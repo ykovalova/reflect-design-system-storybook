@@ -1,0 +1,6 @@
+.DS_Store
+storybook-vue-library/.DS_Store
+storybook-vue-library/node_modules/
+storybook-vue-library/storybook-static/
+storybook-vue-library/.codex-home/
+storybook-vue-library/.codex-config/
