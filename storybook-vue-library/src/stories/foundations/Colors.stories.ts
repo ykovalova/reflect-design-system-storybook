@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
-import { colorTokens, foundationNotes } from "../../tokens/foundations";
+import { colorTokens, foundationNotes, semanticColorTokens } from "../../tokens/foundations";
 
 const meta = {
   title: "Foundations/Colors",
@@ -23,7 +23,7 @@ export const Palette: Story = {
         tokens: colorTokens.filter((token) => token.family === family)
       }));
 
-      return { groupedTokens, foundationNotes };
+      return { groupedTokens, foundationNotes, semanticColorTokens };
     },
     template: `
       <section class="docs-page">
@@ -59,6 +59,27 @@ export const Palette: Story = {
                 </div>
               </article>
             </div>
+          </section>
+
+          <section class="token-section">
+            <div class="docs-heading">
+              <h2>Semantic aliases</h2>
+              <p>
+                The Storybook codebase currently maps semantic usage onto the primitive palette.
+              </p>
+              <p><strong>Theme note:</strong> {{ foundationNotes.themeNote }}</p>
+            </div>
+
+            <ul class="semantic-list">
+              <li v-for="token in semanticColorTokens" :key="token.cssVar">
+                <strong>{{ token.name }}</strong>
+                <span class="token-meta">
+                  <code>{{ token.cssVar }}</code>
+                  <span>maps to {{ token.mapsTo }}</span>
+                </span>
+                <code>{{ token.value }}</code>
+              </li>
+            </ul>
           </section>
         </div>
       </section>

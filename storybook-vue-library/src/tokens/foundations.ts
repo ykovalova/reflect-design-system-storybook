@@ -26,11 +26,26 @@ export type TypographyToken = {
   sample: string;
 };
 
+export type ShadowToken = {
+  name: string;
+  cssVar: string;
+  value: string;
+  x: number;
+  y: number;
+  blur: number;
+  spread: number;
+  color: string;
+};
+
 export const foundationNotes = {
-  status: "stage1_primitives_transferred",
-  nextAction: "Review the transferred primitive palette against Figma before updating semantic usage in components.",
+  status: "stage1_foundations_verified",
+  nextAction: "Validate whether radius and theme modes should be added once they are exposed as dedicated Figma foundations.",
   colorNote:
-    "All primitive palette tokens from the linked Figma color frame are now present in the token source."
+    "All primitive palette tokens from the linked Figma Colors page are present in the token source.",
+  elevationNote:
+    "The linked Figma Elevations page defines two box shadows, now documented as elevation tokens in Storybook.",
+  themeNote:
+    "No Figma variable collections or theme modes were exposed in this file, so semantic aliases remain a code-side mapping layer."
 } as const;
 
 export const colorTokens: ColorToken[] = [
@@ -134,6 +149,29 @@ export const semanticColorTokens = [
   { name: "Action Danger Surface", cssVar: "--color-action-danger-surface", value: "var(--color-red-2-5)", mapsTo: "red-2,5" },
   { name: "Action Danger Border", cssVar: "--color-action-danger-border", value: "var(--color-red-50)", mapsTo: "red-50" },
   { name: "Focus Ring", cssVar: "--color-focus-ring", value: "var(--color-blue-2-5)", mapsTo: "blue-2,5" }
+] as const;
+
+export const shadowTokens: ShadowToken[] = [
+  {
+    name: "Box Shadow 1",
+    cssVar: "--shadow-elevation-1",
+    value: "0 2px 20px rgba(150, 148, 161, 0.2)",
+    x: 0,
+    y: 2,
+    blur: 20,
+    spread: 0,
+    color: "rgba(150, 148, 161, 0.2)"
+  },
+  {
+    name: "Box Shadow 2",
+    cssVar: "--shadow-elevation-2",
+    value: "1px 5px 10px 2px rgba(91, 91, 100, 0.3)",
+    x: 1,
+    y: 5,
+    blur: 10,
+    spread: 2,
+    color: "rgba(91, 91, 100, 0.3)"
+  }
 ] as const;
 
 export const spacingTokens: SpacingToken[] = [

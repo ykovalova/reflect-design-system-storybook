@@ -46,7 +46,7 @@
   --color-red-60: #c34e45;
   --color-red-70: #b42419;
   --color-red-80: #901d14;
-  --color-red-90: #8c160f;
+  --color-red-90: #6c160f;
   --color-red-100: #360b08;
   --color-blue-2-5: #f6f8fd;
   --color-blue-05: #f6f8fd;
@@ -109,7 +109,9 @@
   --color-action-danger-border: var(--color-red-50);
   --color-focus-ring: var(--color-blue-2-5);
   --color-border-subtle: rgba(33, 33, 40, 0.12);
-  --shadow-card: 0 12px 35px rgba(0, 127, 189, 0.24);
+  --shadow-elevation-1: 0 2px 20px rgba(150, 148, 161, 0.2);
+  --shadow-elevation-2: 1px 5px 10px 2px rgba(91, 91, 100, 0.3);
+  --shadow-card: var(--shadow-elevation-1);
 
   --space-2: 0.125rem;
   --space-4: 0.25rem;
@@ -386,4 +388,23 @@ select {
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.72);
+}
+
+.elevation-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(14rem, 0.75fr);
+}
+
+.elevation-demo-wrap {
+  display: grid;
+  place-items: center;
+  padding: var(--space-24);
+  background: linear-gradient(180deg, rgba(247, 247, 249, 0.96), rgba(255, 255, 255, 0.98));
+}
+
+.elevation-demo {
+  inline-size: 7rem;
+  block-size: 7rem;
+  border-radius: var(--radius-md);
+  background: #fff;
 }

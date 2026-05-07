@@ -9,6 +9,7 @@ This file tracks the agreed mapping between Figma variables/styles and the Vue S
 - Colors transferred with verified core swatches and semantic mappings
 - Spacing transferred from the full spacing table
 - Typography transferred from the full type specification
+- Elevations transferred from the dedicated elevations page
 - Stage 2 Button transferred from the exact Buttons component sheet
 
 ## Naming contract
@@ -39,6 +40,14 @@ Transferred Stage 1 mappings:
 | `Body 1`, `Body 2` | `--font-body-*` | Includes the underlined Body 2 style |
 | `Caption field`, `Tooltip` | `--font-caption-field`, `--font-tooltip` | Preserved as separate text roles |
 | `Button large`, `Button medium`, `Button small` | `--font-button-*` | Ready for Stage 2 Button implementation |
+| `Box shadow 1` | `--shadow-elevation-1` | `0 2px 20px rgba(150, 148, 161, 0.2)` |
+| `Box shadow 2` | `--shadow-elevation-2` | `1px 5px 10px 2px rgba(91, 91, 100, 0.3)` |
+
+## Source gaps
+
+- No Figma variable collections were exposed in the source file through MCP
+- No dedicated foundation page for radius tokens was present at the top level
+- Semantic theme aliases remain documented in Storybook as a code-side mapping layer
 
 ## Stage 2 fill-ins
 
