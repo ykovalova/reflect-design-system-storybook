@@ -1,0 +1,7 @@
+interface:
+  display_name: "Figma Tokens To Storybook"
+  short_description: "Verify Reflect token parity before components"
+  default_prompt: "Use $figma-tokens-to-storybook to check Figma foundation tokens against this Storybook workspace before component transfer."
+
+policy:
+  allow_implicit_invocation: true

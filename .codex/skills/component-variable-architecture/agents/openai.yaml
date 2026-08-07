@@ -1,0 +1,4 @@
+interface:
+  display_name: "Component Variable Architecture"
+  short_description: "Plan transferable component variables"
+  default_prompt: "Use $component-variable-architecture to inspect component designs and propose a Figma-to-code variable architecture before transfer."

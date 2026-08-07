@@ -7,6 +7,7 @@ Receiver workspace for transferring the Reflect Design System from Figma into Vu
 - Prep scaffold completed
 - Stage 1 foundations transferred from Figma
 - Stage 2 Button transferred from Figma
+- Token parity skill added for pre-component foundation checks
 
 ## What was prepared
 
@@ -16,6 +17,7 @@ Receiver workspace for transferring the Reflect Design System from Figma into Vu
 - Foundation docs stories for colors, spacing, and typography
 - Button component implementation and Storybook stories
 - Figma-to-code mapping document
+- Project-local token parity skill in `.codex/skills/figma-tokens-to-storybook`
 
 ## Important environment blocker
 
@@ -33,7 +35,17 @@ Storybook's current install docs recommend:
 
 1. Run `source ./bin/activate-local-node.sh` from the project root.
 2. Start Storybook with `./bin/storybook`.
-3. Review the transferred foundations and Button stories.
+3. Run the token parity workflow before transferring more components.
+4. Review the transferred foundations and Button stories.
+
+## Recommended workflow
+
+1. Use `$figma-tokens-to-storybook` to compare Figma foundations against:
+   - `src/tokens/foundations.ts`
+   - `src/styles/base.css`
+   - `src/tokens/figma-mapping.md`
+2. Approve or add missing tokens.
+3. Transfer components only after the token parity pass is clear.
 
 ## GitHub Pages
 
@@ -54,6 +66,7 @@ Once the repository is pushed to GitHub and Pages is enabled, pushes to `main` w
 - `src/stories/foundations/Spacing.stories.ts`
 - `src/stories/foundations/Typography.stories.ts`
 - `src/tokens/figma-mapping.md`
+- `.codex/skills/figma-tokens-to-storybook/SKILL.md`
 
 ## Files updated in Stage 2
 
