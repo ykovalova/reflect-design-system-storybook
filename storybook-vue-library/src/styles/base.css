@@ -98,17 +98,119 @@
   --color-purple-100: #1f143c;
   --color-accent-strong: #ff730b;
   --color-accent-soft: #ff8f0f;
-  --color-surface-primary: var(--color-gray-00);
-  --color-surface-secondary: var(--color-gray-05);
-  --color-text-primary: var(--color-gray-100);
-  --color-text-secondary: var(--color-gray-90);
-  --color-action-primary: var(--color-brand-75);
-  --color-action-primary-hover: var(--color-brand-95);
-  --color-action-danger: var(--color-red-90);
-  --color-action-danger-surface: var(--color-red-2-5);
-  --color-action-danger-border: var(--color-red-50);
-  --color-focus-ring: var(--color-blue-2-5);
-  --color-border-subtle: rgba(33, 33, 40, 0.12);
+  /* ── Text ───────────────────────────────────────────────────────────── */
+  --color-text-strong:            var(--color-gray-100);
+  --color-text-primary:           var(--color-gray-90);
+  --color-text-secondary:         var(--color-gray-70);
+  --color-text-disabled:          var(--color-gray-50);
+  --color-text-inverse:           var(--color-gray-00);
+  --color-text-link:              var(--color-brand-75);
+  --color-text-link-hover:        var(--color-brand-90);
+  --color-text-action:            var(--color-brand-75);
+  --color-text-danger:            var(--color-red-70);
+  --color-text-success:           var(--color-green-100);
+  --color-text-warning:           var(--color-yellow-100);
+  --color-text-info:              var(--color-blue-80);
+  --color-text-on-solid:          var(--color-gray-00);
+  --color-text-on-warning-solid:  var(--color-gray-90);
+
+  /* ── Icon ───────────────────────────────────────────────────────────── */
+  --color-icon-primary:    var(--color-gray-90);
+  --color-icon-secondary:  var(--color-gray-70);
+  --color-icon-disabled:   var(--color-gray-50);
+  --color-icon-inverse:    var(--color-gray-00);
+  --color-icon-action:     var(--color-brand-75);
+  --color-icon-danger:     var(--color-red-70);
+  --color-icon-success:    var(--color-green-100);
+  --color-icon-warning:    var(--color-yellow-100);
+  --color-icon-info:       var(--color-blue-80);
+
+  /* ── Surface ─────────────────────────────────────────────────────────── */
+  --color-surface-base:      var(--color-gray-00);
+  --color-surface-subtle:    var(--color-gray-05);
+  --color-surface-muted:     var(--color-gray-10);
+  --color-surface-disabled:  var(--color-gray-15);
+  --color-surface-raised:    var(--color-gray-00);
+  --color-surface-selected:  var(--color-brand-10);
+
+  /* ── Border ──────────────────────────────────────────────────────────── */
+  --color-border-subtle:    var(--color-gray-20);
+  --color-border-default:   var(--color-gray-50);
+  --color-border-strong:    var(--color-gray-70);
+  --color-border-disabled:  var(--color-gray-50);
+  --color-border-selected:  var(--color-brand-75);
+  --color-border-danger:    var(--color-red-70);
+  --color-border-info:      var(--color-blue-70);
+  --color-border-warning:   var(--color-yellow-70);
+  --color-border-success:   var(--color-green-70);
+  --color-border-focus:     #0066ff;
+
+  /* ── Action — Primary ────────────────────────────────────────────────── */
+  --color-action-primary-default:   var(--color-brand-75);
+  --color-action-primary-hover:     var(--color-brand-80);
+  --color-action-primary-pressed:   var(--color-brand-90);
+  --color-action-primary-disabled:  var(--color-brand-50);
+  --color-action-primary-icon:      var(--color-gray-00);
+
+  /* ── Action — Secondary ──────────────────────────────────────────────── */
+  --color-action-secondary-default:  var(--color-gray-00);
+  --color-action-secondary-hover:    var(--color-gray-05);
+  --color-action-secondary-pressed:  var(--color-gray-10);
+  --color-action-secondary-text:     var(--color-gray-50);
+
+  /* ── Action — Danger ─────────────────────────────────────────────────── */
+  --color-action-danger-default:   var(--color-red-70);
+  --color-action-danger-hover:     var(--color-red-80);
+  --color-action-danger-pressed:   var(--color-red-90);
+  --color-action-danger-disabled:  var(--color-gray-15);
+
+  /* ── Action — OnAction ───────────────────────────────────────────────── */
+  --color-action-on-action-default:   var(--color-gray-00);
+  --color-action-on-action-disabled:  var(--color-gray-50);
+
+  /* ── Focus ───────────────────────────────────────────────────────────── */
+  --color-focus-ring:   #0066ff;
+  --color-focus-inner:  var(--color-gray-00);
+
+  /* ── Status — Neutral ────────────────────────────────────────────────── */
+  --color-status-neutral-surface:    var(--color-gray-05);
+  --color-status-neutral-outline:    var(--color-gray-30);
+  --color-status-neutral-text:       var(--color-gray-90);
+  --color-status-neutral-indicator:  var(--color-gray-50);
+  --color-status-neutral-solid:      var(--color-gray-80);
+  --color-status-neutral-on-solid:   var(--color-gray-00);
+
+  /* ── Status — Info ───────────────────────────────────────────────────── */
+  --color-status-info-surface:    var(--color-blue-20);
+  --color-status-info-outline:    var(--color-blue-40);
+  --color-status-info-text:       var(--color-blue-80);
+  --color-status-info-indicator:  var(--color-blue-60);
+  --color-status-info-solid:      var(--color-blue-70);
+  --color-status-info-on-solid:   var(--color-gray-00);
+
+  /* ── Status — Success ────────────────────────────────────────────────── */
+  --color-status-success-surface:    var(--color-green-20);
+  --color-status-success-outline:    var(--color-green-40);
+  --color-status-success-text:       var(--color-green-100);
+  --color-status-success-indicator:  var(--color-green-60);
+  --color-status-success-solid:      var(--color-green-70);
+  --color-status-success-on-solid:   var(--color-gray-00);
+
+  /* ── Status — Warning ────────────────────────────────────────────────── */
+  --color-status-warning-surface:    var(--color-yellow-20);
+  --color-status-warning-outline:    var(--color-yellow-50);
+  --color-status-warning-text:       var(--color-yellow-100);
+  --color-status-warning-indicator:  var(--color-yellow-60);
+  --color-status-warning-solid:      var(--color-yellow-60);
+  --color-status-warning-on-solid:   var(--color-gray-90);
+
+  /* ── Status — Error ──────────────────────────────────────────────────── */
+  --color-status-error-surface:    var(--color-red-20);
+  --color-status-error-outline:    var(--color-red-40);
+  --color-status-error-text:       var(--color-red-70);
+  --color-status-error-indicator:  var(--color-red-60);
+  --color-status-error-solid:      var(--color-red-70);
+  --color-status-error-on-solid:   var(--color-gray-00);
   --shadow-elevation-1: 0 2px 20px rgba(150, 148, 161, 0.2);
   --shadow-elevation-2: 1px 5px 10px 2px rgba(91, 91, 100, 0.3);
   --shadow-card: var(--shadow-elevation-1);
@@ -305,7 +407,7 @@ select {
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--color-surface-primary);
+  background: var(--color-surface-base);
   box-shadow: var(--shadow-card);
 }
 
@@ -349,7 +451,7 @@ select {
 .type-card {
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
-  background: var(--color-surface-primary);
+  background: var(--color-surface-base);
   padding: var(--space-24);
   box-shadow: var(--shadow-card);
 }
@@ -407,4 +509,134 @@ select {
   block-size: 7rem;
   border-radius: var(--radius-md);
   background: #fff;
+}
+
+/* ── Semantic token table ────────────────────────────────────────────────── */
+
+.semantic-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(33, 33, 40, 0.1);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-elevation-1);
+}
+
+.semantic-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-body-2-regular);
+  line-height: var(--line-body-2);
+}
+
+.semantic-table thead th {
+  padding: var(--space-12) var(--space-16);
+  text-align: left;
+  font-size: var(--font-body-2-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-70);
+  background: var(--color-gray-05);
+  border-bottom: 1px solid rgba(33, 33, 40, 0.1);
+  white-space: nowrap;
+}
+
+.semantic-table thead th:first-child {
+  border-radius: var(--radius-md) 0 0 0;
+}
+
+.semantic-table thead th:last-child {
+  border-radius: 0 var(--radius-md) 0 0;
+}
+
+.semantic-table tbody tr {
+  border-bottom: 1px solid rgba(33, 33, 40, 0.06);
+  transition: background 0.1s ease;
+}
+
+.semantic-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.semantic-table tbody tr:hover {
+  background: rgba(99, 97, 226, 0.04);
+}
+
+.semantic-table td {
+  padding: var(--space-8) var(--space-16);
+  vertical-align: middle;
+}
+
+.semantic-table td:first-child {
+  width: 2.5rem;
+}
+
+.st-swatch {
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(33, 33, 40, 0.14);
+  flex-shrink: 0;
+}
+
+.st-name {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-90);
+  white-space: nowrap;
+}
+
+.st-var {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.75rem;
+  color: var(--color-brand-80);
+  background: rgba(99, 97, 226, 0.07);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.st-alias {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.75rem;
+  color: var(--color-gray-70);
+}
+
+.st-hex {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.75rem;
+  color: var(--color-gray-80);
+}
+
+.st-note {
+  font-size: 0.7rem;
+  color: var(--color-yellow-90);
+  white-space: nowrap;
+}
+
+.st-group-header td {
+  padding: var(--space-12) var(--space-16) var(--space-8);
+  font-size: var(--font-body-2-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-60);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  background: rgba(33, 33, 40, 0.03);
+  border-top: 1px solid rgba(33, 33, 40, 0.06);
+}
+
+.st-group-header:first-child td {
+  border-top: none;
+}
+
+.st-group-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-semibold);
+  padding: 2px 6px;
+  border-radius: 999px;
+  margin-left: var(--space-8);
+  background: rgba(33, 33, 40, 0.08);
+  color: var(--color-gray-70);
+  vertical-align: middle;
+  letter-spacing: 0;
+  text-transform: none;
 }

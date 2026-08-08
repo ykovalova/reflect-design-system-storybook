@@ -194,6 +194,133 @@ export const spacingTokens: SpacingToken[] = [
   { name: "Spacing-144", cssVar: "--space-144", px: 144, rem: "9rem" }
 ];
 
+export type SemanticColorToken = {
+  name: string;
+  cssVar: string;
+  propertyGroup: "text" | "icon" | "surface" | "border" | "action" | "status" | "focus";
+  propertySubgroup: string;
+  intentGroup: "neutral" | "brand" | "danger" | "success" | "warning" | "info" | "focus" | "on-solid";
+  globalAlias: string;
+  hex: string;
+  notes?: string;
+};
+
+export const fullSemanticColorTokens: SemanticColorToken[] = [
+  // ─── Text (14) ───────────────────────────────────────────────────────────
+  { name: "Text/Strong",          cssVar: "--color-text-strong",           propertyGroup: "text",    propertySubgroup: "neutral",  intentGroup: "neutral",  globalAlias: "Gray/100",           hex: "#212128" },
+  { name: "Text/Primary",         cssVar: "--color-text-primary",          propertyGroup: "text",    propertySubgroup: "neutral",  intentGroup: "neutral",  globalAlias: "Gray/90",            hex: "#3E3E46" },
+  { name: "Text/Secondary",       cssVar: "--color-text-secondary",        propertyGroup: "text",    propertySubgroup: "neutral",  intentGroup: "neutral",  globalAlias: "Gray/70",            hex: "#777783" },
+  { name: "Text/Disabled",        cssVar: "--color-text-disabled",         propertyGroup: "text",    propertySubgroup: "neutral",  intentGroup: "neutral",  globalAlias: "Gray/50",            hex: "#B1B1BF" },
+  { name: "Text/Inverse",         cssVar: "--color-text-inverse",          propertyGroup: "text",    propertySubgroup: "neutral",  intentGroup: "on-solid", globalAlias: "Gray/00",            hex: "#FFFFFF" },
+  { name: "Text/Link",            cssVar: "--color-text-link",             propertyGroup: "text",    propertySubgroup: "brand",    intentGroup: "brand",    globalAlias: "Brand/75",           hex: "#3C3ADB" },
+  { name: "Text/LinkHover",       cssVar: "--color-text-link-hover",       propertyGroup: "text",    propertySubgroup: "brand",    intentGroup: "brand",    globalAlias: "Brand/90",           hex: "#242383" },
+  { name: "Text/Action",          cssVar: "--color-text-action",           propertyGroup: "text",    propertySubgroup: "brand",    intentGroup: "brand",    globalAlias: "Brand/75",           hex: "#3C3ADB" },
+  { name: "Text/Danger",          cssVar: "--color-text-danger",           propertyGroup: "text",    propertySubgroup: "danger",   intentGroup: "danger",   globalAlias: "Red/70",             hex: "#B42419" },
+  { name: "Text/Success",         cssVar: "--color-text-success",          propertyGroup: "text",    propertySubgroup: "success",  intentGroup: "success",  globalAlias: "Green/100",          hex: "#0F3A20" },
+  { name: "Text/Warning",         cssVar: "--color-text-warning",          propertyGroup: "text",    propertySubgroup: "warning",  intentGroup: "warning",  globalAlias: "Yellow/100",         hex: "#654D17" },
+  { name: "Text/Info",            cssVar: "--color-text-info",             propertyGroup: "text",    propertySubgroup: "info",     intentGroup: "info",     globalAlias: "Blue/80",            hex: "#183EAC" },
+  { name: "Text/OnSolid",         cssVar: "--color-text-on-solid",         propertyGroup: "text",    propertySubgroup: "on-solid", intentGroup: "on-solid", globalAlias: "Gray/00",            hex: "#FFFFFF" },
+  { name: "Text/OnWarningSolid",  cssVar: "--color-text-on-warning-solid", propertyGroup: "text",    propertySubgroup: "on-solid", intentGroup: "on-solid", globalAlias: "Gray/90",            hex: "#3E3E46" },
+
+  // ─── Icon (9) — all alias Text counterparts ⚠️ ──────────────────────────
+  { name: "Icon/Primary",   cssVar: "--color-icon-primary",   propertyGroup: "icon", propertySubgroup: "neutral", intentGroup: "neutral",  globalAlias: "Text/Primary → Gray/90",   hex: "#3E3E46", notes: "Aliases Text/Primary — no independent value" },
+  { name: "Icon/Secondary", cssVar: "--color-icon-secondary", propertyGroup: "icon", propertySubgroup: "neutral", intentGroup: "neutral",  globalAlias: "Text/Secondary → Gray/70", hex: "#777783", notes: "Aliases Text/Secondary" },
+  { name: "Icon/Disabled",  cssVar: "--color-icon-disabled",  propertyGroup: "icon", propertySubgroup: "neutral", intentGroup: "neutral",  globalAlias: "Text/Disabled → Gray/50",  hex: "#B1B1BF", notes: "Aliases Text/Disabled" },
+  { name: "Icon/Inverse",   cssVar: "--color-icon-inverse",   propertyGroup: "icon", propertySubgroup: "neutral", intentGroup: "on-solid", globalAlias: "Text/Inverse → Gray/00",   hex: "#FFFFFF", notes: "Aliases Text/Inverse" },
+  { name: "Icon/Action",    cssVar: "--color-icon-action",    propertyGroup: "icon", propertySubgroup: "brand",   intentGroup: "brand",    globalAlias: "Text/Action → Brand/75",   hex: "#3C3ADB", notes: "Aliases Text/Action" },
+  { name: "Icon/Danger",    cssVar: "--color-icon-danger",    propertyGroup: "icon", propertySubgroup: "danger",  intentGroup: "danger",   globalAlias: "Text/Danger → Red/70",     hex: "#B42419", notes: "Aliases Text/Danger" },
+  { name: "Icon/Success",   cssVar: "--color-icon-success",   propertyGroup: "icon", propertySubgroup: "success", intentGroup: "success",  globalAlias: "Text/Success → Green/100", hex: "#0F3A20", notes: "Aliases Text/Success" },
+  { name: "Icon/Warning",   cssVar: "--color-icon-warning",   propertyGroup: "icon", propertySubgroup: "warning", intentGroup: "warning",  globalAlias: "Text/Warning → Yellow/100",hex: "#654D17", notes: "Aliases Text/Warning" },
+  { name: "Icon/Info",      cssVar: "--color-icon-info",      propertyGroup: "icon", propertySubgroup: "info",    intentGroup: "info",     globalAlias: "Text/Info → Blue/80",      hex: "#183EAC", notes: "Aliases Text/Info" },
+
+  // ─── Surface (6) ─────────────────────────────────────────────────────────
+  { name: "Surface/Base",     cssVar: "--color-surface-base",     propertyGroup: "surface", propertySubgroup: "neutral", intentGroup: "neutral", globalAlias: "Gray/00",   hex: "#FFFFFF" },
+  { name: "Surface/Subtle",   cssVar: "--color-surface-subtle",   propertyGroup: "surface", propertySubgroup: "neutral", intentGroup: "neutral", globalAlias: "Gray/05",   hex: "#FAFAFC" },
+  { name: "Surface/Muted",    cssVar: "--color-surface-muted",    propertyGroup: "surface", propertySubgroup: "neutral", intentGroup: "neutral", globalAlias: "Gray/10",   hex: "#F7F7F9" },
+  { name: "Surface/Disabled", cssVar: "--color-surface-disabled", propertyGroup: "surface", propertySubgroup: "neutral", intentGroup: "neutral", globalAlias: "Gray/15",   hex: "#EFEFF2" },
+  { name: "Surface/Raised",   cssVar: "--color-surface-raised",   propertyGroup: "surface", propertySubgroup: "neutral", intentGroup: "neutral", globalAlias: "Gray/00",   hex: "#FFFFFF", notes: "⚠️ Same value as Surface/Base — elevation via shadow only?" },
+  { name: "Surface/Selected", cssVar: "--color-surface-selected", propertyGroup: "surface", propertySubgroup: "brand",   intentGroup: "brand",   globalAlias: "Brand/10",  hex: "#EBEBFB" },
+
+  // ─── Border (10) ─────────────────────────────────────────────────────────
+  { name: "Border/Subtle",   cssVar: "--color-border-subtle",   propertyGroup: "border", propertySubgroup: "neutral", intentGroup: "neutral", globalAlias: "Gray/20",   hex: "#E0E0E5" },
+  { name: "Border/Default",  cssVar: "--color-border-default",  propertyGroup: "border", propertySubgroup: "neutral", intentGroup: "neutral", globalAlias: "Gray/50",   hex: "#B1B1BF" },
+  { name: "Border/Strong",   cssVar: "--color-border-strong",   propertyGroup: "border", propertySubgroup: "neutral", intentGroup: "neutral", globalAlias: "Gray/70",   hex: "#777783" },
+  { name: "Border/Disabled", cssVar: "--color-border-disabled", propertyGroup: "border", propertySubgroup: "neutral", intentGroup: "neutral", globalAlias: "Gray/50",   hex: "#B1B1BF", notes: "⚠️ Spelled 'Disbabled' in live Figma library" },
+  { name: "Border/Selected", cssVar: "--color-border-selected", propertyGroup: "border", propertySubgroup: "brand",   intentGroup: "brand",   globalAlias: "Brand/75",  hex: "#3C3ADB" },
+  { name: "Border/Danger",   cssVar: "--color-border-danger",   propertyGroup: "border", propertySubgroup: "danger",  intentGroup: "danger",  globalAlias: "Red/70",    hex: "#B42419" },
+  { name: "Border/Focus",    cssVar: "--color-border-focus",    propertyGroup: "border", propertySubgroup: "focus",   intentGroup: "focus",   globalAlias: "#0066FF",   hex: "#0066FF" },
+  { name: "Border/Info",     cssVar: "--color-border-info",     propertyGroup: "border", propertySubgroup: "info",    intentGroup: "info",    globalAlias: "Blue/70",   hex: "#1E4DD7" },
+  { name: "Border/Warning",  cssVar: "--color-border-warning",  propertyGroup: "border", propertySubgroup: "warning", intentGroup: "warning", globalAlias: "Yellow/70", hex: "#FFC84C" },
+  { name: "Border/Success",  cssVar: "--color-border-success",  propertyGroup: "border", propertySubgroup: "success", intentGroup: "success", globalAlias: "Green/70",  hex: "#32C26B" },
+
+  // ─── Action — Primary (5) ────────────────────────────────────────────────
+  { name: "Action/Primary/Default",  cssVar: "--color-action-primary-default",  propertyGroup: "action", propertySubgroup: "primary", intentGroup: "brand",    globalAlias: "Brand/75",                hex: "#3C3ADB" },
+  { name: "Action/Primary/Hover",    cssVar: "--color-action-primary-hover",    propertyGroup: "action", propertySubgroup: "primary", intentGroup: "brand",    globalAlias: "Brand/80",                hex: "#302EAF" },
+  { name: "Action/Primary/Pressed",  cssVar: "--color-action-primary-pressed",  propertyGroup: "action", propertySubgroup: "primary", intentGroup: "brand",    globalAlias: "Brand/90",                hex: "#242383" },
+  { name: "Action/Primary/Disabled", cssVar: "--color-action-primary-disabled", propertyGroup: "action", propertySubgroup: "primary", intentGroup: "neutral",  globalAlias: "Brand/50",                hex: "#A3A2EE", notes: "⚠️ Spelled 'Disbabled' in live Figma library" },
+  { name: "Action/Primary/Icon",     cssVar: "--color-action-primary-icon",     propertyGroup: "action", propertySubgroup: "primary", intentGroup: "on-solid", globalAlias: "Icon/Inverse → Gray/00",  hex: "#FFFFFF" },
+
+  // ─── Action — Secondary (4) ──────────────────────────────────────────────
+  { name: "Action/Secondary/Default", cssVar: "--color-action-secondary-default", propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Base → Gray/00",   hex: "#FFFFFF" },
+  { name: "Action/Secondary/Hover",   cssVar: "--color-action-secondary-hover",   propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Subtle → Gray/05", hex: "#FAFAFC" },
+  { name: "Action/Secondary/Pressed", cssVar: "--color-action-secondary-pressed", propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Muted → Gray/10",  hex: "#F7F7F9" },
+  { name: "Action/Secondary/Text",    cssVar: "--color-action-secondary-text",    propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Gray/50",                  hex: "#B1B1BF" },
+
+  // ─── Action — Danger (4) ─────────────────────────────────────────────────
+  { name: "Action/Danger/Default",  cssVar: "--color-action-danger-default",  propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger",  globalAlias: "Red/70",                    hex: "#B42419" },
+  { name: "Action/Danger/Hover",    cssVar: "--color-action-danger-hover",    propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger",  globalAlias: "Red/80",                    hex: "#901D14" },
+  { name: "Action/Danger/Pressed",  cssVar: "--color-action-danger-pressed",  propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger",  globalAlias: "Red/90",                    hex: "#6C160F" },
+  { name: "Action/Danger/Disabled", cssVar: "--color-action-danger-disabled", propertyGroup: "action", propertySubgroup: "danger", intentGroup: "neutral", globalAlias: "Surface/Disabled → Gray/15",hex: "#EFEFF2" },
+
+  // ─── Action — OnAction (2) ───────────────────────────────────────────────
+  { name: "Action/OnAction/Default",  cssVar: "--color-action-on-action-default",  propertyGroup: "action", propertySubgroup: "on-action", intentGroup: "on-solid", globalAlias: "Text/OnSolid → Gray/00",    hex: "#FFFFFF" },
+  { name: "Action/OnAction/Disabled", cssVar: "--color-action-on-action-disabled", propertyGroup: "action", propertySubgroup: "on-action", intentGroup: "neutral",  globalAlias: "Text/Disabled → Gray/50",   hex: "#B1B1BF" },
+
+  // ─── Status — Neutral (6) ────────────────────────────────────────────────
+  { name: "Status/Neutral/Surface",   cssVar: "--color-status-neutral-surface",   propertyGroup: "status", propertySubgroup: "neutral", intentGroup: "neutral",  globalAlias: "Gray/05", hex: "#FAFAFC" },
+  { name: "Status/Neutral/Outline",   cssVar: "--color-status-neutral-outline",   propertyGroup: "status", propertySubgroup: "neutral", intentGroup: "neutral",  globalAlias: "Gray/30", hex: "#D0D0D9" },
+  { name: "Status/Neutral/Text",      cssVar: "--color-status-neutral-text",      propertyGroup: "status", propertySubgroup: "neutral", intentGroup: "neutral",  globalAlias: "Gray/90", hex: "#3E3E46" },
+  { name: "Status/Neutral/Indicator", cssVar: "--color-status-neutral-indicator", propertyGroup: "status", propertySubgroup: "neutral", intentGroup: "neutral",  globalAlias: "Gray/50", hex: "#B1B1BF" },
+  { name: "Status/Neutral/Solid",     cssVar: "--color-status-neutral-solid",     propertyGroup: "status", propertySubgroup: "neutral", intentGroup: "neutral",  globalAlias: "Gray/80", hex: "#5B5B64" },
+  { name: "Status/Neutral/OnSolid",   cssVar: "--color-status-neutral-on-solid",  propertyGroup: "status", propertySubgroup: "neutral", intentGroup: "on-solid", globalAlias: "Gray/00", hex: "#FFFFFF" },
+
+  // ─── Status — Info (6) ───────────────────────────────────────────────────
+  { name: "Status/Info/Surface",   cssVar: "--color-status-info-surface",   propertyGroup: "status", propertySubgroup: "info", intentGroup: "info",     globalAlias: "Blue/20", hex: "#E8EDFB" },
+  { name: "Status/Info/Outline",   cssVar: "--color-status-info-outline",   propertyGroup: "status", propertySubgroup: "info", intentGroup: "info",     globalAlias: "Blue/40", hex: "#A5B8EF" },
+  { name: "Status/Info/Text",      cssVar: "--color-status-info-text",      propertyGroup: "status", propertySubgroup: "info", intentGroup: "info",     globalAlias: "Blue/80", hex: "#183EAC" },
+  { name: "Status/Info/Indicator", cssVar: "--color-status-info-indicator", propertyGroup: "status", propertySubgroup: "info", intentGroup: "info",     globalAlias: "Blue/60", hex: "#4B71DF" },
+  { name: "Status/Info/Solid",     cssVar: "--color-status-info-solid",     propertyGroup: "status", propertySubgroup: "info", intentGroup: "info",     globalAlias: "Blue/70", hex: "#1E4DD7" },
+  { name: "Status/Info/OnSolid",   cssVar: "--color-status-info-on-solid",  propertyGroup: "status", propertySubgroup: "info", intentGroup: "on-solid", globalAlias: "Gray/00", hex: "#FFFFFF" },
+
+  // ─── Status — Success (6) ────────────────────────────────────────────────
+  { name: "Status/Success/Surface",   cssVar: "--color-status-success-surface",   propertyGroup: "status", propertySubgroup: "success", intentGroup: "success",  globalAlias: "Green/20",  hex: "#EAF9F0" },
+  { name: "Status/Success/Outline",   cssVar: "--color-status-success-outline",   propertyGroup: "status", propertySubgroup: "success", intentGroup: "success",  globalAlias: "Green/40",  hex: "#ADE7C4" },
+  { name: "Status/Success/Text",      cssVar: "--color-status-success-text",      propertyGroup: "status", propertySubgroup: "success", intentGroup: "success",  globalAlias: "Green/100", hex: "#0F3A20" },
+  { name: "Status/Success/Indicator", cssVar: "--color-status-success-indicator", propertyGroup: "status", propertySubgroup: "success", intentGroup: "success",  globalAlias: "Green/60",  hex: "#5BCE89" },
+  { name: "Status/Success/Solid",     cssVar: "--color-status-success-solid",     propertyGroup: "status", propertySubgroup: "success", intentGroup: "success",  globalAlias: "Green/70",  hex: "#32C26B" },
+  { name: "Status/Success/OnSolid",   cssVar: "--color-status-success-on-solid",  propertyGroup: "status", propertySubgroup: "success", intentGroup: "on-solid", globalAlias: "Gray/00",   hex: "#FFFFFF" },
+
+  // ─── Status — Warning (6) ────────────────────────────────────────────────
+  { name: "Status/Warning/Surface",   cssVar: "--color-status-warning-surface",   propertyGroup: "status", propertySubgroup: "warning", intentGroup: "warning",  globalAlias: "Yellow/20",  hex: "#FFF9ED" },
+  { name: "Status/Warning/Outline",   cssVar: "--color-status-warning-outline",   propertyGroup: "status", propertySubgroup: "warning", intentGroup: "warning",  globalAlias: "Yellow/50",  hex: "#FFDE94" },
+  { name: "Status/Warning/Text",      cssVar: "--color-status-warning-text",      propertyGroup: "status", propertySubgroup: "warning", intentGroup: "warning",  globalAlias: "Yellow/100", hex: "#654D17" },
+  { name: "Status/Warning/Indicator", cssVar: "--color-status-warning-indicator", propertyGroup: "status", propertySubgroup: "warning", intentGroup: "warning",  globalAlias: "Yellow/60",  hex: "#FFD370" },
+  { name: "Status/Warning/Solid",     cssVar: "--color-status-warning-solid",     propertyGroup: "status", propertySubgroup: "warning", intentGroup: "warning",  globalAlias: "Yellow/60",  hex: "#FFD370" },
+  { name: "Status/Warning/OnSolid",   cssVar: "--color-status-warning-on-solid",  propertyGroup: "status", propertySubgroup: "warning", intentGroup: "on-solid", globalAlias: "Gray/90",    hex: "#3E3E46" },
+
+  // ─── Status — Error (6) ──────────────────────────────────────────────────
+  { name: "Status/Error/Surface",   cssVar: "--color-status-error-surface",   propertyGroup: "status", propertySubgroup: "error", intentGroup: "danger",   globalAlias: "Red/20",               hex: "#F7E2E1" },
+  { name: "Status/Error/Outline",   cssVar: "--color-status-error-outline",   propertyGroup: "status", propertySubgroup: "error", intentGroup: "danger",   globalAlias: "Red/40",               hex: "#E3A39E" },
+  { name: "Status/Error/Text",      cssVar: "--color-status-error-text",      propertyGroup: "status", propertySubgroup: "error", intentGroup: "danger",   globalAlias: "Text/Danger → Red/70", hex: "#B42419" },
+  { name: "Status/Error/Indicator", cssVar: "--color-status-error-indicator", propertyGroup: "status", propertySubgroup: "error", intentGroup: "danger",   globalAlias: "Red/60",               hex: "#C34E45" },
+  { name: "Status/Error/Solid",     cssVar: "--color-status-error-solid",     propertyGroup: "status", propertySubgroup: "error", intentGroup: "danger",   globalAlias: "Red/70",               hex: "#B42419" },
+  { name: "Status/Error/OnSolid",   cssVar: "--color-status-error-on-solid",  propertyGroup: "status", propertySubgroup: "error", intentGroup: "on-solid", globalAlias: "Gray/00",              hex: "#FFFFFF" },
+
+  // ─── Focus (2) ───────────────────────────────────────────────────────────
+  { name: "Focus/Ring",  cssVar: "--color-focus-ring",  propertyGroup: "focus", propertySubgroup: "focus", intentGroup: "focus", globalAlias: "#0066FF", hex: "#0066FF" },
+  { name: "Focus/Inner", cssVar: "--color-focus-inner", propertyGroup: "focus", propertySubgroup: "focus", intentGroup: "focus", globalAlias: "Gray/00", hex: "#FFFFFF" },
+];
+
 export const typographyTokens: TypographyToken[] = [
   {
     name: "H1 Regular",
