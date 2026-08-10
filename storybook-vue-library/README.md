@@ -1,75 +1,46 @@
-# Storybook Vue Library
+# Reflect Design System — Storybook
 
-Receiver workspace for transferring the Reflect Design System from Figma into Vue and Storybook.
+This workspace receives the Reflect Design System from Figma and transfers it into Vue 3 components and Storybook documentation. It is not an app — it is a structured receiver for design tokens, semantic layers, and component implementations.
 
-## Current status
+## Milestones
 
-- Prep scaffold completed
-- Stage 1 foundations transferred from Figma
-- Stage 2 Button transferred from Figma
-- Token parity skill added for pre-component foundation checks
+The project follows a staged approach: foundations must be verified before components are transferred.
 
-## What was prepared
+| # | Milestone | Status |
+|---|-----------|--------|
+| 1 | Foundations transfer — primitive variables transferred from Figma to code | Done |
+| 2 | Semantic structure defined and published in Storybook | Done |
+| 3 | Semantic structure tested on three components | Done |
+| 4 | Documentation and structure refined | In progress |
+| 5 | Semantic structure transferred to Figma and applied to remaining components | Upcoming |
+| 6 | Remaining components transferred to code | Upcoming |
+| 7 | Storybook updated and complete | Upcoming |
 
-- Vue + Vite project structure
-- Storybook configuration
-- Foundation token destination files
-- Foundation docs stories for colors, spacing, and typography
-- Button component implementation and Storybook stories
-- Figma-to-code mapping document
-- Project-local token parity skill in `.codex/skills/figma-tokens-to-storybook`
+## Working principles
 
-## Important environment blocker
+**Figma is the source of truth.**
+All values — color, spacing, typography, shadows — originate in Figma. If the code and Figma disagree, update the code. The parity audit in `src/tokens/figma-mapping.md` is the live record of what's confirmed, what's in question, and what's unresolved.
 
-This machine does not currently expose `node`, `npm`, `pnpm`, or `yarn` in the shell by default.
-The project now includes local helper scripts in `bin/` that activate the user-local Node install and the safe CA settings automatically.
+**Tokens are layered.**
+Primitive tokens (`--color-gray-90: #3E3E46`) form the raw palette. Semantic tokens (`--color-text-primary: var(--color-gray-90)`) assign meaning to those primitives. Components reference semantic tokens only — never primitives directly. This separation means that theming, dark mode, or a rebrand changes only the semantic layer without touching component code.
 
-Storybook's current install docs recommend:
+**Foundations gate components.**
+No component is transferred until all the tokens it depends on have been verified against Figma. This is enforced by running `$figma-tokens-to-storybook` before any component work begins. If required tokens are missing, values are unconfirmed, or a mapping requires guesswork, the transfer stops.
 
-- Start from a Vite app
-- Use `npm create vite@latest` for Vue scaffolding
-- Use `npm create storybook@latest` inside the project root
-- Use Node.js 20.19+ or 22.12+
+## Quick start
 
-## Next steps
+Node is not on the system PATH by default. The activate script points the shell at the local Node install.
 
-1. Run `source ./bin/activate-local-node.sh` from the project root.
-2. Start Storybook with `./bin/storybook`.
-3. Run the token parity workflow before transferring more components.
-4. Review the transferred foundations and Button stories.
+```bash
+source ./bin/activate-local-node.sh
+./bin/storybook
+```
 
-## Recommended workflow
+## Documentation
 
-1. Use `$figma-tokens-to-storybook` to compare Figma foundations against:
-   - `src/tokens/foundations.ts`
-   - `src/styles/base.css`
-   - `src/tokens/figma-mapping.md`
-2. Approve or add missing tokens.
-3. Transfer components only after the token parity pass is clear.
-
-## GitHub Pages
-
-This workspace includes a GitHub Actions workflow at `../.github/workflows/deploy-storybook.yml`.
-Once the repository is pushed to GitHub and Pages is enabled, pushes to `main` will build and publish the Storybook site automatically.
-
-## Local commands
-
-- `source ./bin/activate-local-node.sh`
-- `./bin/npm install`
-- `./bin/storybook`
-
-## Files to update in Stage 1
-
-- `src/tokens/foundations.ts`
-- `src/styles/base.css`
-- `src/stories/foundations/Colors.stories.ts`
-- `src/stories/foundations/Spacing.stories.ts`
-- `src/stories/foundations/Typography.stories.ts`
-- `src/tokens/figma-mapping.md`
-- `.codex/skills/figma-tokens-to-storybook/SKILL.md`
-
-## Files updated in Stage 2
-
-- `src/components/Button/Button.vue`
-- `src/stories/components/Button.stories.ts`
-- `src/tokens/figma-mapping.md`
+| Doc | What it covers |
+|-----|----------------|
+| [WORKFLOW.md](WORKFLOW.md) | Step-by-step transfer workflow for tokens and components, and status definitions |
+| [docs/design-system.md](docs/design-system.md) | Token architecture, naming rules, source files, and component transfer rules |
+| [docs/storybook.md](docs/storybook.md) | Story organization, foundation and component story patterns, conventions |
+| [src/tokens/figma-mapping.md](src/tokens/figma-mapping.md) | Figma ↔ code parity — living audit trail, updated after every transfer |
