@@ -1,12 +1,14 @@
-# Figma → Storybook Parity Gate
+# Figma Token Parity Audit
 
-Compares Figma variable definitions against the current code in `src/tokens/foundations.ts` and `src/styles/base.css`. Outputs a parity report and updates `src/tokens/figma-mapping.md` with findings. Returns a clear pass/fail for the component transfer gate.
+Compares Figma variable definitions against the current code in `src/tokens/foundations.ts` and `src/styles/base.css`. Outputs a parity report and updates `src/tokens/figma-mapping.md` with findings. This is a live audit against Figma — it fetches fresh data via the Figma MCP every run.
+
+This is the **foundations track** skill only. It does not decide whether a specific component can start transfer — for that, use `$component-transfer-gate`, which reads this skill's recorded output instead of re-auditing Figma.
 
 ## When to run
 
-- **Before every component transfer** — required; a component cannot enter the transfer track until this passes
 - **After any edit to `base.css` or `foundations.ts`** — confirms values haven't drifted from Figma
 - **When design updates Figma variables** — identifies what changed and whether code needs to follow
+- **When re-verifying a token group** — e.g. resolving an item in `## Open decisions`
 
 ## Arguments
 
@@ -77,6 +79,8 @@ Gate: PASS / FAIL
 Gate **PASS** means: zero mismatches and zero "missing in code" items for token groups that are at **Verified** status in `WORKFLOW.md`. New gaps in **Not started** groups do not block the gate.
 
 Gate **FAIL** means: one or more mismatches or gaps in a **Verified** token group. List each blocker explicitly.
+
+This PASS/FAIL reflects foundations status only. It is not, by itself, a decision about whether any particular component can start transfer — `$component-transfer-gate` makes that call by reading the status this audit produces.
 
 Then print a detail table per token category (Colors, Spacing, Radius, Typography, Shadows), showing only non-Match rows. Skip categories with no issues.
 

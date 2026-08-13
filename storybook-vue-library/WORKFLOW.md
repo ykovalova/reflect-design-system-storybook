@@ -12,7 +12,7 @@ Two tracks cover the full transfer from Figma to code. Foundations must reach **
 The variable or style exists in the Figma file. This is the starting state — nothing has been checked or mapped yet.
 
 **2. Parity checked**
-Run `$figma-tokens-to-storybook`. This reads the Figma file and compares values against the current code. The output shows matches, mismatches, and tokens that exist in Figma but not in code. Record findings in `src/tokens/figma-mapping.md`.
+Run `$figma-token-parity`. This reads the Figma file and compares values against the current code. The output shows matches, mismatches, and tokens that exist in Figma but not in code. Record findings in `src/tokens/figma-mapping.md`.
 
 **3. Mapping decided**
 Agree on how each Figma variable path maps to a CSS custom property name. This is a deliberate decision, not automatic. Document the agreed mapping and flag anything unresolved — missing tokens, ambiguous aliases, values that need a design decision before code can proceed. Figma uses commas in some names (`red-2,5`); normalize these to hyphens in CSS (`--color-red-2-5`).
@@ -38,7 +38,7 @@ A component cannot enter this track until all its required foundation tokens are
 The component spec exists with defined variants, sizes, and states.
 
 **2. Gate passed**
-Run `$figma-tokens-to-storybook` and confirm every token the component references is at **Verified** status. If any required token is at a lower status, resolve it in the foundations track first.
+Run `$component-transfer-gate` and confirm every token the component references is at **Verified** status. If any required token is at a lower status, resolve it in the foundations track first.
 
 **3. Props mapped**
 Map Figma's component properties to Vue props. Every Figma axis — variant, size, state, only-icon — becomes a Vue prop with the same name and value set. Document the mapping in `src/tokens/figma-mapping.md` under Stage fill-ins before writing any component code.
@@ -87,3 +87,13 @@ A token group moves from **Transferred** to **Verified** only after an explicit 
 | Component | Status | Notes |
 |-----------|--------|-------|
 | Button | In Storybook | 7 variants, 3 sizes, 6 states |
+
+---
+
+## Proposed additions (not yet adopted)
+
+Candidate workflow steps identified during the skill clean-up (2026-08-13), not yet written into the tracks above:
+
+- **Token naming-approach decision** — a step for deciding property-first vs. intent-first organization per token category (see `skills/reflect-semantic-color-advisor.md`), so the choice is recorded once per category instead of re-litigated per component.
+- **Design-audit / drift-review cadence** — a recurring check (e.g. before each foundations re-verification) that re-reads the structural audit doc for newly introduced issues, not just value drift.
+- **Component transfer review step** — an explicit PR/review checkpoint between "Documented" and "Verified" in the components track, so a second person confirms the Figma-vs-implementation check rather than the implementer self-verifying.
