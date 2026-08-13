@@ -25,7 +25,7 @@ All values — color, spacing, typography, shadows — originate in Figma. If th
 Primitive tokens (`--color-gray-90: #3E3E46`) form the raw palette. Semantic tokens (`--color-text-primary: var(--color-gray-90)`) assign meaning to those primitives. Components reference semantic tokens only — never primitives directly. This separation means that theming, dark mode, or a rebrand changes only the semantic layer without touching component code.
 
 **Foundations gate components.**
-No component is transferred until all the tokens it depends on have been verified against Figma. This is enforced by running `$figma-tokens-to-storybook` before any component work begins. If required tokens are missing, values are unconfirmed, or a mapping requires guesswork, the transfer stops.
+No component is transferred until all the tokens it depends on have been verified against Figma. This is enforced by running `$component-transfer-gate` before any component work begins. If required tokens are missing, values are unconfirmed, or a mapping requires guesswork, the transfer stops.
 
 ## Quick start
 

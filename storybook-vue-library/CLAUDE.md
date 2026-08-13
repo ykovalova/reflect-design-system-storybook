@@ -12,7 +12,7 @@ source ./bin/activate-local-node.sh
 ## Core rules
 
 - **Figma is authoritative for all values.** If Figma and code disagree, update code to match Figma.
-- **Run the parity gate before every component transfer.** Use `$figma-tokens-to-storybook` to verify foundation tokens are in sync before transferring any component.
+- **Run the transfer gate before every component transfer.** Use `$component-transfer-gate` to confirm required foundation tokens are Verified before transferring any component. Use `$figma-token-parity` whenever foundations change or need a fresh comparison against Figma.
 - **Foundations before components.** A component transfer is blocked until its required tokens are Verified.
 - **`foundations.ts` and `base.css` must stay in sync.** `foundations.ts` holds typed token data; `base.css` registers the CSS custom properties. Adding to one means adding to the other.
 - **Components consume semantic tokens only.** Component CSS must reference `--color-text-primary`, never `--color-gray-90` directly.
