@@ -171,8 +171,8 @@ const iconSize = computed(() => {
   --button-font-size: var(--font-button-medium);
   --button-line-height: var(--line-button-medium);
   --button-font-weight: var(--font-weight-medium);
-  --button-background: var(--color-action-primary);
-  --button-color: var(--color-surface-primary);
+  --button-background: var(--color-action-primary-default);
+  --button-color: var(--color-action-on-action-default);
   --button-border-color: transparent;
   --button-shadow: none;
   --button-opacity: 1;
@@ -255,31 +255,31 @@ const iconSize = computed(() => {
 }
 
 .button-variant-primary {
-  --button-background: var(--color-action-primary);
-  --button-color: var(--color-surface-primary);
+  --button-background: var(--color-action-primary-default);
+  --button-color: var(--color-action-on-action-default);
 }
 
 .button-variant-primary-danger {
-  --button-background: var(--color-action-danger);
-  --button-color: var(--color-surface-primary);
+  --button-background: var(--color-action-danger-default);
+  --button-color: var(--color-action-on-action-default);
 }
 
 .button-variant-secondary {
-  --button-background: var(--color-surface-primary);
-  --button-color: var(--color-action-primary);
-  --button-border-color: rgba(60, 58, 219, 0.24);
+  --button-background: var(--color-action-secondary-default);
+  --button-color: var(--color-action-primary-default);
+  --button-border-color: var(--color-action-secondary-border);
 }
 
 .button-variant-secondary-danger {
   --button-background: var(--color-action-danger-surface);
-  --button-color: var(--color-action-danger);
-  --button-border-color: rgba(210, 120, 114, 0.55);
+  --button-color: var(--color-action-danger-default);
+  --button-border-color: var(--color-action-danger-border);
   --button-shadow: none;
 }
 
 .button-variant-tertiary-modal {
-  --button-background: rgba(60, 58, 219, 0.08);
-  --button-color: var(--color-action-primary);
+  --button-background: var(--color-action-tertiary-modal-default);
+  --button-color: var(--color-action-primary-default);
   --button-border-color: transparent;
   --button-shadow: none;
 }
@@ -296,11 +296,11 @@ const iconSize = computed(() => {
 }
 
 .button-variant-tertiary {
-  --button-color: var(--color-action-primary);
+  --button-color: var(--color-action-primary-default);
 }
 
 .button-variant-tertiary-danger {
-  --button-color: var(--color-action-danger);
+  --button-color: var(--color-action-danger-default);
 }
 
 .button-textual {
@@ -313,24 +313,27 @@ const iconSize = computed(() => {
 
 .button-variant-primary[data-state="hover"]:not(:disabled),
 .button-variant-primary:not(:disabled):hover {
-  --button-background: var(--color-brand-70);
+  --button-background: var(--color-action-primary-hover);
 }
 
 .button-variant-primary-danger[data-state="hover"]:not(:disabled),
 .button-variant-primary-danger:not(:disabled):hover {
-  --button-background: #6c160f;
+  --button-background: var(--color-action-danger-hover);
 }
 
 .button-variant-secondary[data-state="hover"]:not(:disabled),
-.button-variant-secondary:not(:disabled):hover,
+.button-variant-secondary:not(:disabled):hover {
+  background: var(--color-action-secondary-hover);
+}
+
 .button-variant-tertiary-modal[data-state="hover"]:not(:disabled),
 .button-variant-tertiary-modal:not(:disabled):hover {
-  background: rgba(60, 58, 219, 0.08);
+  background: var(--color-action-tertiary-modal-hover);
 }
 
 .button-variant-secondary-danger[data-state="hover"]:not(:disabled),
 .button-variant-secondary-danger:not(:disabled):hover {
-  background: rgba(210, 120, 114, 0.08);
+  background: var(--color-action-danger-surface-hover);
 }
 
 .button-variant-tertiary[data-state="hover"]:not(:disabled),
@@ -345,23 +348,29 @@ const iconSize = computed(() => {
   transform: translateY(0);
 }
 
-.button-variant-primary[data-state="pressed"]:not(:disabled),
-.button-variant-primary-danger[data-state="pressed"]:not(:disabled) {
-  filter: brightness(0.92);
+.button-variant-primary[data-state="pressed"]:not(:disabled) {
+  --button-background: var(--color-action-primary-pressed);
 }
 
-.button-variant-secondary[data-state="pressed"]:not(:disabled),
+.button-variant-primary-danger[data-state="pressed"]:not(:disabled) {
+  --button-background: var(--color-action-danger-pressed);
+}
+
+.button-variant-secondary[data-state="pressed"]:not(:disabled) {
+  background: var(--color-action-secondary-pressed);
+}
+
 .button-variant-tertiary-modal[data-state="pressed"]:not(:disabled) {
-  background: rgba(60, 58, 219, 0.12);
+  background: var(--color-action-tertiary-modal-pressed);
 }
 
 .button-variant-secondary-danger[data-state="pressed"]:not(:disabled) {
-  background: rgba(210, 120, 114, 0.12);
+  background: var(--color-action-danger-surface-pressed);
 }
 
 .button-root[data-state="focused"]:not(:disabled),
 .button-root:focus-visible:not(:disabled) {
-  outline: 2px solid var(--color-action-primary);
+  outline: 2px solid var(--color-action-primary-default);
   outline-offset: 2px;
   box-shadow: 0 0 0 4px var(--color-focus-ring);
 }
@@ -370,6 +379,21 @@ const iconSize = computed(() => {
 .button-root[data-state="loading"],
 .button-root:disabled {
   --button-opacity: 0.48;
+}
+
+.button-variant-primary:disabled:not([data-state="loading"]),
+.button-variant-primary-danger:disabled:not([data-state="loading"]) {
+  --button-opacity: 1;
+}
+
+.button-variant-primary:disabled:not([data-state="loading"]) {
+  --button-background: var(--color-action-primary-disabled);
+  --button-color: var(--color-action-on-action-disabled);
+}
+
+.button-variant-primary-danger:disabled:not([data-state="loading"]) {
+  --button-background: var(--color-action-danger-disabled);
+  --button-color: var(--color-action-on-action-disabled);
 }
 
 .button-variant-tertiary[data-state="disabled"],
