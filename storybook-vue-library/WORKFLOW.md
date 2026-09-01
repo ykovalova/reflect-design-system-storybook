@@ -75,7 +75,7 @@ A token group moves from **Transferred** to **Verified** only after an explicit 
 
 | Group | Status | Notes |
 |-------|--------|-------|
-| Colors — primitive palette | Verified | 3 values differ from latest Figma audit — see `figma-mapping.md` |
+| Colors — primitive palette | Verified | |
 | Colors — semantic layer | Verified | |
 | Typography | Verified | Button font weights need approval |
 | Spacing | Verified | `spc-0` and `spc-6` missing in code |
@@ -94,6 +94,6 @@ A token group moves from **Transferred** to **Verified** only after an explicit 
 
 Candidate workflow steps identified during the skill clean-up (2026-08-13), not yet written into the tracks above:
 
-- **Token naming-approach decision** — a step for deciding property-first vs. intent-first organization per token category (see `skills/reflect-semantic-color-advisor.md`), so the choice is recorded once per category instead of re-litigated per component.
+- **Token naming-approach decision** — *superseded 2026-09-01.* Property-first vs. intent-first is no longer an open per-category question: the `Semantic` collection settles it (property-first throughout, with `Action` splitting pressable backgrounds off `Surface`, and state always as a trailing segment). See the `reflect-token-picker` skill and `docs/semantic-color-spec.html`. What remains is an **adoption** step — migrating `base.css` and `foundations.ts` onto those names.
 - **Design-audit / drift-review cadence** — a recurring check (e.g. before each foundations re-verification) that re-reads the structural audit doc for newly introduced issues, not just value drift.
 - **Component transfer review step** — an explicit PR/review checkpoint between "Documented" and "Verified" in the components track, so a second person confirms the Figma-vs-implementation check rather than the implementer self-verifying.

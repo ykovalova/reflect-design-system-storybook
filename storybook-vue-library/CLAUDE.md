@@ -15,7 +15,7 @@ source ./bin/activate-local-node.sh
 - **Run the transfer gate before every component transfer.** Use `$component-transfer-gate` to confirm required foundation tokens are Verified before transferring any component. Use `$figma-token-parity` whenever foundations change or need a fresh comparison against Figma.
 - **Foundations before components.** A component transfer is blocked until its required tokens are Verified.
 - **`foundations.ts` and `base.css` must stay in sync.** `foundations.ts` holds typed token data; `base.css` registers the CSS custom properties. Adding to one means adding to the other.
-- **Components consume semantic tokens only.** Component CSS must reference `--color-text-primary`, never `--color-gray-90` directly.
+- **Components consume semantic tokens only.** Component CSS must reference `--color-text-primary`, never `--color-gray-90` directly. Use the `reflect-token-picker` skill to choose which semantic token applies.
 
 ## Documentation
 
@@ -25,6 +25,8 @@ source ./bin/activate-local-node.sh
 | [WORKFLOW.md](WORKFLOW.md) | Transfer workflow steps and status definitions |
 | [docs/design-system.md](docs/design-system.md) | Token architecture, naming rules, component transfer rules |
 | [docs/storybook.md](docs/storybook.md) | Story organization, patterns, and conventions |
+| [docs/semantic-color-spec.html](docs/semantic-color-spec.html) | The semantic colour layer — mirrors the `Semantic` collection in Figma. Authoritative for structure; **not yet reflected in `base.css`** |
+| [src/tokens/semantic-token-map.md](src/tokens/semantic-token-map.md) | Every semantic token, its primitive alias, and when to use it — plus the old-token → new-token migration map |
 | [src/tokens/figma-mapping.md](src/tokens/figma-mapping.md) | Figma ↔ code parity — living audit trail |
 
 ## Key files

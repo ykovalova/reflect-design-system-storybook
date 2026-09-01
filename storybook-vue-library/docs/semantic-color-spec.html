@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Reference copy of the Reflect Semantic Color Spec.
+     Structure of record: Figma branch qR9kXKSyZJ2Z0XivlTcejZ, collection "Semantic" (115 variables).
+     Regenerate this file if that collection changes. -->
+<style>*{margin:0;padding:0;box-sizing:border-box}</style>
+<title>Reflect Semantic Color Spec</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+  :root {
+    --bg: #FBFAFD;
+    --panel: #FFFFFF;
+    --panel-2: #F5F4FA;
+    --ink: #16161D;
+    --ink-2: #45444F;
+    --muted: #6C6C7E;
+    --line: #E6E4EE;
+    --line-2: #D6D3E4;
+    --accent: #3C3ADB;
+    --accent-soft: #EBEBFB;
+    --new: #1B7A42;
+    --new-bg: #D6F3E1;
+    --board: #6C6C7E;
+    --board-bg: #EFEFF2;
+    --chg: #A7822E;
+    --chg-bg: #FFE9B7;
+    --shadow: 0 1px 2px rgba(22,22,29,.04), 0 8px 24px rgba(22,22,29,.05);
+    --sw-ring: rgba(22,22,29,.16);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121118; --panel: #1A1922; --panel-2: #22212C;
+      --ink: #ECEBF3; --ink-2: #C3C1D2; --muted: #9695A8;
+      --line: #2B2A36; --line-2: #3A3848;
+      --accent: #908EF2; --accent-soft: #24233A;
+      --new: #6FD79A; --new-bg: #14331F;
+      --board: #9695A8; --board-bg: #2B2A36;
+      --chg: #E0B65C; --chg-bg: #3A2F14;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+      --sw-ring: rgba(255,255,255,.22);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121118; --panel: #1A1922; --panel-2: #22212C;
+    --ink: #ECEBF3; --ink-2: #C3C1D2; --muted: #9695A8;
+    --line: #2B2A36; --line-2: #3A3848;
+    --accent: #908EF2; --accent-soft: #24233A;
+    --new: #6FD79A; --new-bg: #14331F;
+    --board: #9695A8; --board-bg: #2B2A36;
+    --chg: #E0B65C; --chg-bg: #3A2F14;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    --sw-ring: rgba(255,255,255,.22);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 24px 110px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  .prose { max-width: 66ch; }
+  h1, h2, h3, h4, .eyebrow, th, .pill, .chip, .rulehead { font-family: Archivo, "Helvetica Neue", Arial, sans-serif; }
+  .mono, code, td.t, .step, .alpha { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+
+  header.masthead { padding: 84px 0 36px; border-bottom: 2px solid var(--ink); }
+  h1 { font-size: clamp(36px,5.6vw,58px); font-weight: 700; letter-spacing: -.028em; line-height: 1.03; margin: 0 0 18px; text-wrap: balance; }
+  .standfirst { font-size: clamp(18px,2.1vw,21px); line-height: 1.5; color: var(--ink-2); max-width: 62ch; margin: 0 0 30px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 26px; font-family: Archivo, sans-serif; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); padding-bottom: 18px; }
+  .meta b { color: var(--ink-2); font-weight: 600; }
+
+  section { padding: 52px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: 0; }
+  .eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin: 0 0 13px; }
+  h2 { font-size: clamp(25px,3.2vw,33px); font-weight: 650; letter-spacing: -.02em; line-height: 1.14; margin: 0 0 16px; text-wrap: balance; }
+  h3 { font-family: Archivo, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin: 42px 0 4px; }
+  h3 .cnt { color: var(--line-2); font-weight: 500; margin-left: 6px; }
+  h4 { font-size: 16px; font-weight: 600; margin: 0 0 8px; }
+  p { margin: 0 0 16px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; color: var(--ink-2); }
+  code { font-size: .85em; background: var(--panel-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
+
+  /* rule block */
+  .rule { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); padding: 30px 28px 24px; margin: 4px 0 26px; overflow-x: auto; }
+  .rulehead { font-family: "IBM Plex Mono", monospace; font-size: clamp(15px,2vw,20px); font-weight: 500; white-space: nowrap; display: flex; gap: 2px; align-items: baseline; }
+  .rulehead span { padding: 5px 8px; border-radius: 5px; }
+  .r0 { color: var(--muted); }
+  .r1 { background: var(--accent-soft); color: var(--accent); }
+  .r2 { background: var(--new-bg); color: var(--new); }
+  .r3 { background: var(--chg-bg); color: var(--chg); }
+  .rulekey { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px 26px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14.5px; line-height: 1.5; color: var(--muted); }
+  .rulekey b { display: block; font-family: "IBM Plex Mono", monospace; font-size: 12.5px; font-weight: 600; margin-bottom: 4px; }
+  .rulekey .k1 b { color: var(--accent); } .rulekey .k2 b { color: var(--new); } .rulekey .k3 b { color: var(--chg); }
+
+  /* tables */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); box-shadow: var(--shadow); margin: 14px 0 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.42; }
+  th { text-align: left; font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 13px 15px; border-bottom: 1px solid var(--line-2); white-space: nowrap; vertical-align: bottom; }
+  td { padding: 10px 15px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.t { font-size: 12.7px; white-space: nowrap; }
+  td.n { color: var(--ink-2); font-size: 13.8px; }
+  .caption { font-size: 13.5px; color: var(--muted); margin: 9px 2px 0; max-width: 80ch; }
+
+  /* swatch + step chip */
+  .step { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; white-space: nowrap; }
+  .sw { width: 13px; height: 13px; border-radius: 3px; box-shadow: inset 0 0 0 1px var(--sw-ring); flex: none; }
+  .sw.unk { background: repeating-linear-gradient(45deg, var(--panel-2) 0 3px, var(--line) 3px 6px); }
+  .alpha { font-size: 11.5px; color: var(--muted); }
+
+  /* pills */
+  .pill { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+  .p-new { background: var(--new-bg); color: var(--new); }
+  .p-board { background: var(--board-bg); color: var(--board); }
+  .p-chg { background: var(--chg-bg); color: var(--chg); }
+
+  /* gap strip */
+  .gaps { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: 14px; margin-top: 26px; }
+  .gap { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--new); border-radius: 8px; padding: 16px 18px; box-shadow: var(--shadow); }
+  .gap b { font-family: Archivo, sans-serif; font-size: 13.5px; font-weight: 600; display: block; margin-bottom: 5px; }
+  .gap span { font-size: 14px; color: var(--ink-2); line-height: 1.45; }
+
+  /* decisions */
+  ol.decisions { counter-reset: d; list-style: none; padding: 0; margin: 22px 0 0; }
+  ol.decisions li { counter-increment: d; display: grid; grid-template-columns: 32px 1fr; gap: 15px; padding: 17px 0; border-top: 1px solid var(--line); }
+  ol.decisions li::before { content: counter(d,decimal-leading-zero); font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 600; color: var(--accent); padding-top: 3px; }
+  ol.decisions b { font-family: Archivo, sans-serif; font-weight: 600; display: block; margin-bottom: 3px; font-size: 15px; }
+  ol.decisions span { font-size: 14.5px; color: var(--ink-2); }
+
+  footer { padding: 40px 0 0; border-top: 2px solid var(--ink); font-size: 14px; color: var(--muted); max-width: 74ch; }
+  footer b { color: var(--ink-2); }
+
+  @media (max-width: 640px) {
+    body { font-size: 16px; padding: 0 15px 70px; }
+    header.masthead { padding-top: 52px; }
+    section { padding: 38px 0; }
+  }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<header class="masthead">
+  <h1>Reflect Semantic Color Spec</h1>
+  <p class="standfirst">The token tree filled in to the point where every component can actually be built from it — six groups, one naming rule, and the seventeen gaps closed.</p>
+  <div class="meta">
+    <span>Source <b>FigJam token tree</b></span>
+    <span>Scope <b>Semantic colour layer</b></span>
+    <span>Aliases <b>Primitives collection</b></span>
+    <span>Status <b>Live in branch qR9kXKS</b></span>
+    <span>Collection <b>Semantic — 115 variables</b></span>
+  </div>
+</header>
+
+<!-- ═══════ RULE ═══════ -->
+<section>
+  <p class="eyebrow">Naming</p>
+  <h2>One rule, three segments, states always last</h2>
+
+  <div class="rule">
+    <div class="rulehead"><span class="r1">Group</span><span class="r0">/</span><span class="r2">Role</span><span class="r0">/</span><span class="r3">State</span></div>
+    <div class="rulekey">
+      <div class="k1"><b>Group</b>What you're painting. Six, fixed: Surface, Action, Text, Icon, Border, Overlay.</div>
+      <div class="k2"><b>Role</b>Which slot. A neutral rung, a status family, or an action rank.</div>
+      <div class="k3"><b>State</b>Optional, always last. Hover · Pressed · Selected · Disabled. Absent means rest.</div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p><strong>Static and dynamic stop being a naming axis.</strong> They were doing two jobs on the board — separating cards from buttons, which is real, and separating rest text from label text, which isn't. The first job now belongs to a group boundary: <code>Surface</code> is what you paint a ground with, <code>Action</code> is what you paint an interactive control with. The second job disappears, because a state suffix already says it.</p>
+    <p>Keep static / dynamic / status as <em>folders</em> in the Figma panel if they help you browse. They just never appear in a variable name, because the same element changes class the moment someone makes it clickable.</p>
+    <p><strong>The one new idea is the Overlay group.</strong> Translucent washes that composite over whatever is underneath. It's what lets a table row, a menu item, a clickable card and a ghost button all share one hover treatment instead of needing a hover token per surface — and it's the only way ghost controls survive being placed on a coloured banner.</p>
+  </div>
+
+  <div class="gaps">
+    <div class="gap"><b>Overlay group</b><span>Scrim, hover and pressed washes, loading blanket. Unblocks modals, drawers, and every hoverable row.</span></div>
+    <div class="gap"><b>Surface ladder</b><span>Five neutral grounds instead of one. Unblocks cards, tables, panels, wells, tooltips.</span></div>
+    <div class="gap"><b>Solid status fills</b><span>Every family gains a filled weight and its on-fill foreground. Unblocks toasts, badges, dots, meters.</span></div>
+    <div class="gap"><b>Selected as a state</b><span>Promoted alongside hover and pressed. Unblocks tabs, nav, checkboxes, rows, options.</span></div>
+  </div>
+</section>
+
+<!-- ═══════ SURFACE ═══════ -->
+<section>
+  <p class="eyebrow">Group 1</p>
+  <h2>Surface</h2>
+  <div class="prose"><p>Static grounds. Nothing here reacts to a pointer — interaction on a surface comes from an Overlay laid on top, which is why a clickable card doesn't need its own token set.</p></div>
+
+  <h3>Neutral ladder <span class="cnt">6</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:26%">Token</th><th style="width:20%">Alias</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Surface/Page</td><td><span class="step"><span class="sw" style="background:#FAFAFC"></span>gray-05</span></td><td class="n">The app ground. Slightly off-white so raised things read.</td></tr>
+      <tr><td class="t">Surface/Raised</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n">Cards, modals, popovers, menus, sheets. Pairs with an elevation shadow.</td></tr>
+      <tr><td class="t">Surface/Sunken</td><td><span class="step"><span class="sw" style="background:#F7F7F9"></span>gray-10</span></td><td class="n">Input wells, table headers, code blocks, inset regions.</td></tr>
+      <tr><td class="t">Surface/Muted</td><td><span class="step"><span class="sw" style="background:#EFEFF2"></span>gray-15</span></td><td class="n">Chip grounds, avatar placeholders, skeleton blocks.</td></tr>
+      <tr><td class="t">Surface/Disabled</td><td><span class="step"><span class="sw" style="background:#EFEFF2"></span>gray-15</span></td><td class="n">Disabled control fills. Shares Muted's value <em>deliberately</em> — separate token so the two can diverge later.</td></tr>
+      <tr><td class="t">Surface/Inverse</td><td><span class="step"><span class="sw" style="background:#212128"></span>gray-100</span></td><td class="n">Tooltips, toasts, dark bars. The board's <span class="mono">inverse</span> text, icon and border tokens finally have something to sit on.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="caption">The board had one static background (<span class="mono">gray-0</span>), which made page, card, modal, table header and input field the same colour. This is the smallest ladder that separates them.</p>
+
+  <h3>Status grounds <span class="cnt">10</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:20%">Family</th><th style="width:28%">Surface/{family}/Subtle</th><th style="width:28%">Surface/{family}/Solid</th><th></th></tr></thead>
+    <tbody>
+      <tr><td class="t">Info</td><td><span class="step"><span class="sw" style="background:#E8EDFB"></span>blue-20</span></td><td><span class="step"><span class="sw" style="background:#1E4DD7"></span>blue-70</span></td><td class="n">Banner tint / filled badge</td></tr>
+      <tr><td class="t">Success</td><td><span class="step"><span class="sw" style="background:#EAF9F0"></span>green-20</span></td><td><span class="step"><span class="sw" style="background:#32C26B"></span>green-70</span></td><td class="n"></td></tr>
+      <tr><td class="t">Warning</td><td><span class="step"><span class="sw" style="background:#FFF9ED"></span>yellow-20</span></td><td><span class="step"><span class="sw" style="background:#FFC84C"></span>yellow-70</span></td><td class="n">Solid is light — see on-fill text</td></tr>
+      <tr><td class="t">Danger</td><td><span class="step"><span class="sw" style="background:#F7E2E1"></span>red-20</span></td><td><span class="step"><span class="sw" style="background:#B42419"></span>red-70</span></td><td class="n"></td></tr>
+      <tr><td class="t">Neutral <span class="pill p-new">new</span></td><td><span class="step"><span class="sw" style="background:#EFEFF2"></span>gray-15</span></td><td><span class="step"><span class="sw" style="background:#777783"></span>gray-70</span></td><td class="n">Draft, archived, pending, none</td></tr>
+    </tbody>
+  </table></div>
+  <p class="caption">Subtle steps are the board's. Solid is the new weight — without it there is no toast, no filled badge, no status dot, no progress fill. A fifth neutral family is added because every product needs a badge that means "nothing in particular".</p>
+
+  <h3>Selected <span class="cnt">1</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:26%">Token</th><th style="width:20%">Alias</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Surface/Selected</td><td><span class="step"><span class="sw" style="background:#EBEBFB"></span>brand-10</span></td><td class="n">Selected table row, active nav item, chosen menu option. Selected <em>and</em> hovered composites <code>Overlay/Hover</code> on top — no third token needed.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ═══════ ACTION ═══════ -->
+<section>
+  <p class="eyebrow">Group 2</p>
+  <h2>Action</h2>
+  <div class="prose"><p>Fills for things you press. Five ranks, each with the same four states, so no variant is missing feedback — the board gave hover and pressed to primary and danger only, which left secondary and tertiary inert and identical to each other.</p></div>
+
+  <h3>Button ranks <span class="cnt">21</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:19%">Rank</th><th>Default</th><th>Hover</th><th>Pressed</th><th>Disabled</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="t">Primary</td>
+        <td><span class="step"><span class="sw" style="background:#3C3ADB"></span>brand-75</span></td>
+        <td><span class="step"><span class="sw" style="background:#302EAF"></span>brand-80</span></td>
+        <td><span class="step"><span class="sw" style="background:#242383"></span>brand-90</span></td>
+        <td><span class="step"><span class="sw" style="background:#EFEFF2"></span>gray-15</span></td>
+      </tr>
+      <tr>
+        <td class="t">Neutral</td>
+        <td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td>
+        <td><span class="step"><span class="sw" style="background:#FAFAFC"></span>gray-05</span></td>
+        <td><span class="step"><span class="sw" style="background:#F7F7F9"></span>gray-10</span></td>
+        <td><span class="step"><span class="sw" style="background:#EFEFF2"></span>gray-15</span></td>
+      </tr>
+      <tr>
+        <td class="t">Ghost</td>
+        <td><span class="alpha">transparent</span></td>
+        <td class="t"><span class="alpha">Overlay/Hover</span></td>
+        <td class="t"><span class="alpha">Overlay/Pressed</span></td>
+        <td><span class="alpha">transparent</span></td>
+      </tr>
+      <tr>
+        <td class="t">Danger</td>
+        <td><span class="step"><span class="sw" style="background:#B42419"></span>red-70</span></td>
+        <td><span class="step"><span class="sw" style="background:#901D14"></span>red-80</span></td>
+        <td><span class="step"><span class="sw" style="background:#6C160F"></span>red-90</span></td>
+        <td><span class="step"><span class="sw" style="background:#EFEFF2"></span>gray-15</span></td>
+      </tr>
+      <tr>
+        <td class="t">DangerGhost</td>
+        <td><span class="alpha">transparent</span></td>
+        <td><span class="step"><span class="sw" style="background:#FDF9F9"></span>red-10</span></td>
+        <td><span class="step"><span class="sw" style="background:#F7E2E1"></span>red-20</span></td>
+        <td><span class="alpha">transparent</span></td>
+      </tr>
+      <tr>
+        <td class="t">Neutral / Ghost<br><span style="color:var(--muted);font-size:11.5px">+ Selected</span></td>
+        <td colspan="4"><span class="step"><span class="sw" style="background:#EBEBFB"></span>brand-10</span> <span class="n">— toggle buttons and segmented controls in their on position</span></td>
+      </tr>
+    </tbody>
+  </table></div>
+  <p class="caption">Ghost uses Overlay washes rather than an opaque step so it survives being placed on a panel, a toolbar or a coloured banner — an opaque white ghost button punches a rectangle out of anything that isn't white. DangerGhost keeps the board's opaque <span class="mono">red-10/20</span> because it only ever appears on a light ground.</p>
+
+  <h3>Control fills <span class="cnt">5</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:34%">Token</th><th style="width:20%">Alias</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Action/Control/Unchecked</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n">Checkbox, radio, toggle track — off</td></tr>
+      <tr><td class="t">Action/Control/Checked</td><td><span class="step"><span class="sw" style="background:#3C3ADB"></span>brand-75</span></td><td class="n">On</td></tr>
+      <tr><td class="t">Action/Control/Checked/Hover</td><td><span class="step"><span class="sw" style="background:#302EAF"></span>brand-80</span></td><td class="n">The compound state the board has no answer for</td></tr>
+      <tr><td class="t">Action/Control/Checked/Disabled</td><td><span class="step"><span class="sw" style="background:#D0D0D9"></span>gray-30</span></td><td class="n">Checked but locked — must still read as checked</td></tr>
+      <tr><td class="t">Action/Control/Unchecked/Disabled</td><td><span class="step"><span class="sw" style="background:#EFEFF2"></span>gray-15</span></td><td class="n"></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ═══════ OVERLAY ═══════ -->
+<section>
+  <p class="eyebrow">Group 3</p>
+  <h2>Overlay</h2>
+  <div class="prose"><p>The group the board doesn't have at all, and the reason several components can't be built from it. These are the only tokens in the system carrying an alpha channel.</p></div>
+
+  <h3>Washes and scrims <span class="cnt">7</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:26%">Token</th><th style="width:24%">Alias</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Overlay/Scrim</td><td><span class="step"><span class="sw" style="background:#5B5B64"></span>Other/Blanket <span class="alpha">@ 50%</span></span></td><td class="n">Modal, drawer and bottom-sheet backdrop. Nothing in the board can do this — an opaque grey would hide the page instead of dimming it.</td></tr>
+      <tr><td class="t">Overlay/Hover</td><td><span class="step"><span class="sw" style="background:#212128"></span>gray-100 <span class="alpha">@ 6%</span></span></td><td class="n">Universal hover wash. One token covers table rows, list items, menu options, clickable cards, ghost buttons.</td></tr>
+      <tr><td class="t">Overlay/Pressed</td><td><span class="step"><span class="sw" style="background:#212128"></span>gray-100 <span class="alpha">@ 12%</span></span></td><td class="n">Same, held down.</td></tr>
+      <tr><td class="t">Overlay/Selected</td><td><span class="step"><span class="sw" style="background:#3C3ADB"></span>brand-75 <span class="alpha">@ 10%</span></span></td><td class="n">Selected state over a ground that isn't Surface/Page — use when the opaque <code>Surface/Selected</code> would clash.</td></tr>
+      <tr><td class="t">Overlay/Inverse/Hover</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00 <span class="alpha">@ 10%</span></span></td><td class="n">Hover on a dark surface — toolbars, tooltips, dark headers.</td></tr>
+      <tr><td class="t">Overlay/Inverse/Pressed</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00 <span class="alpha">@ 16%</span></span></td><td class="n"></td></tr>
+      <tr><td class="t">Overlay/Loading</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00 <span class="alpha">@ 60%</span></span></td><td class="n">Blanket over content mid-refresh, so a table can grey out without unmounting.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ═══════ TEXT ═══════ -->
+<section>
+  <p class="eyebrow">Group 4</p>
+  <h2>Text</h2>
+
+  <h3>Neutral rungs <span class="cnt">6</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:26%">Token</th><th style="width:20%">Alias</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Text/Strong</td><td><span class="step"><span class="sw" style="background:#212128"></span>gray-100</span></td><td class="n">Headings, emphasis</td></tr>
+      <tr><td class="t">Text/Regular</td><td><span class="step"><span class="sw" style="background:#3E3E46"></span>gray-90</span></td><td class="n">Body copy, labels, values</td></tr>
+      <tr><td class="t">Text/Subtle</td><td><span class="step"><span class="sw" style="background:#777783"></span>gray-70</span></td><td class="n">Captions, helper text, secondary metadata</td></tr>
+      <tr><td class="t">Text/Placeholder <span class="pill p-new">new</span></td><td><span class="step"><span class="sw" style="background:#B1B1BF"></span>gray-50</span></td><td class="n">Empty-field prompt. Separate from Disabled so an empty field doesn't read as locked.</td></tr>
+      <tr><td class="t">Text/Disabled</td><td><span class="step"><span class="sw" style="background:#B1B1BF"></span>gray-50</span></td><td class="n">See open decision 3 — this lands low against <code>Surface/Disabled</code>.</td></tr>
+      <tr><td class="t">Text/Inverse</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n">On <code>Surface/Inverse</code></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>On action fills <span class="cnt">5</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:26%">Token</th><th style="width:20%">Alias</th><th>Sits on</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Text/OnSolid</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n">Action/Primary, Action/Danger</td></tr>
+      <tr><td class="t">Text/OnSolid/Disabled</td><td><span class="step"><span class="sw" style="background:#B1B1BF"></span>gray-50</span></td><td class="n">Action/*/Disabled</td></tr>
+      <tr><td class="t">Text/OnNeutral</td><td><span class="step"><span class="sw" style="background:#3E3E46"></span>gray-90</span></td><td class="n">Action/Neutral <span class="pill p-chg">changed</span> — the board's <span class="mono">gray-70</span> reads as disabled on a white button</td></tr>
+      <tr><td class="t">Text/Action</td><td><span class="step"><span class="sw" style="background:#3C3ADB"></span>brand-75</span></td><td class="n">Ghost buttons, links, inline actions</td></tr>
+      <tr><td class="t">Text/Action/Hover</td><td><span class="step"><span class="sw" style="background:#242383"></span>brand-90</span></td><td class="n"></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Status text <span class="cnt">12</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:20%">Family</th><th style="width:30%">Text/{family}<br><span style="text-transform:none;letter-spacing:0;font-weight:400">on the Subtle tint</span></th><th style="width:30%">Text/On{family}<br><span style="text-transform:none;letter-spacing:0;font-weight:400">on the Solid fill</span></th><th></th></tr></thead>
+    <tbody>
+      <tr><td class="t">Info</td><td><span class="step"><span class="sw" style="background:#183EAC"></span>blue-80</span></td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n"></td></tr>
+      <tr><td class="t">Success</td><td><span class="step"><span class="sw" style="background:#0F3A20"></span>green-100</span></td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n"></td></tr>
+      <tr><td class="t">Warning</td><td><span class="step"><span class="sw" style="background:#654D17"></span>yellow-100</span></td><td><span class="step"><span class="sw" style="background:#212128"></span>gray-100</span></td><td class="n">The exception — white on <span class="mono">yellow-70</span> fails</td></tr>
+      <tr><td class="t">Danger</td><td><span class="step"><span class="sw" style="background:#B42419"></span>red-70</span></td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n"></td></tr>
+      <tr><td class="t">Neutral</td><td><span class="step"><span class="sw" style="background:#3E3E46"></span>gray-90</span></td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n"></td></tr>
+      <tr><td class="t">Danger/Pressed</td><td colspan="2"><span class="step"><span class="sw" style="background:#6C160F"></span>red-90</span></td><td class="n"><span class="pill p-chg">changed</span> The board's second danger text value becomes a state rather than a rival token</td></tr>
+    </tbody>
+  </table></div>
+  <p class="caption">The board lists foregrounds and grounds in separate branches and never says which pairs with which. Stating it is what makes the solid weight safe to add — and warning is the family that proves the pairing has to be explicit.</p>
+</section>
+
+<!-- ═══════ ICON ═══════ -->
+<section>
+  <p class="eyebrow">Group 5</p>
+  <h2>Icon</h2>
+  <div class="prose"><p>Neutral rungs mirror Text exactly. Status does <em>not</em> — a glyph carries less visual mass than a run of text at the same value, so status icons sit one or two steps more saturated. Mirroring Text 1:1, as the board does, produces a near-black success tick and a brown warning triangle.</p></div>
+
+  <h3>All icon roles <span class="cnt">12</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:26%">Token</th><th style="width:22%">Alias</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Icon/Strong</td><td><span class="step"><span class="sw" style="background:#212128"></span>gray-100</span></td><td class="n">Mirrors Text</td></tr>
+      <tr><td class="t">Icon/Regular</td><td><span class="step"><span class="sw" style="background:#3E3E46"></span>gray-90</span></td><td class="n">Mirrors Text</td></tr>
+      <tr><td class="t">Icon/Subtle</td><td><span class="step"><span class="sw" style="background:#777783"></span>gray-70</span></td><td class="n">Mirrors Text</td></tr>
+      <tr><td class="t">Icon/Disabled</td><td><span class="step"><span class="sw" style="background:#B1B1BF"></span>gray-50</span></td><td class="n">Mirrors Text</td></tr>
+      <tr><td class="t">Icon/Inverse</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n">Mirrors Text</td></tr>
+      <tr><td class="t">Icon/OnSolid</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n">On Action/Primary and Action/Danger</td></tr>
+      <tr><td class="t">Icon/Action</td><td><span class="step"><span class="sw" style="background:#3C3ADB"></span>brand-75</span></td><td class="n"><span class="pill p-chg">changed</span> Board splits this from Text at <span class="mono">brand-70</span>; unified at <span class="mono">brand-75</span></td></tr>
+      <tr><td class="t">Icon/Info</td><td><span class="step"><span class="sw" style="background:#1E4DD7"></span>blue-70</span></td><td class="n"><span class="pill p-chg">changed</span> from blue-80 — keeps the blue reading as blue</td></tr>
+      <tr><td class="t">Icon/Success</td><td><span class="step"><span class="sw" style="background:#289B56"></span>green-80</span></td><td class="n"><span class="pill p-chg">changed</span> from green-100, which is effectively black</td></tr>
+      <tr><td class="t">Icon/Warning</td><td><span class="step"><span class="sw" style="background:#A7822E"></span>yellow-90</span></td><td class="n"><span class="pill p-chg">changed</span> from yellow-100, which reads brown</td></tr>
+      <tr><td class="t">Icon/Danger</td><td><span class="step"><span class="sw" style="background:#B42419"></span>red-70</span></td><td class="n">Unchanged</td></tr>
+      <tr><td class="t">Icon/Neutral</td><td><span class="step"><span class="sw" style="background:#777783"></span>gray-70</span></td><td class="n"><span class="pill p-new">new</span> Fifth family</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ═══════ BORDER ═══════ -->
+<section>
+  <p class="eyebrow">Group 6</p>
+  <h2>Border</h2>
+
+  <h3>Neutral rungs <span class="cnt">6</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:26%">Token</th><th style="width:20%">Alias</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Border/Divider <span class="pill p-new">new</span></td><td><span class="step"><span class="sw" style="background:#E0E0E5"></span>gray-20</span></td><td class="n">Rules and separators. Split out so divider weight can be tuned without moving every disabled control edge — on the board these were the same token.</td></tr>
+      <tr><td class="t">Border/Subtle</td><td><span class="step"><span class="sw" style="background:#D0D0D9"></span>gray-30</span></td><td class="n">Card and panel edges</td></tr>
+      <tr><td class="t">Border/Default</td><td><span class="step"><span class="sw" style="background:#B1B1BF"></span>gray-50</span></td><td class="n">Control edges at rest</td></tr>
+      <tr><td class="t">Border/Strong</td><td><span class="step"><span class="sw" style="background:#777783"></span>gray-70</span></td><td class="n">Emphasis, hovered control edges</td></tr>
+      <tr><td class="t">Border/Disabled</td><td><span class="step"><span class="sw" style="background:#D0D0D9"></span>gray-30</span></td><td class="n">Shares Subtle's value deliberately</td></tr>
+      <tr><td class="t">Border/Inverse</td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n">On Surface/Inverse</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Action edges <span class="cnt">10</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:19%">Rank</th><th>Default</th><th>Hover</th><th>Pressed</th><th>Disabled</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="t">Border/Action</td>
+        <td><span class="step"><span class="sw" style="background:#3C3ADB"></span>brand-75</span></td>
+        <td><span class="step"><span class="sw" style="background:#302EAF"></span>brand-80</span></td>
+        <td><span class="step"><span class="sw" style="background:#242383"></span>brand-90</span></td>
+        <td><span class="step"><span class="sw" style="background:#D0D0D9"></span>gray-30</span></td>
+      </tr>
+      <tr>
+        <td class="t">Border/Neutral</td>
+        <td><span class="step"><span class="sw" style="background:#B1B1BF"></span>gray-50</span></td>
+        <td><span class="step"><span class="sw" style="background:#777783"></span>gray-70</span></td>
+        <td><span class="step"><span class="sw" style="background:#777783"></span>gray-70</span></td>
+        <td><span class="step"><span class="sw" style="background:#D0D0D9"></span>gray-30</span></td>
+      </tr>
+      <tr>
+        <td class="t">Border/Danger</td>
+        <td><span class="step"><span class="sw" style="background:#B42419"></span>red-70</span></td>
+        <td><span class="step"><span class="sw" style="background:#901D14"></span>red-80</span></td>
+        <td><span class="step"><span class="sw" style="background:#6C160F"></span>red-90</span></td>
+        <td><span class="step"><span class="sw" style="background:#D0D0D9"></span>gray-30</span></td>
+      </tr>
+    </tbody>
+  </table></div>
+  <p class="caption">The board's border chain started at <span class="mono">brand-80</span> while the matching fill started at <span class="mono">brand-75</span>, and its three state nodes were empty. Edges now track their fill exactly, so an outlined button and a filled button read as the same rank.</p>
+
+  <h3>Field states <span class="cnt">5</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:30%">Token</th><th style="width:20%">Alias</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Border/Field/Default</td><td><span class="step"><span class="sw" style="background:#B1B1BF"></span>gray-50</span></td><td class="n">Resolves the board's ambiguity — it had two identical <span class="mono">gray-50</span> tokens and no rule for which belonged on an input</td></tr>
+      <tr><td class="t">Border/Field/Hover</td><td><span class="step"><span class="sw" style="background:#777783"></span>gray-70</span></td><td class="n"></td></tr>
+      <tr><td class="t">Border/Field/Error</td><td><span class="step"><span class="sw" style="background:#B42419"></span>red-70</span></td><td class="n"><span class="pill p-chg">changed</span> from <span class="mono">red-40</span>, which is too light to carry a 1px edge</td></tr>
+      <tr><td class="t">Border/Field/Disabled</td><td><span class="step"><span class="sw" style="background:#D0D0D9"></span>gray-30</span></td><td class="n"></td></tr>
+      <tr><td class="t">Border/Field/Focus</td><td colspan="2" class="n">→ <code>Border/Focus</code>. Error and focus <em>stack</em>: the ring is drawn outside the red edge, so a focused invalid field shows both.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Status outlines and selection <span class="cnt">7</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:30%">Token</th><th style="width:20%">Alias</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Border/Status/Info</td><td><span class="step"><span class="sw" style="background:#A5B8EF"></span>blue-40</span></td><td class="n">Outline for the Subtle tint</td></tr>
+      <tr><td class="t">Border/Status/Success</td><td><span class="step"><span class="sw" style="background:#ADE7C4"></span>green-40</span></td><td class="n"></td></tr>
+      <tr><td class="t">Border/Status/Warning</td><td><span class="step"><span class="sw" style="background:#FFDE94"></span>yellow-50</span></td><td class="n"></td></tr>
+      <tr><td class="t">Border/Status/Danger</td><td><span class="step"><span class="sw" style="background:#E0A39E"></span>red-40</span></td><td class="n"></td></tr>
+      <tr><td class="t">Border/Status/Neutral <span class="pill p-new">new</span></td><td><span class="step"><span class="sw" style="background:#D0D0D9"></span>gray-30</span></td><td class="n"></td></tr>
+      <tr><td class="t">Border/Selected <span class="pill p-new">new</span></td><td><span class="step"><span class="sw" style="background:#3C3ADB"></span>brand-75</span></td><td class="n">Active tab underline, selected card edge, chosen option</td></tr>
+      <tr><td class="t">Border/Focus <span class="pill p-chg">changed</span></td><td><span class="step"><span class="sw" style="background:#0066FF"></span>Other/Focus&nbsp;state</span></td><td class="n">2px ring. The board's <span class="mono">gray-20</span> is invisible on every surface in the system.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Focus ring <span class="cnt">2</span></h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:30%">Token</th><th style="width:20%">Alias</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Border/Focus</td><td><span class="step"><span class="sw" style="background:#0066FF"></span>Other/Focus&nbsp;state</span></td><td class="n">Drawn <em>outside</em> the control so it never shifts layout. Aliases the dedicated <span class="mono">#0066FF</span> focus primitive that already exists — blue rather than brand-violet, so a focused primary button still shows a ring against its own fill.</td></tr>
+      <tr><td class="t">Border/Focus/Inner <span class="pill p-new">new</span></td><td><span class="step"><span class="sw" style="background:#FFFFFF"></span>gray-00</span></td><td class="n">1px white ring between control and outer ring, so focus reads on dark fills as well as light ones.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ═══════ COVERAGE ═══════ -->
+<section>
+  <p class="eyebrow">Check</p>
+  <h2>Every component, built from this</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th style="width:20%">Component</th><th>Reads from</th></tr></thead>
+    <tbody>
+      <tr><td class="t">Button</td><td class="n">Action/{rank}/{state} · Text/OnSolid · Text/OnNeutral · Text/Action · Icon/OnSolid · Border/Action · Border/Neutral · Border/Focus</td></tr>
+      <tr><td class="t">Input · Select</td><td class="n">Surface/Raised · Surface/Sunken · Surface/Disabled · Border/Field/* · Border/Focus · Text/Placeholder · Text/Danger</td></tr>
+      <tr><td class="t">Checkbox · Radio · Toggle</td><td class="n">Action/Control/* · Icon/OnSolid · Border/Default · Border/Focus</td></tr>
+      <tr><td class="t">Modal · Drawer</td><td class="n">Overlay/Scrim · Surface/Raised · Border/Divider</td></tr>
+      <tr><td class="t">Card</td><td class="n">Surface/Raised · Border/Subtle · Overlay/Hover <span style="color:var(--muted)">(if clickable)</span></td></tr>
+      <tr><td class="t">Table</td><td class="n">Surface/Sunken <span style="color:var(--muted)">(header)</span> · Border/Divider · Overlay/Hover · Surface/Selected · Overlay/Loading</td></tr>
+      <tr><td class="t">Menu · Dropdown</td><td class="n">Surface/Raised · Overlay/Hover · Surface/Selected · Border/Divider</td></tr>
+      <tr><td class="t">Tabs</td><td class="n">Border/Selected · Text/Action · Text/Subtle · Overlay/Hover</td></tr>
+      <tr><td class="t">Tooltip · Toast</td><td class="n">Surface/Inverse · Text/Inverse · Icon/Inverse · Overlay/Inverse/Hover</td></tr>
+      <tr><td class="t">Badge · Chip</td><td class="n">Surface/{family}/Subtle · Surface/{family}/Solid · Text/{family} · Text/On{family} · Border/Status/{family}</td></tr>
+      <tr><td class="t">Banner · Alert</td><td class="n">Surface/{family}/Subtle · Border/Status/{family} · Text/{family} · Icon/{family}</td></tr>
+      <tr><td class="t">Progress · Meter</td><td class="n">Surface/Muted <span style="color:var(--muted)">(track)</span> · Surface/{family}/Solid</td></tr>
+      <tr><td class="t">Avatar</td><td class="n">Surface/Muted · Text/Subtle · Border/Inverse</td></tr>
+    </tbody>
+  </table></div>
+  <p class="caption">Roughly 115 semantic tokens across six groups. Every row above resolves without inventing a value at component level, which was the test the board failed.</p>
+</section>
+
+<!-- ═══════ DECISIONS ═══════ -->
+<section>
+  <p class="eyebrow">Before building</p>
+  <h2>Six things only you can decide</h2>
+  <ol class="decisions">
+    <li><div><b>DangerGhost hover is very nearly invisible.</b><span>Now that the steps are resolved: <span class="mono">red-10</span> is <span class="mono">#FDF9F9</span> — a 2% wash that will not read as a hover. <span class="mono">red-20</span> (<span class="mono">#F7E2E1</span>) is the first visible tint on the red ramp. Recommend shifting the pair up one step: hover <span class="mono">red-20</span>, pressed <span class="mono">red-30</span>. This is the only value in the build I'd change on sight.</span></div></li>
+    <li><div><b>Text and Icon are separate groups. <em>Settled.</em></b><span>The previous collection merged them as <span class="mono">Text+icon/*</span>; this structure splits them so status glyphs can sit more saturated than status text. Resolved on 2026-09-01 when the previous collection was deleted — the split is now the only structure in the file.</span></div></li>
+    <li><div><b>Disabled text on a disabled fill lands around 2:1.</b><span><span class="mono">gray-50</span> on <span class="mono">gray-15</span>. Disabled controls are exempt from WCAG, but this is faint enough to look broken. Either darken <span class="mono">Text/Disabled</span> to a gray-60 step, or lighten <span class="mono">Surface/Disabled</span> to <span class="mono">gray-10</span>.</span></div></li>
+    <li><div><b>Do Ghost and Neutral want the same hover?</b><span>Ghost hovers with a translucent wash; Neutral hovers with opaque <span class="mono">gray-05</span>. Side by side in a button group they will not match exactly. Making Neutral use the wash too would unify them — at the cost of a white button no longer having a fixed value.</span></div></li>
+    <li><div><b>Does Page really move off white?</b><span><span class="mono">Surface/Page → gray-05</span> is what makes cards read as raised without leaning on shadow alone. If the product is meant to be flat white, cards need a border instead and <code>Surface/Raised</code> becomes decorative.</span></div></li>
+    <li><div><b>Status Solid for warning is a light fill.</b><span>It's the only family whose on-fill text is dark. Worth confirming you want a light-yellow filled badge at all, rather than dropping warning's Solid weight and keeping it tint-only.</span></div></li>
+  </ol>
+</section>
+
+<footer>
+  <p>Drafted from the FigJam token tree, then built into branch <span class="mono" style="font-size:.86em">qR9kXKS</span> as the <b>Semantic</b> collection — 115 variables, every one aliased to a Primitive, scoped to its property, and carrying both its <span class="mono" style="font-size:.86em">--color-*</span> web code syntax and a usage description. The previous 88-variable semantic collection was deleted on 2026-09-01, so this is now the only semantic layer in the file. Two board nodes were low-resolution and read with lower confidence: the Background primary pressed step, and the text-versus-icon tertiary split.</p>
+</footer>
+
+</div>
+
+</body>
+</html>
