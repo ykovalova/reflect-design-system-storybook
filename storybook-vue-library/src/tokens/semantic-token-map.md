@@ -149,7 +149,7 @@ Translucent layers that composite over whatever is underneath. **The only tokens
 | `Overlay/Inverse/Pressed` | `gray-00` @ 16% | The same, held down. |
 | `Overlay/Loading` | `gray-00` @ 60% | Blanket over content mid-refresh, so a table can grey out without unmounting. Spinner sits above it. |
 
-> `Other/Blanket` is a Primitive in the `Other` group; its base hex is not recorded in this repo. Resolve it from Figma before writing the scrim into CSS.
+> `Other/Blanket` is a Primitive in the `Other` group. It is most likely `gray-80` (`#5B5B64`) — `figma-mapping.md` records `Color/Focus/Blanket` as `rgba(91, 91, 100, 0.5)`, formalizing the old `Color/Other/Blanket` entry. Confirm against Figma before writing the scrim into CSS.
 
 ---
 
@@ -313,7 +313,7 @@ The rows above are transcribed from the build record, not exported from the file
 | # | Item | What to check |
 |---|---|---|
 | 1 | **Code syntax for camelCase segments** | `OnSolid`, `OnStatus`, `OnNeutral`, `DangerGhost` — read the WEB code-syntax string stored on the variable rather than deriving it. |
-| 2 | **`Other/Blanket` base hex** | `Overlay/Scrim` aliases it at 50%; the primitive's value isn't recorded in this repo. |
+| 2 | **`Other/Blanket` base hex** | `Overlay/Scrim` aliases it at 50%. `figma-mapping.md` records `Color/Focus/Blanket` as `rgba(91, 91, 100, 0.5)` — Gray/80 @ 50% — and describes it as formalizing the old `Color/Other/Blanket` entry. Confirm the two are the same primitive. |
 | 3 | **Leaf naming on four groups** | `Text/OnSolid/Default`, `Text/Action/Default`, `Border/Focus/Ring`, `Action/Control/{Checked,Unchecked}/Default` — the spec page renders these without the trailing `Default`/`Ring`. The group counts only reconcile to 115 with the leaf segments present, so those are used here, but confirm the literal strings. |
 | 4 | **`Status/` segment** | `Text/Status/Info`, `Icon/Status/Info`, `Surface/Status/Info/Subtle` — the spec page abbreviates the `Status/` folder away in places. |
 
