@@ -63,6 +63,7 @@ Statuses describe where a token group or component sits in its track. Assign the
 | **Not started** | Not in code yet |
 | **Transferred** | In code, but not yet explicitly verified against Figma |
 | **Verified** | Confirmed match with Figma — values, naming, and mapping all checked |
+| **Superseded** | Was Verified, but the Figma structure it was checked against has since changed. Treat the status as stale, not as a match |
 | **In Storybook** | Fully documented and visible in Storybook |
 
 A token group moves from **Transferred** to **Verified** only after an explicit parity check, not automatically at the point of transfer. Some groups may sit at **Transferred** when there are known gaps or value discrepancies that haven't been resolved yet.
@@ -76,7 +77,7 @@ A token group moves from **Transferred** to **Verified** only after an explicit 
 | Group | Status | Notes |
 |-------|--------|-------|
 | Colors — primitive palette | Verified | |
-| Colors — semantic layer | Verified | |
+| Colors — semantic layer | Superseded | Verified 2026-08-13 against a Figma collection deleted 2026-09-01; code still carries those names. Re-verification is blocked on the migration — see `src/tokens/semantic-token-map.md` |
 | Typography | Verified | Button font weights need approval |
 | Spacing | Verified | `spc-0` and `spc-6` missing in code |
 | Elevation & Shadows | Verified | |
