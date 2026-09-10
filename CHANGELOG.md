@@ -9,6 +9,135 @@ minus the semver.
 
 ## Unreleased
 
+Branch `RF-6134-Button-component`.
+
+### Added
+
+- **`storybook-vue-library/docs/button-token-audit.md`** — audit of the tokens
+  applied to the Button in Figma branch `E7eUpizBfWjk1JSLTGrsfC` (frame `558:3397`,
+  all 6 variants × 3 sizes × 6 states, text and icon-only). Records the 46 tokens
+  bound, eleven structural gaps, the contrast findings, and the net token diff:
+  **+12 added, 9 retired, 8 rebound — net +3 variables**, after which the Button
+  touches no primitives.
+
+### Changed (Figma — branch `E7eUpizBfWjk1JSLTGrsfC`)
+
+- **Disabled model applied — universal foreground, fill only where there is a
+  face.** Disabled is now one rule for all six Button variants:
+  `Background/Action/Disabled` + `Border/Action/Disabled` + `Text/Disabled`;
+  ranks with no face at rest keep no fill and no border when disabled.
+  Fully-universal disabled (a grey fill and border on tertiary too) was considered
+  and rejected: it removes no token, because ghost *rest* states need transparent
+  regardless, and it makes a disabled ghost louder than an enabled one.
+- **Added `Background/Action/Transparent`** (`rgba(0,0,0,0)`, state-free), serving
+  ghost rest *and* ghost disabled. Neutral transparent rather than the previous
+  white-at-zero-alpha, so a ghost hover animating to `Overlay/Hover` no longer
+  interpolates through white.
+- **Deleted `Background/Action/Tertiary/Default` and
+  `Background/Action/DangerTertiary/Default`** after a 52-page scan confirmed zero
+  remaining consumers. Semantic collection: 114 → 113 variables.
+- **52 Button variant nodes rebound** — 16 faced-rank disabled, 9 ghost disabled
+  (strokes removed), 27 ghost rest/focused/loading.
+
+- **Icon colour now arrives by context, not by binding** (Button-scoped pilot).
+  The glyph sits two `INSTANCE_SWAP` levels below the Button — Button → `Icon `
+  wrapper → glyph — and nothing in that chain carried rank or state, so no button
+  could tell its icon to be white. New collection **`Icon context`** with modes
+  `Default` / `OnSolid` / `Danger` / `Disabled` holds one variable `Icon/Current`
+  aliasing `Icon/Regular` / `Icon/OnSolid` / `Icon/Status/Danger` /
+  `Icon/Disabled`. Glyphs bind `Icon/Current`; each Button variant sets the mode
+  (state wins over rank, so a disabled danger button gets the disabled glyph).
+  150 variants moded — 45 Default, 40 OnSolid, 40 Danger, 25 Disabled — and 197
+  glyph overrides rebound off `Icon/Placeholder`. A glyph with no mode set
+  resolves to `Default`.
+  Per-variant fill overrides were rejected: ~150 variants × two slots, repeated
+  for every future component, and Figma drops the override when a multi-layer icon
+  is swapped in — the pattern that produced the current state.
+- **Icon library migrated off the primitive layer.** 203 vectors across
+  `Outline icons` and `Extra icons` rebound from `Color/Gray/gray-90` to
+  `Icon/Current`. Verified end to end with a real icon instanced under all four
+  modes. **Duotone icons (90 vectors) were deliberately excluded**: a duotone
+  glyph pairs a `gray-90` primary with a `brand-20` secondary, so migrating only
+  the primary would produce a white-on-`brand-20` glyph the first time anything
+  set `OnSolid`. They need a paired `Icon/Current Secondary` first, and render
+  unchanged until then.
+- **`Placeholder` glyph left on `Icon/Placeholder`.** It was briefly moved onto
+  `Icon/Current` during the pilot, which made it render as a convincing real icon
+  and destroyed the only thing it exists to do — flag an unswapped slot. Reverted.
+  Real glyphs take colour from context; the placeholder never does.
+
+- **Naming shape decided: property-first.** Six top-level groups — `Background`,
+  `Border`, `Text`, `Icon`, `Overlay`, `Brand/Logo` — where the first segment
+  names the property being painted, not its meaning. `Surface` and `Action` are
+  no longer top-level: a static ground is `Background/Raised`, a pressable fill
+  is `Background/Action/Primary/Default`. Chosen over the documented
+  `Surface`/`Action` shape because it keeps a fill and its matching stroke
+  parallel (`Background/Action/Primary/Default` + `Border/Action/Primary/Default`)
+  instead of special-casing fills. `Overlay/*` stays top-level as a deliberate
+  exception — it is the only alpha-carrying family and the group name is a useful
+  warning. `Brand/Logo/*` should probably move out of the layer; not yet decided.
+- **WEB code syntax set on all 114 semantic variables**, emitting `--color-bg-*`
+  rather than the 41-character `--color-background-*`. The Figma name and the CSS
+  name are deliberately allowed to differ. This settles "Verify before migrating"
+  item 1 in `semantic-token-map.md`: `OnSolid`, `OnStatus`, `OnNeutral` and
+  `DangerSecondary` are now stored explicitly kebab-cased
+  (`--color-text-on-solid-default`) rather than derived. Read
+  `variable.codeSyntax.WEB`, don't transform the name.
+
+- **Three docs regenerated from the Figma file**, against the property-first
+  shape: `src/tokens/semantic-token-map.md`, `docs/semantic-color-spec.html` and
+  the `reflect-token-picker` skill. Names, aliases, values, CSS names and usage
+  text were read from the variables rather than transcribed, and each file
+  carries the script to re-pull it. All three previously described `Surface/*`
+  and `Action/*` as top-level groups, which no longer exist — anyone following
+  them reached for tokens that were not in the file. **This unblocks
+  `$component-transfer-gate` on the documentation side.**
+- **51 Figma variable descriptions corrected.** They still cross-referenced the
+  retired names — "Pair with `Surface/Disabled`", "makes `Action/Neutral` read as
+  a button", "gives `Action/DangerGhost` its shape" — so regenerating the docs
+  would have propagated them. Also rewritten where the text was wrong rather than
+  merely renamed: `Background/Action/Disabled` and `Border/Action/Disabled` now
+  describe the agreed disabled rule, the three `DangerSecondary/*` and
+  `Text/OnSolid/Disabled` are marked pending retirement, and `Icon/Placeholder`
+  and `Brand/Logo/*` have descriptions for the first time.
+- **`figma-mapping.md`'s superseded notice updated** to point at branch
+  `E7eUpizBfWjk1JSLTGrsfC` and both current collections. It previously described
+  the unmerged `qR9kXKSyZJ2Z0XivlTcejZ` structure as current.
+
+### Fixed (Figma)
+
+- **Seven Button variants were bound to orphaned variables.**
+  `Background/Action/Secondary/Disabled`, `Background/Action/Tertiary/Disabled`
+  and `Border/Action/Danger/Disabled` are absent from the Semantic collection and
+  the Variables panel, but still resolved by id and still rendered — deleted
+  during the 2026-09-01 rebuild while node bindings kept pointing at them. All
+  seven now reference live tokens. This was invisible in the Figma UI and would
+  have transferred as a hardcoded value.
+- **Primary Danger / Disabled's edge** was bound to `Background/Action/Disabled` —
+  a `FRAME_FILL`-scoped fill token applied to a stroke, rendering `gray-15` on
+  `gray-15` so the button had no visible edge. Now `Border/Action/Disabled`.
+
+### Notes
+
+Code-side unchanged — nothing in `base.css` or `foundations.ts` moves here.
+
+Inspection contradicted six of the audit's original proposals, and the document
+records the corrections: `Overlay/{Hover,Pressed}`, `Border/Focus/{Ring,Inner}`,
+`Icon/OnSolid` and `Icon/Disabled` all already exist — the audit had been written
+against `semantic-token-map.md`, which describes a collection that no longer
+matches the file.
+
+Icons now resolve correctly end to end for Outline and Extra sets. Duotone is the
+one remaining primitive consumer in the icon library, held until its secondary
+layer is tokenised.
+
+The Button transfer stays blocked, principally on the naming-shape decision: the
+Button uses a property-first shape (`Background`/`Border`/`Text`/`Icon` × role ×
+rank × state) that none of `semantic-token-map.md`,
+`docs/semantic-color-spec.html` or the `reflect-token-picker` skill describes.
+
+---
+
 Branch `RF-5866-Refine-hybrid-token-structure`.
 
 ### Fixed

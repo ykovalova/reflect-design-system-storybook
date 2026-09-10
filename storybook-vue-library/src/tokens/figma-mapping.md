@@ -22,7 +22,15 @@ How Figma variable paths translate to CSS custom property names:
 
 ## Last audit
 
-> **⚠️ Superseded on the Figma side (2026-09-01).** Everything recorded below audits the semantic collection in branch `BT833nDww47dQ17CA5FTFg`. That structure no longer exists: branch `qR9kXKSyZJ2Z0XivlTcejZ` now holds a single `Semantic` collection of 115 variables with a different shape (`Surface` / `Action` / `Text` / `Icon` / `Border` / `Overlay`; text and icon split; no `Status/*` or `Text+icon/*` groups). See **`semantic-token-map.md`** (beside this file) for the token-by-token alias table and the old→new migration map — that is the document a fresh parity pass should be run against. `docs/semantic-color-spec.html` carries the rationale; the `reflect-token-picker` skill covers which token to use where. **The primitive audit below is still valid** — primitives were untouched. The semantic sections are historical until a fresh parity pass runs against the new collection.
+> **⚠️ Superseded twice on the Figma side.** Everything recorded below audits the semantic collection in branch `BT833nDww47dQ17CA5FTFg`, which no longer exists.
+>
+> **Current structure of record (2026-09-10):** branch **`E7eUpizBfWjk1JSLTGrsfC`**, holding two collections — **`Semantic`** (113 variables, one mode) and **`Icon context`** (1 variable, four modes). The shape is **property-first**: `Background` / `Border` / `Text` / `Icon` / `Overlay` / `Brand/Logo`, where the first segment names the property being painted. There is no `Surface` group and no top-level `Action` group; a static ground is `Background/Raised` and a button face is `Background/Action/Primary/Default`.
+>
+> This replaces the intermediate `Surface` / `Action` shape recorded in branch `qR9kXKSyZJ2Z0XivlTcejZ`, which was never merged and which the earlier version of this notice described.
+>
+> **Every variable now carries an explicit WEB code syntax.** CSS names are read, not derived — `Background/` emits `bg`, so `Background/Action/Primary/Default` → `var(--color-bg-action-primary-default)`. A parity pass must compare against `variable.codeSyntax.WEB`, not against a transformed name.
+>
+> See **`semantic-token-map.md`** (beside this file) for the token-by-token table, `../../docs/semantic-color-spec.html` for the rationale, the `reflect-token-picker` skill for which token to use where, and `../../docs/button-token-audit.md` for how this shape was arrived at. **The primitive audit below is still valid** — primitives were untouched. The semantic sections are historical until a fresh parity pass runs against the current collections.
 
 
 - **Date:** 2026-08-13
