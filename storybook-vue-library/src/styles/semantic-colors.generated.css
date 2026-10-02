@@ -1,0 +1,129 @@
+/* GENERATED — do not edit. Source: src/tokens/figma-export/Color.tokens.json
+   Regenerate with: npm run tokens:generate */
+:root {
+
+  /* Overlay */
+  --color-overlay-scrim: rgba(91, 91, 100, 0.5);
+  --color-overlay-hover: rgba(33, 33, 40, 0.059);
+  --color-overlay-pressed: rgba(33, 33, 40, 0.122);
+  --color-overlay-selected: rgba(60, 58, 219, 0.102);
+  --color-overlay-loading: rgba(255, 255, 255, 0.6);
+  --color-overlay-inverse-hover: rgba(255, 255, 255, 0.102);
+  --color-overlay-inverse-pressed: rgba(255, 255, 255, 0.161);
+
+  /* Background */
+  --color-bg-page: var(--color-gray-05);
+  --color-bg-raised: var(--color-gray-00);
+  --color-bg-sunken: var(--color-gray-10);
+  --color-bg-muted: var(--color-gray-15);
+  --color-bg-disabled: var(--color-gray-15);
+  --color-bg-inverse: var(--color-gray-100);
+  --color-bg-selected: var(--color-brand-10);
+  --color-bg-action-disabled: var(--color-gray-15);
+  --color-bg-action-transparent: rgba(0, 0, 0, 0);
+  --color-bg-action-primary-default: var(--color-brand-75);
+  --color-bg-action-primary-hover: var(--color-brand-80);
+  --color-bg-action-primary-pressed: var(--color-brand-90);
+  --color-bg-action-secondary-default: var(--color-gray-00);
+  --color-bg-action-secondary-hover: var(--color-gray-05);
+  --color-bg-action-secondary-pressed: var(--color-gray-10);
+  --color-bg-action-tertiary-hover: var(--color-overlay-hover);
+  --color-bg-action-tertiary-pressed: var(--color-overlay-pressed);
+  --color-bg-action-danger-default: var(--color-red-70);
+  --color-bg-action-danger-hover: var(--color-red-80);
+  --color-bg-action-danger-pressed: var(--color-red-90);
+  --color-bg-action-danger-secondary-default: var(--color-gray-00);
+  --color-bg-action-danger-secondary-hover: var(--color-red-10);
+  --color-bg-action-danger-secondary-pressed: var(--color-red-20);
+  --color-bg-action-danger-tertiary-hover: var(--color-red-10);
+  --color-bg-action-danger-tertiary-pressed: var(--color-red-20);
+  --color-bg-action-control-unchecked-default: var(--color-gray-00);
+  --color-bg-action-control-unchecked-disabled: var(--color-gray-15);
+  --color-bg-action-control-checked-default: var(--color-brand-75);
+  --color-bg-action-control-checked-hover: var(--color-brand-80);
+  --color-bg-action-control-checked-disabled: var(--color-gray-30);
+  --color-bg-status-info-subtle: var(--color-blue-20);
+  --color-bg-status-info-solid: var(--color-blue-70);
+  --color-bg-status-success-subtle: var(--color-green-20);
+  --color-bg-status-success-solid: var(--color-green-70);
+  --color-bg-status-warning-subtle: var(--color-yellow-20);
+  --color-bg-status-warning-solid: var(--color-yellow-70);
+  --color-bg-status-danger-subtle: var(--color-red-20);
+  --color-bg-status-danger-solid: var(--color-red-70);
+  --color-bg-status-neutral-subtle: var(--color-gray-15);
+  --color-bg-status-neutral-solid: var(--color-gray-70);
+
+  /* Text */
+  --color-text-strong: var(--color-gray-100);
+  --color-text-regular: var(--color-gray-90);
+  --color-text-subtle: var(--color-gray-70);
+  --color-text-placeholder: var(--color-gray-50);
+  --color-text-disabled: var(--color-gray-50);
+  --color-text-inverse: var(--color-gray-00);
+  --color-text-on-neutral: var(--color-gray-90);
+  --color-text-on-solid-default: var(--color-gray-00);
+  --color-text-on-solid-disabled: var(--color-gray-50);
+  --color-text-action-default: var(--color-brand-75);
+  --color-text-action-hover: var(--color-brand-90);
+  --color-text-status-info: var(--color-blue-80);
+  --color-text-status-success: var(--color-green-100);
+  --color-text-status-warning: var(--color-yellow-100);
+  --color-text-status-neutral: var(--color-gray-90);
+  --color-text-status-danger-default: var(--color-red-70);
+  --color-text-status-danger-pressed: var(--color-red-90);
+  --color-text-on-status-info: var(--color-blue-90);
+  --color-text-on-status-success: var(--color-green-90);
+  --color-text-on-status-warning: var(--color-gray-90);
+  --color-text-on-status-danger: var(--color-red-90);
+  --color-text-on-status-neutral: var(--color-gray-70);
+
+  /* Icon */
+  --color-icon-strong: var(--color-gray-100);
+  --color-icon-regular: var(--color-gray-90);
+  --color-icon-subtle: var(--color-gray-70);
+  --color-icon-disabled: var(--color-gray-50);
+  --color-icon-inverse: var(--color-gray-00);
+  --color-icon-on-solid: var(--color-gray-00);
+  --color-icon-action: var(--color-brand-75);
+  --color-icon-placeholder: var(--color-red-30);
+  --color-icon-status-info: var(--color-blue-70);
+  --color-icon-status-success: var(--color-green-80);
+  --color-icon-status-warning: var(--color-yellow-90);
+  --color-icon-status-danger: var(--color-red-70);
+  --color-icon-status-neutral: var(--color-gray-70);
+
+  /* Border */
+  --color-border-divider: var(--color-gray-20);
+  --color-border-subtle: var(--color-gray-30);
+  --color-border-default: var(--color-gray-50);
+  --color-border-strong: var(--color-gray-70);
+  --color-border-disabled: var(--color-gray-30);
+  --color-border-inverse: var(--color-gray-00);
+  --color-border-selected: var(--color-brand-75);
+  --color-border-action-disabled: var(--color-gray-30);
+  --color-border-action-primary-default: var(--color-brand-75);
+  --color-border-action-primary-hover: var(--color-brand-80);
+  --color-border-action-primary-pressed: var(--color-brand-90);
+  --color-border-action-secondary-default: var(--color-gray-50);
+  --color-border-action-secondary-hover: var(--color-gray-70);
+  --color-border-action-secondary-pressed: var(--color-gray-80);
+  --color-border-action-danger-default: var(--color-red-70);
+  --color-border-action-danger-hover: var(--color-red-80);
+  --color-border-action-danger-pressed: var(--color-red-90);
+  --color-border-field-default: var(--color-gray-50);
+  --color-border-field-hover: var(--color-gray-70);
+  --color-border-field-error: var(--color-red-70);
+  --color-border-field-disabled: var(--color-gray-30);
+  --color-border-status-info: var(--color-blue-40);
+  --color-border-status-success: var(--color-green-40);
+  --color-border-status-warning: var(--color-yellow-50);
+  --color-border-status-danger: var(--color-red-40);
+  --color-border-status-neutral: var(--color-gray-30);
+  --color-border-focus-ring: #0066ff;
+  --color-border-focus-inner: var(--color-gray-00);
+
+  /* Brand */
+  --color-brand-logo-dark: #173647;
+  --color-brand-logo-purple: #4a45eb;
+  --color-brand-logo-green: #85eb2e;
+}

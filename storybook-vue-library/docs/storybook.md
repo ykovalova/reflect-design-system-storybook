@@ -40,10 +40,10 @@ Three stories because the color system has two distinct layers, and the semantic
 Renders all primitive color tokens grouped by family (Gray, Brand, Red, Green, Yellow, Blue, Purple). Each token is a swatch card showing name, CSS variable, and hex value. Source data: `colorTokens` from `foundations.ts`.
 
 **`Semantic — Property-first`** (`SemanticPropertyFirst`)
-Renders the full semantic token layer in a table, grouped by CSS property type: Text, Icon, Surface, Border, Action, Status, Focus. Each row shows a swatch, token name, CSS variable, global alias, hex value, and any notes. This is the recommended view for developers deciding which token to use in a component. Source data: `fullSemanticColorTokens`.
+Renders the full semantic token layer in a table, grouped by CSS property type: Text, Icon, Surface, Border, Action, Status, Focus. ⚠️ This is the **previous** structure — the story still reads `fullSemanticColorTokens` from `foundations.ts`. The current `Background / Border / Text / Icon / Overlay / Brand` tokens are in `semanticColors` (`src/tokens/semantic-colors.generated.ts`) and are not rendered yet; moving this story onto them is part of the migration. Each row shows a swatch, token name, CSS variable, global alias, hex value, and any notes. This is the recommended view for developers deciding which token to use in a component. Source data: `fullSemanticColorTokens`.
 
 **`Semantic — Intent-first`** (`SemanticIntentFirst`)
-Same tokens, regrouped by semantic intent: Neutral, Brand, Danger, Success, Warning, Info, Focus, On Solid. Useful for auditing coverage — confirms that each intent has the full set of Text, Icon, Surface, and Border tokens. Source data: `fullSemanticColorTokens`.
+Same tokens, regrouped by semantic intent: Neutral, Brand, Danger, Success, Warning, Info, Focus, On Solid. Useful for auditing coverage — confirms that each intent has the full set of Text, Icon, Surface, and Border tokens. (Same caveat as above: still the previous structure.) Source data: `fullSemanticColorTokens`.
 
 ### Spacing
 
