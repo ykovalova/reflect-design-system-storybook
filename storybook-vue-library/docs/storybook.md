@@ -34,16 +34,15 @@ Foundations are not components — they are data-driven displays of token arrays
 
 ### Colors
 
-Three stories because the color system has two distinct layers, and the semantic layer is usefully viewed in two different groupings.
+Two stories: the primitive palette, and the semantic layer.
 
 **`Palette`**
 Renders all primitive color tokens grouped by family (Gray, Brand, Red, Green, Yellow, Blue, Purple). Each token is a swatch card showing name, CSS variable, and hex value. Source data: `colorTokens` from `foundations.ts`.
 
-**`Semantic — Property-first`** (`SemanticPropertyFirst`)
-Renders the full semantic token layer in a table, grouped by CSS property type: Text, Icon, Surface, Border, Action, Status, Focus. ⚠️ This is the **previous** structure — the story still reads `fullSemanticColorTokens` from `foundations.ts`. The current `Background / Border / Text / Icon / Overlay / Brand` tokens are in `semanticColors` (`src/tokens/semantic-colors.generated.ts`) and are not rendered yet; moving this story onto them is part of the migration. Each row shows a swatch, token name, CSS variable, global alias, hex value, and any notes. This is the recommended view for developers deciding which token to use in a component. Source data: `fullSemanticColorTokens`.
+**`Semantic`**
+Renders the 113 tokens of the Figma `Semantic` collection in one table per group — Background, Border, Text, Icon, Overlay, Brand / Logo. Each row shows a swatch, token name, CSS variable, primitive alias with hex, and the usage description from Figma. Swatches are painted with the live CSS variable (`var(--color-bg-…)`) over a checkerboard, so alpha tokens read correctly and the story proves the generated CSS actually resolves. Source data: `semanticColors` from `src/tokens/semantic-colors.generated.ts` — regenerate with `npm run tokens:generate`, never edit by hand.
 
-**`Semantic — Intent-first`** (`SemanticIntentFirst`)
-Same tokens, regrouped by semantic intent: Neutral, Brand, Danger, Success, Warning, Info, Focus, On Solid. Useful for auditing coverage — confirms that each intent has the full set of Text, Icon, Surface, and Border tokens. (Same caveat as above: still the previous structure.) Source data: `fullSemanticColorTokens`.
+The previous `Semantic — Property-first` and `Semantic — Intent-first` stories described the old `Surface/Action/Status` structure and were removed.
 
 ### Spacing
 

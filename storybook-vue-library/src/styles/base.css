@@ -590,6 +590,14 @@ select {
   border-radius: var(--radius-sm);
   border: 1px solid rgba(33, 33, 40, 0.14);
   flex-shrink: 0;
+  background-size: 0.5rem 0.5rem;
+  overflow: hidden;
+}
+
+.st-swatch-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .st-name {
@@ -653,4 +661,12 @@ select {
   vertical-align: middle;
   letter-spacing: 0;
   text-transform: none;
+}
+
+.st-desc {
+  display: block;
+  max-width: 34rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--color-gray-70);
 }

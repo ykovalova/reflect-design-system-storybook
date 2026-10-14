@@ -145,7 +145,7 @@ Status: **Verified** — 3 values differ from the May 2026 parity audit. See `sr
 
 Source of truth: the Figma `Semantic` collection. Token-by-token table: `src/tokens/semantic-token-map.md`. Rationale: `docs/semantic-color-spec.html`. Choosing a token: the `reflect-token-picker` skill.
 
-Status: **In migration** — the new tokens are generated and available. `foundations.ts` (`fullSemanticColorTokens`) and the Button still use the previous `Surface`/`Action`/`Status` names until the migration is finished.
+Status: **In migration** — the new tokens are generated, available and rendered by the `Foundations/Colors → Semantic` story. `foundations.ts` (`fullSemanticColorTokens`, no longer used by any story) and the Button still use the previous `Surface`/`Action`/`Status` names until the migration is finished.
 
 ### Typography
 

@@ -24,16 +24,20 @@ Branch `Marika-button`.
 
 ### Changed
 
+- **`Foundations/Colors` stories** — replaced `Semantic — Property-first` and
+  `Semantic — Intent-first` with one `Semantic` story rendering the 113 generated
+  tokens by group (Background, Border, Text, Icon, Overlay, Brand), with live-variable
+  swatches over a checkerboard and Figma usage descriptions. Added `.st-swatch-fill` and
+  `.st-desc` styles to `base.css`.
 - `docs/design-system.md` — semantic naming, catalog and source-file sections rewritten
   for the property-first structure and the generated pipeline.
-- `docs/storybook.md` and `CLAUDE.md` — flag that the Colors stories still render the
-  previous `Surface/Action/Status` structure; document the generator.
+- `docs/storybook.md` and `CLAUDE.md` — document the new Colors story and the generator.
 
 ### Notes
 
 Additive: the new `--color-bg-*`, `--color-border-*`, `--color-text-*`, `--color-icon-*`,
 `--color-overlay-*` variables coexist with the old ones. Nothing is removed or renamed
-yet — `foundations.ts`, the Colors stories and `Button.vue` still use the old names.
+yet — `foundations.ts` (`fullSemanticColorTokens`, now unused by stories) and `Button.vue` still use the old names.
 
 ---
 
