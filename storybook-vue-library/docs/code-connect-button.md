@@ -12,12 +12,14 @@ Code: `src/components/Button/Button.vue`.
 | State | Default / Hover / Pressed / Focused / Disabled / Loading | `state` (+ `disabled`) | `default` / `hover` / `pressed` / `focused` / `disabled` / `loading` |
 | Only icon | True / False (toggle) | `onlyIcon` | `true` / `false` |
 | Button text | text | `label` | string |
-| Show left icon + Left icon | boolean + icon swap | `icon` + `iconPosition="leading"` | `plus` / `close` / `arrow-right` |
-| Show right icon + Right icon | boolean + icon swap | `icon` + `iconPosition="trailing"` | same |
-| Icon | icon swap (Only icon = True) | `icon` | same |
+| Show left icon + Left icon | boolean + icon swap | `leadingIcon` (or `icon` + `iconPosition="leading"`), or slot `leading-icon` | `plus` / `close` / `arrow-right` |
+| Show right icon + Right icon | boolean + icon swap | `trailingIcon` (or `icon` + `iconPosition="trailing"`), or slot `trailing-icon` | same |
+| Icon | icon swap (Only icon = True) | `icon`, or slot `icon` | same |
 
-## Gaps to resolve
-- **Both icons at once:** Figma allows a leading and a trailing icon together; the Vue component takes a single `icon` with one `iconPosition`.
-- **Plain Tertiary:** in Figma it is a separate component ("Tertiary Button (app)") and maps to `variant="tertiary"`. It needs its own mapping.
-- **Icons:** Figma swaps any icon from the Icon set; Vue accepts only `plus`, `close`, `arrow-right`.
-- **Extra small** is valid only for icon-only `tertiary-modal` (Vue falls back to `small` otherwise).
+## Previously open gaps
+- **Both icons at once** — fixed: `leadingIcon` and `trailingIcon` props (`icon` + `iconPosition` stays as a single-icon shorthand).
+- **Any icon from the Icon set** — fixed: `leading-icon`, `trailing-icon` and `icon` slots accept any markup; built-in names remain for the common three.
+- **Plain Tertiary** — no code change needed: `variant="tertiary"` already exists. In Figma it is a separate component ("Tertiary Button (app)") and needs its own Code Connect mapping.
+
+## Notes
+- Extra small is valid only for icon-only `tertiary-modal` (Vue falls back to `small` otherwise).

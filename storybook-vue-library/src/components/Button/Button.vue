@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, useSlots } from "vue";
 
 type ButtonVariant =
   | "primary"
@@ -21,8 +21,13 @@ const props = withDefaults(
     size?: ButtonSize;
     state?: ButtonState;
     onlyIcon?: boolean;
+    /** Single-icon shorthand; placed by `iconPosition`. Ignored for a side that has its own prop or slot. */
     icon?: ButtonIcon;
     iconPosition?: "leading" | "trailing";
+    /** Figma "Left icon" (Show left icon + Left icon). Use together with `trailingIcon` for both sides. */
+    leadingIcon?: ButtonIcon;
+    /** Figma "Right icon" (Show right icon + Right icon). */
+    trailingIcon?: ButtonIcon;
     disabled?: boolean;
     ariaLabel?: string;
   }>(),
@@ -34,10 +39,24 @@ const props = withDefaults(
     onlyIcon: false,
     icon: "none",
     iconPosition: "leading",
+    leadingIcon: undefined,
+    trailingIcon: undefined,
     disabled: false,
     ariaLabel: "Button"
   }
 );
+
+/**
+ * Any Figma icon can be supplied through slots instead of the built-in names:
+ * `leading-icon`, `trailing-icon`, and `icon` (icon-only). A slot wins over the matching prop.
+ */
+const slots = useSlots();
+
+const ICON_PATHS: Record<Exclude<ButtonIcon, "none">, { d: string; join?: boolean }[]> = {
+  plus: [{ d: "M8 3V13" }, { d: "M3 8H13" }],
+  close: [{ d: "M4 4L12 12" }, { d: "M12 4L4 12" }],
+  "arrow-right": [{ d: "M3 8H13" }, { d: "M8 3L13 8L8 13", join: true }]
+};
 
 const isLoading = computed(() => props.state === "loading");
 const isDisabled = computed(() => props.disabled || props.state === "disabled" || isLoading.value);
@@ -73,6 +92,22 @@ const iconSize = computed(() => {
 
   return resolvedSize.value === "small" ? 14 : 16;
 });
+
+const shorthandIcon = (position: "leading" | "trailing"): ButtonIcon => {
+  if (props.icon === "none") return "none";
+  if (position === "leading") return props.iconPosition === "leading" || props.onlyIcon ? props.icon : "none";
+  return props.iconPosition === "trailing" && !props.onlyIcon ? props.icon : "none";
+};
+
+const leadingName = computed<ButtonIcon>(() => props.leadingIcon ?? shorthandIcon("leading"));
+const trailingName = computed<ButtonIcon>(() => (props.onlyIcon ? "none" : props.trailingIcon ?? shorthandIcon("trailing")));
+
+const hasLeading = computed(
+  () => !isLoading.value && (leadingName.value !== "none" || !!slots["leading-icon"] || (props.onlyIcon && !!slots.icon))
+);
+const hasTrailing = computed(
+  () => !isLoading.value && !props.onlyIcon && (trailingName.value !== "none" || !!slots["trailing-icon"])
+);
 </script>
 
 <template>
@@ -84,79 +119,36 @@ const iconSize = computed(() => {
     type="button"
   >
     <span v-if="isLoading" class="button-spinner" aria-hidden="true" />
-    <span
-      v-else-if="icon !== 'none' && (iconPosition === 'leading' || onlyIcon)"
-      class="button-icon"
-      aria-hidden="true"
-    >
-      <svg
-        v-if="icon === 'plus'"
-        :width="iconSize"
-        :height="iconSize"
-        viewBox="0 0 16 16"
-        fill="none"
-      >
-        <path d="M8 3V13" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-        <path d="M3 8H13" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-      </svg>
-      <svg
-        v-else-if="icon === 'close'"
-        :width="iconSize"
-        :height="iconSize"
-        viewBox="0 0 16 16"
-        fill="none"
-      >
-        <path d="M4 4L12 12" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-        <path d="M12 4L4 12" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-      </svg>
-      <svg
-        v-else
-        :width="iconSize"
-        :height="iconSize"
-        viewBox="0 0 16 16"
-        fill="none"
-      >
-        <path d="M3 8H13" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-        <path d="M8 3L13 8L8 13" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+    <span v-else-if="hasLeading" class="button-icon" aria-hidden="true">
+      <slot v-if="onlyIcon && $slots.icon" name="icon" />
+      <slot v-else-if="$slots['leading-icon']" name="leading-icon" />
+      <svg v-else :width="iconSize" :height="iconSize" viewBox="0 0 16 16" fill="none">
+        <path
+          v-for="path in ICON_PATHS[leadingName as Exclude<ButtonIcon, 'none'>]"
+          :key="path.d"
+          :d="path.d"
+          :stroke-width="iconStrokeWidth"
+          stroke="currentColor"
+          stroke-linecap="round"
+          :stroke-linejoin="path.join ? 'round' : undefined"
+        />
       </svg>
     </span>
 
     <span v-if="!onlyIcon" class="button-label">{{ label }}</span>
 
-    <span
-      v-if="!isLoading && !onlyIcon && icon !== 'none' && iconPosition === 'trailing'"
-      class="button-icon"
-      aria-hidden="true"
-    >
-      <svg
-        v-if="icon === 'plus'"
-        :width="iconSize"
-        :height="iconSize"
-        viewBox="0 0 16 16"
-        fill="none"
-      >
-        <path d="M8 3V13" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-        <path d="M3 8H13" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-      </svg>
-      <svg
-        v-else-if="icon === 'close'"
-        :width="iconSize"
-        :height="iconSize"
-        viewBox="0 0 16 16"
-        fill="none"
-      >
-        <path d="M4 4L12 12" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-        <path d="M12 4L4 12" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-      </svg>
-      <svg
-        v-else
-        :width="iconSize"
-        :height="iconSize"
-        viewBox="0 0 16 16"
-        fill="none"
-      >
-        <path d="M3 8H13" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" />
-        <path d="M8 3L13 8L8 13" :stroke-width="iconStrokeWidth" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+    <span v-if="hasTrailing" class="button-icon" aria-hidden="true">
+      <slot v-if="$slots['trailing-icon']" name="trailing-icon" />
+      <svg v-else :width="iconSize" :height="iconSize" viewBox="0 0 16 16" fill="none">
+        <path
+          v-for="path in ICON_PATHS[trailingName as Exclude<ButtonIcon, 'none'>]"
+          :key="path.d"
+          :d="path.d"
+          :stroke-width="iconStrokeWidth"
+          stroke="currentColor"
+          stroke-linecap="round"
+          :stroke-linejoin="path.join ? 'round' : undefined"
+        />
       </svg>
     </span>
   </button>
