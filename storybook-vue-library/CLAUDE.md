@@ -14,9 +14,10 @@ source ./bin/activate-local-node.sh
 - **Figma is authoritative for all values.** If Figma and code disagree, update code to match Figma.
 - **Run the transfer gate before every component transfer.** Use `$component-transfer-gate` to confirm required foundation tokens are Verified before transferring any component. Use `$figma-token-parity` whenever foundations change or need a fresh comparison against Figma.
 - **Foundations before components.** A component transfer is blocked until its required tokens are Verified.
-- **`foundations.ts` and `base.css` must stay in sync.** `foundations.ts` holds typed token data; `base.css` registers the CSS custom properties. Adding to one means adding to the other.
+- **`foundations.ts` and `base.css` must stay in sync** for primitives, type, spacing, shadow and radius. `foundations.ts` holds typed token data; `base.css` registers the CSS custom properties. Adding to one means adding to the other.
+- **Semantic colours are generated.** Re-export the Figma `Semantic` collection to `src/tokens/figma-export/Color.tokens.json`, run `npm run tokens:generate`, commit the output. Never edit `semantic-colors.generated.*` by hand; `npm run tokens:check` verifies it is current.
 - **Every change gets a changelog entry.** `CHANGELOG.md` at the repo root, updated as part of the change itself — same commit or PR, not retroactively. `LEARNINGS.md` is for reasoning and rules learned; the changelog is the record of what changed.
-- **Components consume semantic tokens only.** Component CSS must reference `--color-text-primary`, never `--color-gray-90` directly. Use the `reflect-token-picker` skill to choose which semantic token applies.
+- **Components consume semantic tokens only.** Component CSS must reference `--color-text-regular`, never `--color-gray-90` directly. Use the `reflect-token-picker` skill to choose which semantic token applies.
 
 ## Documentation
 
@@ -27,7 +28,7 @@ source ./bin/activate-local-node.sh
 | [WORKFLOW.md](WORKFLOW.md) | Transfer workflow steps and status definitions |
 | [docs/design-system.md](docs/design-system.md) | Token architecture, naming rules, component transfer rules |
 | [docs/storybook.md](docs/storybook.md) | Story organization, patterns, and conventions |
-| [docs/semantic-color-spec.html](docs/semantic-color-spec.html) | The semantic colour layer — mirrors the `Semantic` collection in Figma. Authoritative for structure; **not yet reflected in `base.css`** |
+| [docs/semantic-color-spec.html](docs/semantic-color-spec.html) | The semantic colour layer — mirrors the `Semantic` collection in Figma. Authoritative for structure; the CSS is generated into `semantic-colors.generated.css`, but `foundations.ts` and the Button have not migrated yet |
 | [src/tokens/semantic-token-map.md](src/tokens/semantic-token-map.md) | Every semantic token, its primitive alias, and when to use it — plus the old-token → new-token migration map |
 | [src/tokens/figma-mapping.md](src/tokens/figma-mapping.md) | Figma ↔ code parity — living audit trail |
 
@@ -37,6 +38,8 @@ source ./bin/activate-local-node.sh
 |------|---------|
 | `src/tokens/foundations.ts` | Typed token data — source of truth for stories |
 | `src/styles/base.css` | CSS custom properties on `:root` |
+| `src/tokens/figma-export/Color.tokens.json` | Figma `Semantic` export — input to the generator |
+| `scripts/generate-semantic-tokens.mjs` | Generates `semantic-colors.generated.{css,ts}` |
 | `src/stories/foundations/` | Foundation stories (Colors, Spacing, Typography, Elevations) |
 | `src/components/` | Vue components and their stories |
 | `.storybook/preview.ts` | Navigation order, global config |

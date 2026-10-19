@@ -15,8 +15,8 @@ Tokens follow a two-layer model: primitives and semantics.
 **Semantic tokens** are aliases that assign a role to a primitive. They describe intent, not appearance:
 
 ```css
---color-text-primary: var(--color-gray-90);
---color-action-primary: var(--color-brand-75);
+--color-text-regular: var(--color-gray-90);
+--color-bg-action-primary-default: var(--color-brand-75);
 ```
 
 Components reference semantic tokens only. Referencing a primitive in component code is a parity error — it means the component is bypassing the meaning layer and will break if the semantic mapping ever changes. The separation exists so that theming, dark mode, or a rebrand changes only the semantic layer without touching component code.
@@ -45,22 +45,34 @@ Figma uses commas in some step names (`red-2,5`). Normalize to hyphens in CSS: `
 
 ### Semantic colors
 
+The structure is **property-first**: the first segment names the property being painted, not its meaning.
+
 ```
---color-{role}-{qualifier}
+Figma:  {Property}/{Role}/{Rank}/{State}      e.g. Background/Action/Primary/Default
+CSS:    --color-{prefix}-{role}-{rank}-{state}  e.g. --color-bg-action-primary-default
 ```
 
-Roles correspond to CSS property types: `text`, `icon`, `surface`, `border`, `action`, `status`, `focus`. Qualifiers describe the specific use within that role:
+| Figma group | CSS prefix | Paints |
+|-------------|-----------|--------|
+| `Background` | `--color-bg-*` | fills — static surfaces, button faces, status fills |
+| `Text` | `--color-text-*` | text colour |
+| `Icon` | `--color-icon-*` | glyph colour |
+| `Border` | `--color-border-*` | strokes, field edges, focus ring |
+| `Overlay` | `--color-overlay-*` | alpha washes — hover, pressed, scrim |
+| `Brand/Logo` | `--color-brand-logo-*` | logo variants |
+
+**Figma and CSS names are deliberately different** (`Background/` emits `bg`, not `background`). CSS names are never derived from the Figma name — they come from each variable's WEB code syntax, which `npm run tokens:generate` reads from the Figma export. Do not hand-write a semantic name.
 
 ```css
---color-text-primary
---color-text-danger
---color-action-primary-default
---color-action-primary-hover
---color-status-success-surface
---color-status-success-text
---color-border-subtle
---color-focus-ring
+--color-bg-action-primary-default
+--color-bg-action-primary-hover
+--color-text-on-solid-default
+--color-icon-status-danger
+--color-border-focus-ring
+--color-overlay-hover
 ```
+
+`--color-surface-*`, `--color-action-*`, `--color-status-*` and `--color-focus-*` belong to the previous structure. They still exist in `base.css` while components are migrated, but new work must not use them.
 
 ### Other tokens
 
@@ -77,7 +89,7 @@ Roles correspond to CSS property types: `text`, `icon`, `surface`, `border`, `ac
 
 ## Source files
 
-Two files must always stay in sync:
+The semantic colour layer is **generated**, not hand-edited — see below. Primitives, typography, spacing, shadows and radius are still maintained by hand in two files that must always stay in sync:
 
 **`src/tokens/foundations.ts`**
 Typed token data exported as arrays. Used by Storybook stories to render the token catalog — swatches, type specimens, spacing bars. This is the source of truth for the token documentation layer.
@@ -85,7 +97,18 @@ Typed token data exported as arrays. Used by Storybook stories to render the tok
 **`src/styles/base.css`**
 CSS custom properties registered on `:root`. Used by the browser at runtime — components and layout consume tokens from here. This is what makes the tokens real in the running application.
 
-Adding a token to one without the other creates a split: either a token is documented but doesn't work, or it works but isn't documented. Every token addition touches both files.
+Adding a token to one without the other creates a split: either a token is documented but doesn't work, or it works but isn't documented. Every hand-maintained token addition touches both files.
+
+### Generated semantic colours
+
+```
+src/tokens/figma-export/Color.tokens.json     ← Figma export of the Semantic collection (input)
+        │  npm run tokens:generate
+        ├─▶ src/styles/semantic-colors.generated.css   (imported by base.css)
+        └─▶ src/tokens/semantic-colors.generated.ts    (typed catalog for stories)
+```
+
+To update after a change in Figma: re-export the `Semantic` collection over `Color.tokens.json`, run `npm run tokens:generate`, commit all three files. `npm run tokens:check` fails if the generated files are stale, so it can run in CI. Never edit the `.generated.*` files by hand.
 
 ---
 
@@ -109,19 +132,20 @@ Status: **Verified** — 3 values differ from the May 2026 parity audit. See `sr
 
 ### Colors — semantic layer
 
-~75 tokens organized by CSS property role. Each group covers a consistent set of sub-roles.
+113 tokens in the Figma `Semantic` collection (one mode), generated into `src/styles/semantic-colors.generated.css` and `src/tokens/semantic-colors.generated.ts`.
 
 | Group | Tokens | Sub-roles |
 |-------|--------|-----------|
-| Text | 14 | strong, primary, secondary, disabled, inverse, link, link-hover, action, danger, success, warning, info, on-solid, on-warning-solid |
-| Icon | 9 | primary, secondary, disabled, inverse, action, danger, success, warning, info |
-| Surface | 6 | base, subtle, muted, disabled, raised, selected |
-| Border | 10 | subtle, default, strong, disabled, selected, danger, focus, info, warning, success |
-| Action | 15 | primary (default/hover/pressed/disabled/icon), secondary (default/hover/pressed/text), danger (default/hover/pressed/disabled), on-action (default/disabled) |
-| Status | 30 | neutral, info, success, warning, error — each with surface, outline, text, indicator, solid, on-solid |
-| Focus | 2 | ring, inner |
+| Background | 40 | surfaces (page, raised, sunken, muted, disabled, inverse, selected) · `Action/*` (primary, secondary, tertiary, danger, danger-secondary, danger-tertiary, disabled, transparent) · `Status/*` (info, success, warning, danger — subtle and solid) |
+| Border | 28 | base (divider, subtle, default, strong, disabled, inverse, selected) · `Action/*` · `Field/*` (default, hover, error, disabled) · `Status/*` · `Focus/{Ring,Inner}` |
+| Text | 22 | base (strong, regular, subtle, placeholder, disabled, inverse, on-neutral) · `OnSolid/*` · `Action/*` · `Status/*` · `OnStatus/*` |
+| Icon | 13 | base (strong, regular, subtle, disabled, inverse, on-solid, action, placeholder) · `Status/*` |
+| Overlay | 7 | scrim, hover, pressed, selected, loading, inverse hover/pressed — the only alpha-carrying family |
+| Brand/Logo | 3 | dark, purple, green |
 
-Status: **Verified**
+Source of truth: the Figma `Semantic` collection. Token-by-token table: `src/tokens/semantic-token-map.md`. Rationale: `docs/semantic-color-spec.html`. Choosing a token: the `reflect-token-picker` skill.
+
+Status: **In migration** — the new tokens are generated, available and rendered by the `Foundations/Colors → Semantic` story. `foundations.ts` (`fullSemanticColorTokens`, no longer used by any story) and the Button still use the previous `Surface`/`Action`/`Status` names until the migration is finished.
 
 ### Typography
 
@@ -180,7 +204,7 @@ Status: **Not started** — blocked pending Figma radius variable collection bei
 Every Figma property on a component — variant, size, state, only-icon — becomes a Vue prop with the same name and the same set of values. The mapping is documented in `src/tokens/figma-mapping.md` before implementation begins.
 
 **Components consume semantic tokens only.**
-A component's scoped CSS references semantic custom properties. If a component needs the primary action color, it uses `var(--color-action-primary)`, not `var(--color-brand-75)`. Direct primitive references in component CSS are a parity error.
+A component's scoped CSS references semantic custom properties. If a component needs the primary action color, it uses `var(--color-bg-action-primary-default)`, not `var(--color-brand-75)`. Direct primitive references in component CSS are a parity error.
 
 **Transfer requires a gate.**
 Before a component is implemented, all foundation tokens it depends on must be at **Verified** status. See [WORKFLOW.md](../WORKFLOW.md).

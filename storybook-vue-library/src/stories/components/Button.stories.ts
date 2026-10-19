@@ -37,6 +37,14 @@ const meta = {
       control: "inline-radio",
       options: ["leading", "trailing"]
     },
+    leadingIcon: {
+      control: "select",
+      options: [undefined, "none", "plus", "close", "arrow-right"]
+    },
+    trailingIcon: {
+      control: "select",
+      options: [undefined, "none", "plus", "close", "arrow-right"]
+    },
     disabled: { control: "boolean" },
     ariaLabel: { control: "text" }
   },
@@ -162,4 +170,32 @@ export const Textual: Story = {
     icon: "arrow-right",
     iconPosition: "trailing"
   }
+};
+
+export const LeadingAndTrailingIcons: Story = {
+  args: {
+    label: "Add item",
+    variant: "secondary",
+    size: "medium",
+    leadingIcon: "plus",
+    trailingIcon: "arrow-right"
+  }
+};
+
+export const CustomIconSlots: Story = {
+  render: (args) => ({
+    components: { Button },
+    setup: () => ({ args }),
+    template: `
+      <Button v-bind="args" label="Search">
+        <template #leading-icon>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="2" />
+            <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </template>
+      </Button>
+    `
+  }),
+  args: { variant: "secondary", size: "medium" }
 };
