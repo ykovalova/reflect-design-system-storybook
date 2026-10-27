@@ -103,7 +103,7 @@ Fills for things you press. Five ranks, each with the same four states, so no va
 | Rank | Default | Hover | Pressed | Disabled |
 |---|---|---|---|---|
 | `Action/Primary/*` | `brand-75` `#3C3ADB` | `brand-80` `#302EAF` | `brand-90` `#242383` | `gray-15` `#EFEFF2` |
-| `Action/Neutral/*` | `gray-00` `#FFFFFF` | `gray-05` `#FAFAFC` | `gray-10` `#F7F7F9` | `gray-15` `#EFEFF2` |
+| `Action/Neutral/*` | `gray-00` `#FFFFFF` | `gray-05` `#FAFAFC` | `gray-15` `#EFEFF2` | `gray-15` `#EFEFF2` |
 | `Action/Ghost/*` | `transparent` | → `Overlay/Hover` | → `Overlay/Pressed` | `transparent` |
 | `Action/Danger/*` | `red-70` `#B42419` | `red-80` `#901D14` | `red-90` `#6C160F` | `gray-15` `#EFEFF2` |
 | `Action/DangerGhost/*` | `transparent` | `red-10` `#FDF9F9` | `red-20` `#F7E2E1` | `transparent` |

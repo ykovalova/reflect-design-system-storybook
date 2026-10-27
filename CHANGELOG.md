@@ -31,6 +31,11 @@ Branch `Marika-button`.
 
 ### Changed
 
+- **`Action/Secondary/Pressed` background gray-10 → gray-15** (matches `Action/Neutral/Pressed` in the
+  Floating button file). Updated in the Figma export, the regenerated semantic tokens
+  (`--color-bg-action-secondary-pressed`), legacy `--color-action-secondary-pressed` in `base.css`,
+  the token map and spec, and used by `FloatingButton` instead of a raw primitive. Affects the pressed
+  state of the secondary `Button`.
 - **`Foundations/Colors` stories** — replaced `Semantic — Property-first` and
   `Semantic — Intent-first` with one `Semantic` story rendering the 113 generated
   tokens by group (Background, Border, Text, Icon, Overlay, Brand), with live-variable

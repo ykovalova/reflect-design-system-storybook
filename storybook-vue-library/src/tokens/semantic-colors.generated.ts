@@ -229,9 +229,9 @@ export const semanticColors: SemanticColor[] = [
     "name": "Background/Action/Secondary/Pressed",
     "group": "Background",
     "cssVar": "--color-bg-action-secondary-pressed",
-    "value": "var(--color-gray-10)",
-    "alias": "Color/Gray/gray-10",
-    "hex": "#F7F7F9",
+    "value": "var(--color-gray-15)",
+    "alias": "Color/Gray/gray-15",
+    "hex": "#EFEFF2",
     "alpha": 1,
     "description": "Secondary button while held down."
   },

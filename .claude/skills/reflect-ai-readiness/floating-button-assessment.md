@@ -30,7 +30,7 @@ First assessed 2026-10-26: 9 / 18 (Not ready). **Re-assessed after fixes: 14 / 1
 
 ## Remaining fixes, by impact
 1. Register Code Connect once the library is published, using `docs/code-connect-floating-button.md` — dev, S.
-2. Decide whether Neutral pressed (gray-15) and Neutral pressed border (gray-70) should become semantic tokens; code uses the primitives for now.
+2. Decide whether the Neutral pressed border (gray-70) should replace `Border/Action/Secondary/Pressed` (gray-80); code uses the primitive `--color-gray-70` for now. (Pressed background was aligned to gray-15.)
 
 ## Assumptions Claude still has to make
 None blocking. The component is separate from `Button` by decision; Opened rotates the icon by CSS.

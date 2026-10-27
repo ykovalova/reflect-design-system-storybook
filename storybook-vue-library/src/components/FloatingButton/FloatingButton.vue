@@ -126,7 +126,7 @@ const iconSize = computed(() => (props.size === "small" ? 20 : 24));
 
 .floating-button-opened[data-state="pressed"]:not(:disabled),
 .floating-button-opened:not(:disabled):active {
-  --fb-background: var(--color-gray-15);
+  --fb-background: var(--color-bg-action-secondary-pressed);
   --fb-border: var(--color-gray-70);
 }
 
