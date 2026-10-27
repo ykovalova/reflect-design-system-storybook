@@ -13,6 +13,10 @@ Branch `Marika-button`.
 
 ### Added
 
+- **`--shadow-elevation-0`** (`0 1px 1px rgba(61, 61, 69, 0.2)`) — code token for the new Figma
+  effect style `shadow 0`, which reproduces the resting shadow of the Floating circle button.
+  Needs design approval; listed in `figma-mapping.md`, `design-system.md` and the
+  Elevations story.
 - **`scripts/generate-semantic-tokens.mjs`** (`npm run tokens:generate`, `tokens:check`)
   — builds the semantic colour layer from the Figma export
   `src/tokens/figma-export/Color.tokens.json` (113 tokens). Emits

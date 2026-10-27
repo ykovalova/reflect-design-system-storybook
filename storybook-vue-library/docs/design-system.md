@@ -82,7 +82,7 @@ CSS:    --color-{prefix}-{role}-{rank}-{state}  e.g. --color-bg-action-primary-d
 | Font size | `--font-{category}-{variant}` | `--font-body-1-regular`, `--font-heading-h2-semibold` |
 | Line height | `--line-{category}-{variant}` | `--line-body-1`, `--line-heading-h2` |
 | Font weight | `--font-weight-{name}` | `--font-weight-medium`, `--font-weight-semibold` |
-| Shadow | `--shadow-{name}` | `--shadow-elevation-1`, `--shadow-elevation-2` |
+| Shadow | `--shadow-{name}` | `--shadow-elevation-0`, `--shadow-elevation-1`, `--shadow-elevation-2` |
 | Radius | `--radius-{name}` | `--radius-sm`, `--radius-md` |
 
 ---
@@ -172,10 +172,11 @@ Status: **Verified** — `spc-0` (0px) and `spc-6` (6px) exist in Figma but have
 
 ### Elevation & Shadows
 
-Two levels matching the Figma effect styles:
+Levels matching the Figma effect styles (`shadow 0` is pending design approval):
 
 | Token | Value |
 |-------|-------|
+| `--shadow-elevation-0` | `0 1px 1px rgba(61, 61, 69, 0.2)` |
 | `--shadow-elevation-1` | `0 2px 20px rgba(150, 148, 161, 0.2)` |
 | `--shadow-elevation-2` | `1px 5px 10px 2px rgba(91, 91, 100, 0.3)` |
 

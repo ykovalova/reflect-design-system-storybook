@@ -43,7 +43,7 @@ export const foundationNotes = {
   colorNote:
     "All primitive palette tokens from the linked Figma Colors page are present in the token source.",
   elevationNote:
-    "The linked Figma Elevations page defines two box shadows, now documented as elevation tokens in Storybook.",
+    "The linked Figma Elevations page defines two approved box shadows (shadow 1, shadow 2); shadow 0 is a small resting shadow pending design approval. All are documented as elevation tokens in Storybook.",
   themeNote:
     "No Figma variable collections or theme modes were exposed in this file, so semantic aliases remain a code-side mapping layer."
 } as const;
@@ -152,6 +152,16 @@ export const semanticColorTokens = [
 ] as const;
 
 export const shadowTokens: ShadowToken[] = [
+  {
+    name: "Box Shadow 0",
+    cssVar: "--shadow-elevation-0",
+    value: "0 1px 1px rgba(61, 61, 69, 0.2)",
+    x: 0,
+    y: 1,
+    blur: 1,
+    spread: 0,
+    color: "rgba(61, 61, 69, 0.2)"
+  },
   {
     name: "Box Shadow 1",
     cssVar: "--shadow-elevation-1",
