@@ -172,7 +172,7 @@ Status: **Verified** — `spc-0` (0px) and `spc-6` (6px) exist in Figma but have
 
 ### Elevation & Shadows
 
-Levels matching the Figma effect styles (`shadow 0` is pending design approval):
+Levels matching the Figma effect styles:
 
 | Token | Value |
 |-------|-------|

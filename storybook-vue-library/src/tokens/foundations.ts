@@ -43,7 +43,7 @@ export const foundationNotes = {
   colorNote:
     "All primitive palette tokens from the linked Figma Colors page are present in the token source.",
   elevationNote:
-    "The linked Figma Elevations page defines two approved box shadows (shadow 1, shadow 2); shadow 0 is a small resting shadow pending design approval. All are documented as elevation tokens in Storybook.",
+    "The Figma effect styles define three approved box shadows (shadow 0, shadow 1, shadow 2), documented as elevation tokens in Storybook. shadow 0 is the small resting shadow added for the Floating circle button.",
   themeNote:
     "No Figma variable collections or theme modes were exposed in this file, so semantic aliases remain a code-side mapping layer."
 } as const;

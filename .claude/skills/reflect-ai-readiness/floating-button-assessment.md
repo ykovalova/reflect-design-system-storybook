@@ -8,7 +8,7 @@ First assessed 2026-10-26: 9 / 18 (Not ready). **Re-assessed after fixes: 14 / 1
 - Properties: Icon (instance swap, default Add), Appearance (Closed / Opened), State, Size. The "(Modal)" suffix was dropped from Appearance values.
 - Fills 24 bound / 0 raw; strokes 26 bound / 0 raw; all from `Semantic`.
 - Padding/gap 120 bound / 0 raw (`spc-8`, new `spc-10`); radius 28 bound / 0 raw (`r-64`).
-- Effects: the 20 non-Focused variants use a new `shadow 0` effect style (`0 1px 1px`, 20% neutral dark, #3D3D45) that reproduces the previous custom shadow; it needs design lead approval and a code token (`--shadow-elevation-0`), since the approved set is `shadow 1` and `shadow 2`. Focused variants have no shadow; the focus ring replaces it.
+- Effects: the 20 non-Focused variants use a new `shadow 0` effect style (`0 1px 1px`, 20% neutral dark, #3D3D45) that reproduces the previous custom shadow; it is approved by the design lead and has a code token (`--shadow-elevation-0`). Focused variants have no shadow; the focus ring replaces it.
 - Text nodes: 0 (typography not applicable).
 - Layers: `Icon` ×20, `Spinner` ×4, `Focus ring` ×4. Focus ring follows the Button rule (2px inside stroke, 3px offset, `Border/Focus/Ring`, `r-64`).
 - Description written; spec sheet has a Documentation block (Appearance, States and sizes, Accessibility).
@@ -30,8 +30,7 @@ First assessed 2026-10-26: 9 / 18 (Not ready). **Re-assessed after fixes: 14 / 1
 
 ## Remaining fixes, by impact
 1. Register Code Connect once the library is published, using `docs/code-connect-floating-button.md` — dev, S.
-2. Get `shadow 0` approved (design lead) — it backs `--shadow-elevation-0`.
-3. Decide whether Neutral pressed (gray-15) and Neutral pressed border (gray-70) should become semantic tokens; code uses the primitives for now.
+2. Decide whether Neutral pressed (gray-15) and Neutral pressed border (gray-70) should become semantic tokens; code uses the primitives for now.
 
 ## Assumptions Claude still has to make
 None blocking. The component is separate from `Button` by decision; Opened rotates the icon by CSS.
