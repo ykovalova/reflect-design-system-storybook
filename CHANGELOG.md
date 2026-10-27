@@ -13,6 +13,9 @@ Branch `Marika-button`.
 
 ### Added
 
+- **`FloatingButton` component** (`src/components/FloatingButton/`) and stories — circular icon-only
+  action button: `appearance` (closed/opened), `size` (medium 60px / small 40px), `state`, required
+  `ariaLabel`, default slot for any icon. Figma-to-Vue mapping in `docs/code-connect-floating-button.md`.
 - **`--shadow-elevation-0`** (`0 1px 1px rgba(61, 61, 69, 0.2)`) — code token for the new Figma
   effect style `shadow 0`, which reproduces the resting shadow of the Floating circle button.
   Needs design approval; listed in `figma-mapping.md`, `design-system.md` and the
