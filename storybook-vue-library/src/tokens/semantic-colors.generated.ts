@@ -959,9 +959,9 @@ export const semanticColors: SemanticColor[] = [
     "name": "Border/Action/Secondary/Hover",
     "group": "Border",
     "cssVar": "--color-border-action-secondary-hover",
-    "value": "var(--color-gray-70)",
-    "alias": "Color/Gray/gray-70",
-    "hex": "#777783",
+    "value": "var(--color-gray-60)",
+    "alias": "Color/Gray/gray-60",
+    "hex": "#9494A1",
     "alpha": 1,
     "description": "Secondary button edge under the pointer."
   },

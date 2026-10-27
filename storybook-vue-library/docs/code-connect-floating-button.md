@@ -21,7 +21,7 @@ Figma "Opened" shows the same icon rotated 45°; the component does this with CS
 | `Action/Primary/Default · Hover · Pressed` | `--color-bg-action-primary-default · -hover · -pressed` |
 | `Border/Action/Default · Hover · Pressed` | `--color-border-action-primary-default · -hover · -pressed` |
 | `Action/Neutral/Default · Hover · Pressed` | `--color-bg-action-secondary-default · -hover · -pressed` |
-| `Border/Neutral/Default · Hover` | `--color-border-action-secondary-default · -hover` |
+| `Border/Neutral/Default · Hover` | `--color-border-action-secondary-default · -hover` (hover is gray-60 after the Figma change) |
 | `Border/Neutral/Pressed` (gray-70) | `--color-gray-70` (`secondary-pressed` is gray-80) |
 | `Action/*/Disabled`, `Border/*/Disabled` | `--color-bg-action-disabled`, `--color-border-action-disabled` |
 | `Border/Focus/Ring` | `--color-border-focus-ring` |
@@ -31,4 +31,5 @@ Figma "Opened" shows the same icon rotated 45°; the component does this with CS
 - The component is **separate from `Button`**: it is circular, fixed at 60/40px, has no label and a different Appearance axis.
 - Figma `Appearance` values were renamed from "Closed (Modal)" / "Opened (Modal)" to "Closed" / "Opened"; the "(Modal)" suffix carried no documented meaning.
 - `Action/Secondary/Pressed` was changed from gray-10 to gray-15 in Figma to match `Action/Neutral/Pressed`; code follows (export, generated tokens, `base.css`).
+- `Border/Action/Secondary/Hover` was changed from gray-70 to gray-60 in Figma; code follows (export, generated tokens).
 - Neutral pressed border (gray-70) still differs from `--color-border-action-secondary-pressed` (gray-80); the primitive `--color-gray-70` is used until design decides whether to align them.

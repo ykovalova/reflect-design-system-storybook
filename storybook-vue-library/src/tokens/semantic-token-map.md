@@ -237,7 +237,7 @@ Each rank tracks its matching fill exactly, so an outlined button and a filled b
 | Rank | Default | Hover | Pressed | Disabled |
 |---|---|---|---|---|
 | `Border/Action/*` | `brand-75` `#3C3ADB` | `brand-80` `#302EAF` | `brand-90` `#242383` | `gray-30` `#D0D0D9` |
-| `Border/Neutral/*` | `gray-50` `#B1B1BF` | `gray-70` `#777783` | `gray-70` `#777783` | `gray-30` `#D0D0D9` |
+| `Border/Neutral/*` | `gray-50` `#B1B1BF` | `gray-60` `#9494A1` | `gray-70` `#777783` | `gray-30` `#D0D0D9` |
 | `Border/Danger/*` | `red-70` `#B42419` | `red-80` `#901D14` | `red-90` `#6C160F` | `gray-30` `#D0D0D9` |
 
 ### Field states

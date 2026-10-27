@@ -31,6 +31,11 @@ Branch `Marika-button`.
 
 ### Changed
 
+- **`Border/Action/Secondary/Hover` gray-70 → gray-60** (matches `Border/Neutral/Hover` in the Floating
+  button file). Updated in the Figma export and regenerated tokens (`--color-border-action-secondary-hover`),
+  token map and spec. Used by `FloatingButton` (opened); the secondary `Button` still uses the legacy
+  rgba border and is unaffected. The alias id in the export entry is the plugin key; a fresh Figma
+  export will normalise it.
 - **`Action/Secondary/Pressed` background gray-10 → gray-15** (matches `Action/Neutral/Pressed` in the
   Floating button file). Updated in the Figma export, the regenerated semantic tokens
   (`--color-bg-action-secondary-pressed`), legacy `--color-action-secondary-pressed` in `base.css`,
