@@ -26,7 +26,7 @@
   --color-bg-action-primary-pressed: var(--color-brand-90);
   --color-bg-action-secondary-default: var(--color-gray-00);
   --color-bg-action-secondary-hover: var(--color-gray-05);
-  --color-bg-action-secondary-pressed: var(--color-gray-10);
+  --color-bg-action-secondary-pressed: var(--color-gray-15);
   --color-bg-action-tertiary-hover: var(--color-overlay-hover);
   --color-bg-action-tertiary-pressed: var(--color-overlay-pressed);
   --color-bg-action-danger-default: var(--color-red-70);
@@ -105,7 +105,7 @@
   --color-border-action-primary-hover: var(--color-brand-80);
   --color-border-action-primary-pressed: var(--color-brand-90);
   --color-border-action-secondary-default: var(--color-gray-50);
-  --color-border-action-secondary-hover: var(--color-gray-70);
+  --color-border-action-secondary-hover: var(--color-gray-60);
   --color-border-action-secondary-pressed: var(--color-gray-80);
   --color-border-action-danger-default: var(--color-red-70);
   --color-border-action-danger-hover: var(--color-red-80);

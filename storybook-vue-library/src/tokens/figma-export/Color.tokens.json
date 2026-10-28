@@ -601,12 +601,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9686274528503418,
-              0.9686274528503418,
-              0.9764705896377563
+              0.9388235211372375,
+              0.9388235211372375,
+              0.9498039484024048
             ],
             "alpha": 1,
-            "hex": "#F7F7F9"
+            "hex": "#EFEFF2"
           },
           "$description": "Secondary button while held down.",
           "$extensions": {
@@ -619,8 +619,8 @@
               "WEB": "var(--color-bg-action-secondary-pressed)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:8ac8e75d022cf361fab836fbd4e84d83e1e947b6/-1:-1",
-              "targetVariableName": "Color/Gray/gray-10",
+              "targetVariableId": "VariableID:550f18c12b5d3beadd69e8491e84212c7c5ae0d9/-1:-1",
+              "targetVariableName": "Color/Gray/gray-15",
               "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
               "targetVariableSetName": "Primitives"
             }
@@ -2776,12 +2776,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.46666666865348816,
-              0.46666666865348816,
-              0.5137255191802979
+              0.5803921568627451,
+              0.5803921568627451,
+              0.6313725490196078
             ],
             "alpha": 1,
-            "hex": "#777783"
+            "hex": "#9494A1"
           },
           "$description": "Secondary button edge under the pointer.",
           "$extensions": {
@@ -2793,8 +2793,8 @@
               "WEB": "var(--color-border-action-secondary-hover)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
-              "targetVariableName": "Color/Gray/gray-70",
+              "targetVariableId": "VariableID:17b8fa7d1fd14c86ebed8dc72b509d172dc0542e/-1:-1",
+              "targetVariableName": "Color/Gray/gray-60",
               "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
               "targetVariableSetName": "Primitives"
             }

@@ -15,6 +15,7 @@ How Figma variable paths translate to CSS custom property names:
 | `Color/Red/red-2,5` | `--color-red-2-5` | Comma normalized to hyphen |
 | `Spacing/spc-16` | `--space-16` | `spc-` prefix dropped; `space-` used instead |
 | `Typography/Heading/H1/Regular` | `--font-heading-h1-regular` | Full path collapsed; weight variant appended |
+| `shadow 0` | `--shadow-elevation-0` — `0 1px 1px rgba(61, 61, 69, 0.2)` | Approved by design lead — new style added in the Floating button branch (`HnugASjnJEVK0CpIyqj1MI`) to reproduce the button's previous resting shadow |
 | `shadow 1` | `--shadow-elevation-1` | Renamed to reflect intent |
 | `Radius/r-8` | `--radius-sm` | Radius uses semantic names, not step numbers |
 
