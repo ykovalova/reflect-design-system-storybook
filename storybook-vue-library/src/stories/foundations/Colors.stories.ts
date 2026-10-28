@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
-import { colorTokens, foundationNotes, fullSemanticColorTokens } from "../../tokens/foundations";
+import { colorTokens, foundationNotes } from "../../tokens/foundations";
+import { semanticColors, type SemanticColorGroup } from "../../tokens/semantic-colors.generated";
 
 const meta = {
   title: "Foundations/Colors",
@@ -14,13 +15,18 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const SEMANTIC_TABLE_TEMPLATE = `
+const SEMANTIC_TEMPLATE = `
   <section class="docs-page">
     <div class="docs-stack">
       <header class="docs-heading">
         <p class="eyebrow">Stage 2 — Semantic layer</p>
-        <h1>{{ title }}</h1>
-        <p>{{ description }}</p>
+        <h1>Semantic Colors</h1>
+        <p>
+          {{ total }} tokens from the Figma <code>Semantic</code> collection, grouped by the property they paint.
+          The first segment of every name is the property (<code>Background</code>, <code>Text</code>, <code>Icon</code>,
+          <code>Border</code>, <code>Overlay</code>); CSS names come from each variable's code syntax, so
+          <code>Background/</code> emits <code>--color-bg-*</code>. Components use these tokens, never primitives.
+        </p>
       </header>
 
       <section v-for="group in grouped" :key="group.key" class="token-section">
@@ -28,7 +34,7 @@ const SEMANTIC_TABLE_TEMPLATE = `
           <table class="semantic-table">
             <thead>
               <tr>
-                <th colspan="6">
+                <th colspan="5">
                   {{ group.label }}
                   <span class="st-group-badge">{{ group.tokens.length }}</span>
                 </th>
@@ -37,19 +43,24 @@ const SEMANTIC_TABLE_TEMPLATE = `
                 <th></th>
                 <th>Token</th>
                 <th>CSS Variable</th>
-                <th>→ Global</th>
-                <th>Hex</th>
-                <th>Notes</th>
+                <th>→ Alias</th>
+                <th>Use</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="token in group.tokens" :key="token.cssVar">
-                <td><span class="st-swatch" :style="{ background: token.hex }" /></td>
+                <td>
+                  <span class="st-swatch" :style="{ backgroundImage: checker }">
+                    <span class="st-swatch-fill" :style="{ background: 'var(' + token.cssVar + ')' }" />
+                  </span>
+                </td>
                 <td><span class="st-name">{{ token.name }}</span></td>
                 <td><code class="st-var">{{ token.cssVar }}</code></td>
-                <td><code class="st-alias">{{ token.globalAlias }}</code></td>
-                <td><code class="st-hex">{{ token.hex }}</code></td>
-                <td><span v-if="token.notes" class="st-note">{{ token.notes }}</span></td>
+                <td>
+                  <code class="st-alias">{{ token.alias ?? token.value }}</code>
+                  <code class="st-hex" style="display:block">{{ token.hex }}<template v-if="token.alpha < 1"> @ {{ Math.round(token.alpha * 100) }}%</template></code>
+                </td>
+                <td><span class="st-desc">{{ token.description }}</span></td>
               </tr>
             </tbody>
           </table>
@@ -59,66 +70,31 @@ const SEMANTIC_TABLE_TEMPLATE = `
   </section>
 `;
 
-export const SemanticPropertyFirst: Story = {
-  name: "Semantic — Property-first",
-  render: () => ({
-    setup() {
-      const groups = [
-        { key: "text",    label: "Text"    },
-        { key: "icon",    label: "Icon"    },
-        { key: "surface", label: "Surface" },
-        { key: "border",  label: "Border"  },
-        { key: "action",  label: "Action"  },
-        { key: "status",  label: "Status"  },
-        { key: "focus",   label: "Focus"   }
-      ] as const;
-
-      const grouped = groups.map((g) => ({
-        key: g.key,
-        label: g.label,
-        tokens: fullSemanticColorTokens.filter((t) => t.propertyGroup === g.key)
-      }));
-
-      return {
-        grouped,
-        title: "Semantic Colors — Property-first",
-        description:
-          "Tokens grouped by CSS property type (Option A). Recommended for Storybook — every declaration self-documents its intent and dark mode only changes values, not component code."
-      };
-    },
-    template: SEMANTIC_TABLE_TEMPLATE
-  })
+const GROUP_LABELS: Record<SemanticColorGroup, string> = {
+  Background: "Background",
+  Border: "Border",
+  Text: "Text",
+  Icon: "Icon",
+  Overlay: "Overlay",
+  Brand: "Brand / Logo"
 };
 
-export const SemanticIntentFirst: Story = {
-  name: "Semantic — Intent-first",
+const CHECKER =
+  "conic-gradient(#d7d7de 25%, #fff 0 50%, #d7d7de 0 75%, #fff 0)";
+
+export const Semantic: Story = {
+  name: "Semantic",
   render: () => ({
     setup() {
-      const groups = [
-        { key: "neutral",  label: "Neutral / Gray"   },
-        { key: "brand",    label: "Brand / Primary"  },
-        { key: "danger",   label: "Danger / Error"   },
-        { key: "success",  label: "Success"          },
-        { key: "warning",  label: "Warning"          },
-        { key: "info",     label: "Info"             },
-        { key: "focus",    label: "Focus"            },
-        { key: "on-solid", label: "On Solid"         }
-      ] as const;
-
-      const grouped = groups.map((g) => ({
-        key: g.key,
-        label: g.label,
-        tokens: fullSemanticColorTokens.filter((t) => t.intentGroup === g.key)
+      const grouped = (Object.keys(GROUP_LABELS) as SemanticColorGroup[]).map((key) => ({
+        key,
+        label: GROUP_LABELS[key],
+        tokens: semanticColors.filter((t) => t.group === key)
       }));
 
-      return {
-        grouped,
-        title: "Semantic Colors — Intent-first",
-        description:
-          "Same tokens reorganized by semantic intent (Option B). Useful for auditing coverage — see at a glance which intents have Text, Icon, Border, Surface, and Action variants."
-      };
+      return { grouped, total: semanticColors.length, checker: CHECKER };
     },
-    template: SEMANTIC_TABLE_TEMPLATE
+    template: SEMANTIC_TEMPLATE
   })
 };
 

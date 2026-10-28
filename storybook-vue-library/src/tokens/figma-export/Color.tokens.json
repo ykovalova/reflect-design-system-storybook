@@ -1,0 +1,3343 @@
+{
+  "Overlay": {
+    "Scrim": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.35686275362968445,
+          0.35686275362968445,
+          0.3921568691730499
+        ],
+        "alpha": 0.5,
+        "hex": "#5B5B64"
+      },
+      "$description": "Backdrop behind modals, drawers and bottom sheets — covers the viewport beneath the raised surface. Semi-transparent by design; never use it as a plain background fill.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:33",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-overlay-scrim)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:c95c8bf094d26f6f43e3bc35bcbda7ac3b3534e7/-1:-1",
+          "targetVariableName": "Color/Other/Blanket",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Hover": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.12941177189350128,
+          0.12941177189350128,
+          0.1568627506494522
+        ],
+        "alpha": 0.05882352963089943,
+        "hex": "#212128"
+      },
+      "$description": "The universal hover wash. Lay it OVER the existing surface rather than swapping that surface's colour — this is what lets table rows, list items, menu options, clickable cards and ghost buttons all share one hover treatment on white, tinted or coloured grounds alike.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:34",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-overlay-hover)"
+        }
+      }
+    },
+    "Pressed": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.12941177189350128,
+          0.12941177189350128,
+          0.1568627506494522
+        ],
+        "alpha": 0.12156862765550613,
+        "hex": "#212128"
+      },
+      "$description": "Held-down partner to Overlay/Hover. Same rule: composite it over the existing surface, don't replace the surface.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:35",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-overlay-pressed)"
+        }
+      }
+    },
+    "Selected": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.23529411852359772,
+          0.22745098173618317,
+          0.8588235378265381
+        ],
+        "alpha": 0.10196078568696976,
+        "hex": "#3C3ADB"
+      },
+      "$description": "Persistent selection wash for rows and items sitting on a ground that is not Background/Page. When the ground is plain, prefer the opaque Background/Selected instead.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:36",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-overlay-selected)"
+        }
+      }
+    },
+    "Loading": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 0.6000000238418579,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Blanket over content that is refreshing, so a table or card can grey out in place without unmounting. Place the spinner above this layer.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:39",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-overlay-loading)"
+        }
+      }
+    },
+    "Inverse": {
+      "Hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.10196078568696976,
+          "hex": "#FFFFFF"
+        },
+        "$description": "Hover wash for controls on a dark ground — Background/Inverse toolbars, tooltips, dark headers. Overlay/Hover is invisible there because it darkens rather than lightens.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10625:37",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-overlay-inverse-hover)"
+          }
+        }
+      },
+      "Pressed": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.16078431904315948,
+          "hex": "#FFFFFF"
+        },
+        "$description": "Held-down partner to Overlay/Inverse/Hover, for controls sitting on Background/Inverse.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10625:38",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-overlay-inverse-pressed)"
+          }
+        }
+      }
+    }
+  },
+  "Background": {
+    "Page": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9803921580314636,
+          0.9803921580314636,
+          0.9882352948188782
+        ],
+        "alpha": 1,
+        "hex": "#FAFAFC"
+      },
+      "$description": "The application ground — sits behind everything. Deliberately just off white so Background/Raised reads as lifted without depending on shadow alone. Do not use on cards.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:40",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-bg-page)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:f5027f142426245dce14bc5dd40161ae0d4b5237/-1:-1",
+          "targetVariableName": "Color/Gray/gray-05",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Raised": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Anything lifted off the page: cards, modals, popovers, menus, sheets. Pair with an elevation shadow and Border/Subtle.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:41",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-bg-raised)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+          "targetVariableName": "Color/Gray/gray-00",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Sunken": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9686274528503418,
+          0.9686274528503418,
+          0.9764705896377563
+        ],
+        "alpha": 1,
+        "hex": "#F7F7F9"
+      },
+      "$description": "Inset regions that should read as pushed into the page — input wells, table headers, code blocks, quiet panels.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:42",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-bg-sunken)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:8ac8e75d022cf361fab836fbd4e84d83e1e947b6/-1:-1",
+          "targetVariableName": "Color/Gray/gray-10",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Muted": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9388235211372375,
+          0.9388235211372375,
+          0.9498039484024048
+        ],
+        "alpha": 1,
+        "hex": "#EFEFF2"
+      },
+      "$description": "Quiet neutral fill for non-interactive furniture: chip grounds, avatar placeholders, skeleton blocks. Not for controls — use Background/Action/* for anything pressable.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:43",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-bg-muted)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:550f18c12b5d3beadd69e8491e84212c7c5ae0d9/-1:-1",
+          "targetVariableName": "Color/Gray/gray-15",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Disabled": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9388235211372375,
+          0.9388235211372375,
+          0.9498039484024048
+        ],
+        "alpha": 1,
+        "hex": "#EFEFF2"
+      },
+      "$description": "Fill for disabled controls (buttons, inputs, selects). Pair with Text/Disabled and Border/Disabled. Shares a value with Background/Muted today; kept as a separate token so the two can diverge.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:44",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-bg-disabled)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:550f18c12b5d3beadd69e8491e84212c7c5ae0d9/-1:-1",
+          "targetVariableName": "Color/Gray/gray-15",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Inverse": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.12941177189350128,
+          0.12941177189350128,
+          0.1568627506494522
+        ],
+        "alpha": 1,
+        "hex": "#212128"
+      },
+      "$description": "Dark ground for tooltips, toasts and dark headers. The only surface that pairs with Text/Inverse, Icon/Inverse, Border/Inverse and the Overlay/Inverse washes.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:45",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-bg-inverse)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:b143beecbe31ee3e5e47d28e88f67d951cce8eac/-1:-1",
+          "targetVariableName": "Color/Gray/gray-100",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Selected": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9215686321258545,
+          0.9215686321258545,
+          0.9843137264251709
+        ],
+        "alpha": 1,
+        "hex": "#EBEBFB"
+      },
+      "$description": "Persistent selection ground for table rows, nav items and chosen menu options. For selected AND hovered, composite Overlay/Hover on top — there is deliberately no third token.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:56",
+        "com.figma.scopes": [
+          "FRAME_FILL",
+          "SHAPE_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-bg-selected)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:05f836bd93b1751c32142db73437f121171b6812/-1:-1",
+          "targetVariableName": "Color/Brand/brand-10",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Action": {
+      "Disabled": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9388235211372375,
+            0.9388235211372375,
+            0.9498039484024048
+          ],
+          "alpha": 1,
+          "hex": "#EFEFF2"
+        },
+        "$description": "Fill of any button whose action is unavailable — every rank that has a face at rest (Primary, Secondary, and their Danger forms). Pair with Border/Action/Disabled, Text/Disabled and Icon/Disabled. Ranks with no face at rest (Tertiary, Tertiary Danger) take Background/Action/Transparent instead and keep no border. Never fade the enabled fill with opacity.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10625:60",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-bg-action-disabled)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:550f18c12b5d3beadd69e8491e84212c7c5ae0d9/-1:-1",
+            "targetVariableName": "Color/Gray/gray-15",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Transparent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0,
+          "hex": "#000000"
+        },
+        "$description": "Transparent by design — the absence of a fill, not a colour. Used by every rank that has no face at rest (Tertiary, Tertiary Danger) for BOTH its rest state and its disabled state. A ghost control keeps no fill and no border when disabled: it is carried entirely by Text/Disabled and Icon/Disabled. Neutral transparent rather than white-at-zero-alpha, so a hover animating to Overlay/Hover does not interpolate through white.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10685:33",
+          "com.figma.scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-bg-action-transparent)"
+          }
+        }
+      },
+      "Primary": {
+        "Default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.23529411852359772,
+              0.22745098173618317,
+              0.8588235378265381
+            ],
+            "alpha": 1,
+            "hex": "#3C3ADB"
+          },
+          "$description": "Fill of the highest-emphasis button — the one action you most want taken. Aim for one per view. Foreground: Text/OnSolid/Default and Icon/OnSolid. Edge: Border/Action/Primary/Default.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:57",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-primary-default)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:2dd91d6346b43665ebd42011c4d532fbc0690ef1/-1:-1",
+              "targetVariableName": "Color/Brand/brand-75",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1882352977991104,
+              0.181960791349411,
+              0.6870588064193726
+            ],
+            "alpha": 1,
+            "hex": "#302EAF"
+          },
+          "$description": "Primary button under the pointer. Never substitute an opacity change — the token carries the intended step.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:58",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-primary-hover)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:5bc073ddc90089fa5d24e2ad859261d57b2b02e4/-1:-1",
+              "targetVariableName": "Color/Brand/brand-80",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1411764770746231,
+              0.13725490868091583,
+              0.5137255191802979
+            ],
+            "alpha": 1,
+            "hex": "#242383"
+          },
+          "$description": "Primary button while held down.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:59",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-primary-pressed)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:a120d027d4b41ec3731c1538a0e90b320689e58b/-1:-1",
+              "targetVariableName": "Color/Brand/brand-90",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      },
+      "Secondary": {
+        "Default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 1,
+            "hex": "#FFFFFF"
+          },
+          "$description": "Fill of the standard secondary button — an opaque white face with Border/Action/Secondary/Default around it. Foreground: Text/OnNeutral. Use when the action is real but not the primary one.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:61",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-secondary-default)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+              "targetVariableName": "Color/Gray/gray-00",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9803921580314636,
+              0.9803921580314636,
+              0.9882352948188782
+            ],
+            "alpha": 1,
+            "hex": "#FAFAFC"
+          },
+          "$description": "Secondary button under the pointer.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:62",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-secondary-hover)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:f5027f142426245dce14bc5dd40161ae0d4b5237/-1:-1",
+              "targetVariableName": "Color/Gray/gray-05",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9686274528503418,
+              0.9686274528503418,
+              0.9764705896377563
+            ],
+            "alpha": 1,
+            "hex": "#F7F7F9"
+          },
+          "$description": "Secondary button while held down.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:63",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-secondary-pressed)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:8ac8e75d022cf361fab836fbd4e84d83e1e947b6/-1:-1",
+              "targetVariableName": "Color/Gray/gray-10",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      },
+      "Tertiary": {
+        "Hover": {
+          "$type": "color",
+          "$value": "{Overlay.Hover}",
+          "$description": "Aliases Overlay/Hover, so the ghost button darkens whatever is behind it rather than punching an opaque rectangle. This is why ghost buttons survive on panels, toolbars and coloured banners.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:67",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-tertiary-hover)"
+            }
+          }
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": "{Overlay.Pressed}",
+          "$description": "Aliases Overlay/Pressed. Same compositing rule as Background/Action/Tertiary/Hover — lay it over the existing ground rather than replacing it.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:68",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-tertiary-pressed)"
+            }
+          }
+        }
+      },
+      "Danger": {
+        "Default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7058823704719543,
+              0.1411764770746231,
+              0.09803921729326248
+            ],
+            "alpha": 1,
+            "hex": "#B42419"
+          },
+          "$description": "Fill of a destructive primary button: delete, remove, revoke. Reserve for actions that lose data or cannot be undone. Foreground: Text/OnSolid/Default.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:71",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-danger-default)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:70ca0c48ccc2f2a6541b08e313ef4ca0b2cfc5d5/-1:-1",
+              "targetVariableName": "Color/Red/red-70",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5647059082984924,
+              0.11294117569923401,
+              0.0784313753247261
+            ],
+            "alpha": 1,
+            "hex": "#901D14"
+          },
+          "$description": "Destructive primary button under the pointer.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:72",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-danger-hover)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:eb439c1da87cb9960daa3960b1ca8d8c4b7dee86/-1:-1",
+              "targetVariableName": "Color/Red/red-80",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.42352941632270813,
+              0.08627451211214066,
+              0.05882352963089943
+            ],
+            "alpha": 1,
+            "hex": "#6C160F"
+          },
+          "$description": "Destructive primary button while held down.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:73",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-action-danger-pressed)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:24caafd42c2c583e0d93943adb8e740ae71d531c/-1:-1",
+              "targetVariableName": "Color/Red/red-90",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Secondary": {
+          "Default": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                1,
+                1,
+                1
+              ],
+              "alpha": 1,
+              "hex": "#FFFFFF"
+            },
+            "$description": "PENDING RETIREMENT — duplicates Background/Action/Secondary/Default (both gray-00). A secondary-danger button is a neutral white face with Border/Action/Danger/* and Text/Status/Danger/*; it needs no fill of its own.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10645:19798",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-danger-secondary-default)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+                "targetVariableName": "Color/Gray/gray-00",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          },
+          "Hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.9921568632125854,
+                0.9764705896377563,
+                0.9764705896377563
+              ],
+              "alpha": 1,
+              "hex": "#FDF9F9"
+            },
+            "$description": "PENDING RETIREMENT — duplicates Background/Action/DangerTertiary/Hover. Use that one; the two danger low-emphasis ranks should share a single wash pair.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10645:19799",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-danger-secondary-hover)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:1b709b904f33680fc4a848627b71d7ffeaa2334d/-1:-1",
+                "targetVariableName": "Color/Red/red-10",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          },
+          "Pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.9686274528503418,
+                0.886274516582489,
+                0.8823529481887817
+              ],
+              "alpha": 1,
+              "hex": "#F7E2E1"
+            },
+            "$description": "PENDING RETIREMENT — duplicates Background/Action/DangerTertiary/Pressed. Use that one.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10645:19800",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-danger-secondary-pressed)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:7e52d6717b0f39661a6e5365cb7bdacbc98941f1/-1:-1",
+                "targetVariableName": "Color/Red/red-20",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          }
+        },
+        "Tertiary": {
+          "Hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.9921568632125854,
+                0.9764705896377563,
+                0.9764705896377563
+              ],
+              "alpha": 1,
+              "hex": "#FDF9F9"
+            },
+            "$description": "Low-emphasis destructive button under the pointer. Opaque rather than a wash because this variant only ever appears on a light ground.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10625:76",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-danger-tertiary-hover)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:1b709b904f33680fc4a848627b71d7ffeaa2334d/-1:-1",
+                "targetVariableName": "Color/Red/red-10",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          },
+          "Pressed": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.9686274528503418,
+                0.886274516582489,
+                0.8823529481887817
+              ],
+              "alpha": 1,
+              "hex": "#F7E2E1"
+            },
+            "$description": "Low-emphasis destructive button while held down.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10625:77",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-danger-tertiary-pressed)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:7e52d6717b0f39661a6e5365cb7bdacbc98941f1/-1:-1",
+                "targetVariableName": "Color/Red/red-20",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          }
+        }
+      },
+      "Control": {
+        "Unchecked": {
+          "Default": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                1,
+                1,
+                1
+              ],
+              "alpha": 1,
+              "hex": "#FFFFFF"
+            },
+            "$description": "Box or track fill of an unchecked checkbox, radio or toggle. Pair with Border/Default so the empty control still has an edge.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10625:79",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-control-unchecked-default)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+                "targetVariableName": "Color/Gray/gray-00",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          },
+          "Disabled": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.9388235211372375,
+                0.9388235211372375,
+                0.9498039484024048
+              ],
+              "alpha": 1,
+              "hex": "#EFEFF2"
+            },
+            "$description": "Unchecked control that cannot be changed. Pair with Border/Disabled.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10625:80",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-control-unchecked-disabled)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:550f18c12b5d3beadd69e8491e84212c7c5ae0d9/-1:-1",
+                "targetVariableName": "Color/Gray/gray-15",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          }
+        },
+        "Checked": {
+          "Default": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.23529411852359772,
+                0.22745098173618317,
+                0.8588235378265381
+              ],
+              "alpha": 1,
+              "hex": "#3C3ADB"
+            },
+            "$description": "Box or track fill of a checked checkbox, radio or toggle. The tick or knob uses Icon/OnSolid.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10625:81",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-control-checked-default)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:2dd91d6346b43665ebd42011c4d532fbc0690ef1/-1:-1",
+                "targetVariableName": "Color/Brand/brand-75",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          },
+          "Hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.1882352977991104,
+                0.181960791349411,
+                0.6870588064193726
+              ],
+              "alpha": 1,
+              "hex": "#302EAF"
+            },
+            "$description": "Checked control under the pointer — the compound state that is easy to forget and obvious when missing.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10625:82",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-control-checked-hover)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:5bc073ddc90089fa5d24e2ad859261d57b2b02e4/-1:-1",
+                "targetVariableName": "Color/Brand/brand-80",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          },
+          "Disabled": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.8156862854957581,
+                0.8156862854957581,
+                0.8509804010391235
+              ],
+              "alpha": 1,
+              "hex": "#D0D0D9"
+            },
+            "$description": "Checked but locked. Must stay clearly checked: this is a muted brand-to-grey step, not the unchecked fill.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:10625:83",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-control-checked-disabled)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:f44c6147b375a5f21cee57861c6c1978b898df60/-1:-1",
+                "targetVariableName": "Color/Gray/gray-30",
+                "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Status": {
+      "Info": {
+        "Subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9098039269447327,
+              0.929411768913269,
+              0.9843137264251709
+            ],
+            "alpha": 1,
+            "hex": "#E8EDFB"
+          },
+          "$description": "Tinted ground for informational banners, alerts and soft badges. Pair with Text/Status/Info, Icon/Status/Info and Border/Status/Info.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:46",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-info-subtle)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:7a79f1c0de731fbae18ba49254ea3fe8be7e8a24/-1:-1",
+              "targetVariableName": "Color/Blue/blue-20",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.11764705926179886,
+              0.3019607961177826,
+              0.843137264251709
+            ],
+            "alpha": 1,
+            "hex": "#1E4DD7"
+          },
+          "$description": "Filled informational ground for solid badges, toasts, status dots and progress fills. Pair the foreground with Text/OnStatus/Info — never with Text/Status/Info, which is tuned for the Subtle tint.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:47",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-info-solid)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:6be649302e0b6e17642e5d6c78be459994aea6cf/-1:-1",
+              "targetVariableName": "Color/Blue/blue-70",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      },
+      "Success": {
+        "Subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9176470637321472,
+              0.9764705896377563,
+              0.9411764740943909
+            ],
+            "alpha": 1,
+            "hex": "#EAF9F0"
+          },
+          "$description": "Tinted ground for success banners, alerts and soft badges. Pair with Text/Status/Success, Icon/Status/Success and Border/Status/Success.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:48",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-success-subtle)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:e2dd3cac532c088fb333f5555fb4795ba49828e4/-1:-1",
+              "targetVariableName": "Color/Green/green-20",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.19607843458652496,
+              0.7607843279838562,
+              0.41960784792900085
+            ],
+            "alpha": 1,
+            "hex": "#32C26B"
+          },
+          "$description": "Filled success ground for solid badges, toasts, status dots and progress fills. Pair the foreground with Text/OnStatus/Success — never with Text/Status/Success, which is tuned for the Subtle tint.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:49",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-success-solid)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:0435a4b42f8f9f06b2147784708936d829535a9a/-1:-1",
+              "targetVariableName": "Color/Green/green-70",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      },
+      "Warning": {
+        "Subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              0.9764705896377563,
+              0.929411768913269
+            ],
+            "alpha": 1,
+            "hex": "#FFF9ED"
+          },
+          "$description": "Tinted ground for warning banners, alerts and soft badges. Pair with Text/Status/Warning, Icon/Status/Warning and Border/Status/Warning.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:50",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-warning-subtle)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:c7911523ca995c5167a15c66327286839be5b27b/-1:-1",
+              "targetVariableName": "Color/Yellow/yellow-20",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              0.7843137383460999,
+              0.2980392277240753
+            ],
+            "alpha": 1,
+            "hex": "#FFC84C"
+          },
+          "$description": "Filled warning ground for solid badges, toasts, status dots and progress fills. Pair the foreground with Text/OnStatus/Warning — never with Text/Status/Warning, which is tuned for the Subtle tint.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:51",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-warning-solid)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:4903aa85bc711f06c326e05702a34240d47b6dd4/-1:-1",
+              "targetVariableName": "Color/Yellow/yellow-70",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      },
+      "Danger": {
+        "Subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9686274528503418,
+              0.886274516582489,
+              0.8823529481887817
+            ],
+            "alpha": 1,
+            "hex": "#F7E2E1"
+          },
+          "$description": "Tinted ground for error/destructive banners, alerts and soft badges. Pair with Text/Status/Danger, Icon/Status/Danger and Border/Status/Danger.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:52",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-danger-subtle)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:7e52d6717b0f39661a6e5365cb7bdacbc98941f1/-1:-1",
+              "targetVariableName": "Color/Red/red-20",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7058823704719543,
+              0.1411764770746231,
+              0.09803921729326248
+            ],
+            "alpha": 1,
+            "hex": "#B42419"
+          },
+          "$description": "Filled error/destructive ground for solid badges, toasts, status dots and progress fills. Pair the foreground with Text/OnStatus/Danger — never with Text/Status/Danger, which is tuned for the Subtle tint.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:53",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-danger-solid)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:70ca0c48ccc2f2a6541b08e313ef4ca0b2cfc5d5/-1:-1",
+              "targetVariableName": "Color/Red/red-70",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      },
+      "Neutral": {
+        "Subtle": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9388235211372375,
+              0.9388235211372375,
+              0.9498039484024048
+            ],
+            "alpha": 1,
+            "hex": "#EFEFF2"
+          },
+          "$description": "Tinted ground for neutral (draft, archived, pending) banners, alerts and soft badges. Pair with Text/Status/Neutral, Icon/Status/Neutral and Border/Status/Neutral.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:54",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-neutral-subtle)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:550f18c12b5d3beadd69e8491e84212c7c5ae0d9/-1:-1",
+              "targetVariableName": "Color/Gray/gray-15",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Solid": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.46666666865348816,
+              0.46666666865348816,
+              0.5137255191802979
+            ],
+            "alpha": 1,
+            "hex": "#777783"
+          },
+          "$description": "Filled neutral (draft, archived, pending) ground for solid badges, toasts, status dots and progress fills. Pair the foreground with Text/OnStatus/Neutral — never with Text/Status/Neutral, which is tuned for the Subtle tint.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10625:55",
+            "com.figma.scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-bg-status-neutral-solid)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
+              "targetVariableName": "Color/Gray/gray-70",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Text": {
+    "Strong": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.12941177189350128,
+          0.12941177189350128,
+          0.1568627506494522
+        ],
+        "alpha": 1,
+        "hex": "#212128"
+      },
+      "$description": "Highest-contrast text: headings, key figures, the one phrase that must land first. Not for body copy — over-using it flattens the hierarchy.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:84",
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-text-strong)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:b143beecbe31ee3e5e47d28e88f67d951cce8eac/-1:-1",
+          "targetVariableName": "Color/Gray/gray-100",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Regular": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.24313725531101227,
+          0.24313725531101227,
+          0.27450981736183167
+        ],
+        "alpha": 1,
+        "hex": "#3E3E46"
+      },
+      "$description": "Default body copy, form labels and values. The token you reach for unless you have a reason not to.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:85",
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-text-regular)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:313ddc9a382d53c06753bc4344987a54d1a3d085/-1:-1",
+          "targetVariableName": "Color/Gray/gray-90",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Subtle": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.46666666865348816,
+          0.46666666865348816,
+          0.5137255191802979
+        ],
+        "alpha": 1,
+        "hex": "#777783"
+      },
+      "$description": "De-emphasised text: captions, helper text, timestamps, secondary metadata. Still passes contrast on Background/Page — it is quiet, not disabled.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:86",
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-text-subtle)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
+          "targetVariableName": "Color/Gray/gray-70",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Placeholder": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6947004795074463,
+          0.6947004795074463,
+          0.75
+        ],
+        "alpha": 1,
+        "hex": "#B1B1BF"
+      },
+      "$description": "The prompt shown inside an empty input. Kept separate from Text/Disabled so an empty field never reads as a locked one, even though they share a value today.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:87",
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-text-placeholder)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:17bb82faa99ee73b7fb22fbcad2381bb8b1743d0/-1:-1",
+          "targetVariableName": "Color/Gray/gray-50",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Disabled": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6947004795074463,
+          0.6947004795074463,
+          0.75
+        ],
+        "alpha": 1,
+        "hex": "#B1B1BF"
+      },
+      "$description": "Text in a control that cannot be used. Pair with Background/Disabled and Border/Disabled. Never use it merely to de-emphasise — that is Text/Subtle.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:88",
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-text-disabled)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:17bb82faa99ee73b7fb22fbcad2381bb8b1743d0/-1:-1",
+          "targetVariableName": "Color/Gray/gray-50",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Inverse": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Text on a dark ground. Only valid on Background/Inverse (tooltips, toasts, dark headers).",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10625:89",
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-text-inverse)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+          "targetVariableName": "Color/Gray/gray-00",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "OnNeutral": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.24313725531101227,
+          0.24313725531101227,
+          0.27450981736183167
+        ],
+        "alpha": 1,
+        "hex": "#3E3E46"
+      },
+      "$description": "Label on the white secondary button (Background/Action/Secondary). Deliberately darker than the board&#39;s original grey, which read as disabled on a white face.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:33",
+        "com.figma.scopes": [
+          "TEXT_FILL"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-text-on-neutral)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:313ddc9a382d53c06753bc4344987a54d1a3d085/-1:-1",
+          "targetVariableName": "Color/Gray/gray-90",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "OnSolid": {
+      "Default": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$description": "Label on a filled action — Background/Action/Primary and Background/Action/Danger. Do not use on Background/Action/Secondary, which is light; that is Text/OnNeutral.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10625:90",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-on-solid-default)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+            "targetVariableName": "Color/Gray/gray-00",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Disabled": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6947004795074463,
+            0.6947004795074463,
+            0.75
+          ],
+          "alpha": 1,
+          "hex": "#B1B1BF"
+        },
+        "$description": "PENDING RETIREMENT — no consumer. A disabled button is not a solid fill any more, it is Background/Action/Disabled, so its label is Text/Disabled. Kept only until the last reference is confirmed gone.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10625:91",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-on-solid-disabled)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:17bb82faa99ee73b7fb22fbcad2381bb8b1743d0/-1:-1",
+            "targetVariableName": "Color/Gray/gray-50",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      }
+    },
+    "Action": {
+      "Default": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.23529411852359772,
+            0.22745098173618317,
+            0.8588235378265381
+          ],
+          "alpha": 1,
+          "hex": "#3C3ADB"
+        },
+        "$description": "Brand-coloured interactive text: ghost button labels, links, inline actions. Signals 'this is clickable' without a fill.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:34",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-action-default)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:2dd91d6346b43665ebd42011c4d532fbc0690ef1/-1:-1",
+            "targetVariableName": "Color/Brand/brand-75",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1411764770746231,
+            0.13725490868091583,
+            0.5137255191802979
+          ],
+          "alpha": 1,
+          "hex": "#242383"
+        },
+        "$description": "Interactive text under the pointer. Applies to links and ghost labels alike.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:35",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-action-hover)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:a120d027d4b41ec3731c1538a0e90b320689e58b/-1:-1",
+            "targetVariableName": "Color/Brand/brand-90",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      }
+    },
+    "Status": {
+      "Info": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0941176488995552,
+            0.24156862497329712,
+            0.6745098233222961
+          ],
+          "alpha": 1,
+          "hex": "#183EAC"
+        },
+        "$description": "Informational text on Background/Status/Info/Subtle — banner copy, badge labels, helper notes.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:36",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-status-info)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:26c4417ee55ab323b6ec21007895b6cf9594c6fd/-1:-1",
+            "targetVariableName": "Color/Blue/blue-80",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Success": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.05882352963089943,
+            0.22823528945446014,
+            0.1258823573589325
+          ],
+          "alpha": 1,
+          "hex": "#0F3A20"
+        },
+        "$description": "Success text on Background/Status/Success/Subtle.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:37",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-status-success)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:bf5f4c860f40e0545dea893566862ee36db8c61e/-1:-1",
+            "targetVariableName": "Color/Green/green-100",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Warning": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3960784375667572,
+            0.3019607961177826,
+            0.09019608050584793
+          ],
+          "alpha": 1,
+          "hex": "#654D17"
+        },
+        "$description": "Warning text on Background/Status/Warning/Subtle.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:38",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-status-warning)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:11a653c2a8c780642462d610ab1d1737e8ff9972/-1:-1",
+            "targetVariableName": "Color/Yellow/yellow-100",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Neutral": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.24313725531101227,
+            0.24313725531101227,
+            0.27450981736183167
+          ],
+          "alpha": 1,
+          "hex": "#3E3E46"
+        },
+        "$description": "Neutral status text on Background/Status/Neutral/Subtle — draft, archived, pending.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:39",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-status-neutral)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:313ddc9a382d53c06753bc4344987a54d1a3d085/-1:-1",
+            "targetVariableName": "Color/Gray/gray-90",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Danger": {
+        "Default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7058823704719543,
+              0.1411764770746231,
+              0.09803921729326248
+            ],
+            "alpha": 1,
+            "hex": "#B42419"
+          },
+          "$description": "Error text: form validation messages, destructive confirmations, danger badge labels on Background/Status/Danger/Subtle. This is the single error-text token — there is no rival value.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:40",
+            "com.figma.scopes": [
+              "TEXT_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-text-status-danger-default)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:70ca0c48ccc2f2a6541b08e313ef4ca0b2cfc5d5/-1:-1",
+              "targetVariableName": "Color/Red/red-70",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.42352941632270813,
+              0.08627451211214066,
+              0.05882352963089943
+            ],
+            "alpha": 1,
+            "hex": "#6C160F"
+          },
+          "$description": "Error text while an interactive error element is held down. A state of Text/Status/Danger/Default, not an alternative to it.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:41",
+            "com.figma.scopes": [
+              "TEXT_FILL"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-text-status-danger-pressed)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:24caafd42c2c583e0d93943adb8e740ae71d531c/-1:-1",
+              "targetVariableName": "Color/Red/red-90",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      }
+    },
+    "OnStatus": {
+      "Info": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.07058823853731155,
+            0.18117646872997284,
+            0.5058823823928833
+          ],
+          "alpha": 1,
+          "hex": "#122E81"
+        },
+        "$description": "Label on the filled Background/Status/Info/Solid ground — solid badges, toasts.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:42",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-on-status-info)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:e49cb8eebd1f5ebb0f065a64d0c6fc415925dea8/-1:-1",
+            "targetVariableName": "Color/Blue/blue-90",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Success": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.11764705926179886,
+            0.45490196347236633,
+            0.250980406999588
+          ],
+          "alpha": 1,
+          "hex": "#1E7440"
+        },
+        "$description": "Label on the filled Background/Status/Success/Solid ground.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:43",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-on-status-success)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:d0fd225685ee2d1e85855602862ccbdd77ffba47/-1:-1",
+            "targetVariableName": "Color/Green/green-90",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Warning": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.24313725531101227,
+            0.24313725531101227,
+            0.27450981736183167
+          ],
+          "alpha": 1,
+          "hex": "#3E3E46"
+        },
+        "$description": "Label on the filled Background/Status/Warning/Solid ground. Dark, not white — warning&#39;s solid fill is a light yellow, and white on it fails contrast. This is the one family that breaks the pattern.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:44",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-on-status-warning)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:313ddc9a382d53c06753bc4344987a54d1a3d085/-1:-1",
+            "targetVariableName": "Color/Gray/gray-90",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Danger": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.42352941632270813,
+            0.08627451211214066,
+            0.05882352963089943
+          ],
+          "alpha": 1,
+          "hex": "#6C160F"
+        },
+        "$description": "Label on the filled Background/Status/Danger/Solid ground.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:45",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-on-status-danger)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:24caafd42c2c583e0d93943adb8e740ae71d531c/-1:-1",
+            "targetVariableName": "Color/Red/red-90",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Neutral": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.46666666865348816,
+            0.46666666865348816,
+            0.5137255191802979
+          ],
+          "alpha": 1,
+          "hex": "#777783"
+        },
+        "$description": "Label on the filled Background/Status/Neutral/Solid ground.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:46",
+          "com.figma.scopes": [
+            "TEXT_FILL"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-text-on-status-neutral)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
+            "targetVariableName": "Color/Gray/gray-70",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      }
+    }
+  },
+  "Icon": {
+    "Strong": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.12941177189350128,
+          0.12941177189350128,
+          0.1568627506494522
+        ],
+        "alpha": 1,
+        "hex": "#212128"
+      },
+      "$description": "Highest-contrast glyph, matching Text/Strong. For icons that carry the same weight as a heading.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:47",
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-icon-strong)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:b143beecbe31ee3e5e47d28e88f67d951cce8eac/-1:-1",
+          "targetVariableName": "Color/Gray/gray-100",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Regular": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.24313725531101227,
+          0.24313725531101227,
+          0.27450981736183167
+        ],
+        "alpha": 1,
+        "hex": "#3E3E46"
+      },
+      "$description": "Default glyph colour, matching Text/Regular. Use for icons sitting alongside body copy.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:48",
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-icon-regular)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:313ddc9a382d53c06753bc4344987a54d1a3d085/-1:-1",
+          "targetVariableName": "Color/Gray/gray-90",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Subtle": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.46666666865348816,
+          0.46666666865348816,
+          0.5137255191802979
+        ],
+        "alpha": 1,
+        "hex": "#777783"
+      },
+      "$description": "De-emphasised glyph: chevrons, affordance hints, decorative marks. Matches Text/Subtle.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:49",
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-icon-subtle)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
+          "targetVariableName": "Color/Gray/gray-70",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Disabled": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6947004795074463,
+          0.6947004795074463,
+          0.75
+        ],
+        "alpha": 1,
+        "hex": "#B1B1BF"
+      },
+      "$description": "Glyph in a control that cannot be used. Matches Text/Disabled.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:50",
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-icon-disabled)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:17bb82faa99ee73b7fb22fbcad2381bb8b1743d0/-1:-1",
+          "targetVariableName": "Color/Gray/gray-50",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Inverse": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Glyph on a dark ground. Only valid on Background/Inverse.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:51",
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-icon-inverse)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+          "targetVariableName": "Color/Gray/gray-00",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "OnSolid": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Glyph on a filled action — Background/Action/Primary, Background/Action/Danger — and the tick or knob inside Background/Action/Control/Checked.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:52",
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-icon-on-solid)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+          "targetVariableName": "Color/Gray/gray-00",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Action": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.23529411852359772,
+          0.22745098173618317,
+          0.8588235378265381
+        ],
+        "alpha": 1,
+        "hex": "#3C3ADB"
+      },
+      "$description": "Brand-coloured interactive glyph: icon buttons, inline action affordances. Matches Text/Action/Default so an icon and its label agree.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:53",
+        "com.figma.scopes": [
+          "SHAPE_FILL",
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-icon-action)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:2dd91d6346b43665ebd42011c4d532fbc0690ef1/-1:-1",
+          "targetVariableName": "Color/Brand/brand-75",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Placeholder": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.9372549057006836,
+          0.8039215803146362,
+          0.7960784435272217
+        ],
+        "alpha": 1,
+        "hex": "#EFCDCB"
+      },
+      "$description": "The deliberate 'you have not swapped this yet' colour for an unfilled icon slot. It is the ONE glyph token that must never take its colour from context: everything else binds Icon/Current so it adapts, and the placeholder stays loud precisely so an unswapped slot is impossible to miss. Never use it on a real icon.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10667:15362",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-icon-placeholder)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:c22c41ab073cdbaca5aeea7e414c7ecd22bbaeca/-1:-1",
+          "targetVariableName": "Color/Red/red-30",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Status": {
+      "Info": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.11764705926179886,
+            0.3019607961177826,
+            0.843137264251709
+          ],
+          "alpha": 1,
+          "hex": "#1E4DD7"
+        },
+        "$description": "Informational glyph — the (i) in a banner, a status dot. Sits MORE saturated than Text/Status/Info on purpose: a glyph carries less visual mass than a run of text, so matching the text value would wash it out.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:54",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-icon-status-info)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:6be649302e0b6e17642e5d6c78be459994aea6cf/-1:-1",
+            "targetVariableName": "Color/Blue/blue-70",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Success": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1568627506494522,
+            0.608627438545227,
+            0.33568626642227173
+          ],
+          "alpha": 1,
+          "hex": "#289B56"
+        },
+        "$description": "Success glyph — tick, filled dot. More saturated than Text/Status/Success, which is near-black and would read as a neutral tick.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:55",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-icon-status-success)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:dc85727ae0157233f9f46235b0314ee08c78b60d/-1:-1",
+            "targetVariableName": "Color/Green/green-80",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Warning": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6549019813537598,
+            0.5098039507865906,
+            0.18039216101169586
+          ],
+          "alpha": 1,
+          "hex": "#A7822E"
+        },
+        "$description": "Warning glyph — triangle, exclamation. More saturated than Text/Status/Warning, which reads brown at glyph scale and loses the yellow identity.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:56",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-icon-status-warning)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:31695914773f79a29b133be36d20c12f44a2b3cd/-1:-1",
+            "targetVariableName": "Color/Yellow/yellow-90",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Danger": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7058823704719543,
+            0.1411764770746231,
+            0.09803921729326248
+          ],
+          "alpha": 1,
+          "hex": "#B42419"
+        },
+        "$description": "Error glyph — alert circle, cross. Matches Text/Status/Danger/Default; red needs no correction at glyph scale.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:57",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-icon-status-danger)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:70ca0c48ccc2f2a6541b08e313ef4ca0b2cfc5d5/-1:-1",
+            "targetVariableName": "Color/Red/red-70",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Neutral": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.46666666865348816,
+            0.46666666865348816,
+            0.5137255191802979
+          ],
+          "alpha": 1,
+          "hex": "#777783"
+        },
+        "$description": "Neutral status glyph — the dot on a draft, archived or pending badge.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:58",
+          "com.figma.scopes": [
+            "SHAPE_FILL",
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-icon-status-neutral)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
+            "targetVariableName": "Color/Gray/gray-70",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      }
+    }
+  },
+  "Border": {
+    "Divider": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8784313797950745,
+          0.8784313797950745,
+          0.8980392217636108
+        ],
+        "alpha": 1,
+        "hex": "#E0E0E5"
+      },
+      "$description": "Rules and separators only — between list rows, menu sections, toolbar groups. Split from Border/Disabled so divider weight can be tuned without moving every disabled control edge.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:59",
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-border-divider)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:2da5f88b1c6238ed39a144346ff1909e797f4108/-1:-1",
+          "targetVariableName": "Color/Gray/gray-20",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Subtle": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8156862854957581,
+          0.8156862854957581,
+          0.8509804010391235
+        ],
+        "alpha": 1,
+        "hex": "#D0D0D9"
+      },
+      "$description": "Quiet container edges: cards, panels, popovers. Pairs with Background/Raised.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:60",
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-border-subtle)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:f44c6147b375a5f21cee57861c6c1978b898df60/-1:-1",
+          "targetVariableName": "Color/Gray/gray-30",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Default": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.6947004795074463,
+          0.6947004795074463,
+          0.75
+        ],
+        "alpha": 1,
+        "hex": "#B1B1BF"
+      },
+      "$description": "Standard control edge at rest. If you are drawing an input specifically, prefer Border/Field/Default — it carries the full state set.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:61",
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-border-default)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:17bb82faa99ee73b7fb22fbcad2381bb8b1743d0/-1:-1",
+          "targetVariableName": "Color/Gray/gray-50",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Strong": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.46666666865348816,
+          0.46666666865348816,
+          0.5137255191802979
+        ],
+        "alpha": 1,
+        "hex": "#777783"
+      },
+      "$description": "Emphasised edge for a control that needs to assert itself, and the hovered step of Border/Default.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:62",
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-border-strong)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
+          "targetVariableName": "Color/Gray/gray-70",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Disabled": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8156862854957581,
+          0.8156862854957581,
+          0.8509804010391235
+        ],
+        "alpha": 1,
+        "hex": "#D0D0D9"
+      },
+      "$description": "Edge of a control that cannot be used. Pair with Background/Disabled and Text/Disabled.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:63",
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-border-disabled)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:f44c6147b375a5f21cee57861c6c1978b898df60/-1:-1",
+          "targetVariableName": "Color/Gray/gray-30",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Inverse": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$description": "Edge on a dark ground. Only valid on Background/Inverse.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:64",
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-border-inverse)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+          "targetVariableName": "Color/Gray/gray-00",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Selected": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.23529411852359772,
+          0.22745098173618317,
+          0.8588235378265381
+        ],
+        "alpha": 1,
+        "hex": "#3C3ADB"
+      },
+      "$description": "Edge marking a persistent selection: active tab underline, selected card, chosen option. Pair with Background/Selected on the ground.",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:10626:86",
+        "com.figma.scopes": [
+          "STROKE"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--color-border-selected)"
+        },
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:2dd91d6346b43665ebd42011c4d532fbc0690ef1/-1:-1",
+          "targetVariableName": "Color/Brand/brand-75",
+          "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Action": {
+      "Disabled": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8156862854957581,
+            0.8156862854957581,
+            0.8509804010391235
+          ],
+          "alpha": 1,
+          "hex": "#D0D0D9"
+        },
+        "$description": "Edge of any disabled button that has a face. It does real work: Background/Action/Disabled alone is 1.15:1 against a white page, so without this edge the control disappears. Ghost ranks deliberately get no disabled edge.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:68",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-action-disabled)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:f44c6147b375a5f21cee57861c6c1978b898df60/-1:-1",
+            "targetVariableName": "Color/Gray/gray-30",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Primary": {
+        "Default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.23529411852359772,
+              0.22745098173618317,
+              0.8588235378265381
+            ],
+            "alpha": 1,
+            "hex": "#3C3ADB"
+          },
+          "$description": "Edge of a primary button. Tracks Background/Action/Primary/Default exactly, so a filled button&#39;s edge is invisible and an outlined one reads as the same rank.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:65",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-border-action-primary-default)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:2dd91d6346b43665ebd42011c4d532fbc0690ef1/-1:-1",
+              "targetVariableName": "Color/Brand/brand-75",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1882352977991104,
+              0.181960791349411,
+              0.6870588064193726
+            ],
+            "alpha": 1,
+            "hex": "#302EAF"
+          },
+          "$description": "Primary button edge under the pointer. Tracks Background/Action/Primary/Hover.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:66",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-border-action-primary-hover)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:5bc073ddc90089fa5d24e2ad859261d57b2b02e4/-1:-1",
+              "targetVariableName": "Color/Brand/brand-80",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1411764770746231,
+              0.13725490868091583,
+              0.5137255191802979
+            ],
+            "alpha": 1,
+            "hex": "#242383"
+          },
+          "$description": "Primary button edge while held down. Tracks Background/Action/Primary/Pressed.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:67",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-border-action-primary-pressed)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:a120d027d4b41ec3731c1538a0e90b320689e58b/-1:-1",
+              "targetVariableName": "Color/Brand/brand-90",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      },
+      "Secondary": {
+        "Default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6947004795074463,
+              0.6947004795074463,
+              0.75
+            ],
+            "alpha": 1,
+            "hex": "#B1B1BF"
+          },
+          "$description": "Edge of the secondary button — the line that makes Background/Action/Secondary read as a button at all, since its fill is white.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:69",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-border-action-secondary-default)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:17bb82faa99ee73b7fb22fbcad2381bb8b1743d0/-1:-1",
+              "targetVariableName": "Color/Gray/gray-50",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.46666666865348816,
+              0.46666666865348816,
+              0.5137255191802979
+            ],
+            "alpha": 1,
+            "hex": "#777783"
+          },
+          "$description": "Secondary button edge under the pointer.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:70",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-border-action-secondary-hover)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
+              "targetVariableName": "Color/Gray/gray-70",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.35686275362968445,
+              0.35686275362968445,
+              0.3921568691730499
+            ],
+            "alpha": 1,
+            "hex": "#5B5B64"
+          },
+          "$description": "Secondary button edge while held down. Shares Hover's value deliberately; the fill carries the pressed signal.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:71",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-border-action-secondary-pressed)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:5383579227e4303293de9bd394eebbe1994cefdd/-1:-1",
+              "targetVariableName": "Color/Gray/gray-80",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      },
+      "Danger": {
+        "Default": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7058823704719543,
+              0.1411764770746231,
+              0.09803921729326248
+            ],
+            "alpha": 1,
+            "hex": "#B42419"
+          },
+          "$description": "Edge of a destructive button. Tracks Background/Action/Danger/Default, and is the outline that gives Background/Action/DangerTertiary its shape.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:73",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-border-action-danger-default)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:70ca0c48ccc2f2a6541b08e313ef4ca0b2cfc5d5/-1:-1",
+              "targetVariableName": "Color/Red/red-70",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.5647059082984924,
+              0.11294117569923401,
+              0.0784313753247261
+            ],
+            "alpha": 1,
+            "hex": "#901D14"
+          },
+          "$description": "Destructive button edge under the pointer.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:74",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-border-action-danger-hover)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:eb439c1da87cb9960daa3960b1ca8d8c4b7dee86/-1:-1",
+              "targetVariableName": "Color/Red/red-80",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.42352941632270813,
+              0.08627451211214066,
+              0.05882352963089943
+            ],
+            "alpha": 1,
+            "hex": "#6C160F"
+          },
+          "$description": "Destructive button edge while held down.",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:10626:75",
+            "com.figma.scopes": [
+              "STROKE"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--color-border-action-danger-pressed)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:24caafd42c2c583e0d93943adb8e740ae71d531c/-1:-1",
+              "targetVariableName": "Color/Red/red-90",
+              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableSetName": "Primitives"
+            }
+          }
+        }
+      }
+    },
+    "Field": {
+      "Default": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6947004795074463,
+            0.6947004795074463,
+            0.75
+          ],
+          "alpha": 1,
+          "hex": "#B1B1BF"
+        },
+        "$description": "Input, textarea and select edge at rest. Use this rather than Border/Default on form controls: it is the entry point to the full field state set (Hover, Error, Disabled, plus Focus).",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:77",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-field-default)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:17bb82faa99ee73b7fb22fbcad2381bb8b1743d0/-1:-1",
+            "targetVariableName": "Color/Gray/gray-50",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.46666666865348816,
+            0.46666666865348816,
+            0.5137255191802979
+          ],
+          "alpha": 1,
+          "hex": "#777783"
+        },
+        "$description": "Field edge under the pointer, before focus.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:78",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-field-hover)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
+            "targetVariableName": "Color/Gray/gray-70",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Error": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7058823704719543,
+            0.1411764770746231,
+            0.09803921729326248
+          ],
+          "alpha": 1,
+          "hex": "#B42419"
+        },
+        "$description": "Field edge in a validation error state. Deliberately the full-strength red, not the pale status outline — a 1px edge needs the weight. Pair with Text/Status/Danger/Default on the message below.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:79",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-field-error)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:70ca0c48ccc2f2a6541b08e313ef4ca0b2cfc5d5/-1:-1",
+            "targetVariableName": "Color/Red/red-70",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Disabled": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8156862854957581,
+            0.8156862854957581,
+            0.8509804010391235
+          ],
+          "alpha": 1,
+          "hex": "#D0D0D9"
+        },
+        "$description": "Field edge when the input cannot be used. Pair with Background/Disabled and Text/Disabled.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:80",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-field-disabled)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:f44c6147b375a5f21cee57861c6c1978b898df60/-1:-1",
+            "targetVariableName": "Color/Gray/gray-30",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      }
+    },
+    "Status": {
+      "Info": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6470588445663452,
+            0.7207843065261841,
+            0.9372549057006836
+          ],
+          "alpha": 1,
+          "hex": "#A5B8EF"
+        },
+        "$description": "Outline around an informational banner or soft badge, paired with Background/Status/Info/Subtle.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:81",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-status-info)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:ad2ad5bf941659e01894a3fdb08a392db67a221c/-1:-1",
+            "targetVariableName": "Color/Blue/blue-40",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Success": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6784313917160034,
+            0.9058823585510254,
+            0.7686274647712708
+          ],
+          "alpha": 1,
+          "hex": "#ADE7C4"
+        },
+        "$description": "Outline around a success banner or soft badge, paired with Background/Status/Success/Subtle.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:82",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-status-success)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:e3ff8e8a73d7433ce3ba59f0e6eaa14a3a494762/-1:-1",
+            "targetVariableName": "Color/Green/green-40",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Warning": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.8705882430076599,
+            0.5803921818733215
+          ],
+          "alpha": 1,
+          "hex": "#FFDE94"
+        },
+        "$description": "Outline around a warning banner or soft badge, paired with Background/Status/Warning/Subtle.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:83",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-status-warning)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:6ca5ac86229322a21f0404986fa0b61c27692c47/-1:-1",
+            "targetVariableName": "Color/Yellow/yellow-50",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Danger": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8784313797950745,
+            0.6392157077789307,
+            0.6196078658103943
+          ],
+          "alpha": 1,
+          "hex": "#E0A39E"
+        },
+        "$description": "Outline around an error banner or soft badge, paired with Background/Status/Danger/Subtle. NOT for input error edges — that is Border/Field/Error, which is stronger.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:84",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-status-danger)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:d73e3bf2dcb581491ec608f144e770cff1ea747a/-1:-1",
+            "targetVariableName": "Color/Red/red-40",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Neutral": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8156862854957581,
+            0.8156862854957581,
+            0.8509804010391235
+          ],
+          "alpha": 1,
+          "hex": "#D0D0D9"
+        },
+        "$description": "Outline around a neutral banner or soft badge, paired with Background/Status/Neutral/Subtle.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:85",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-status-neutral)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:f44c6147b375a5f21cee57861c6c1978b898df60/-1:-1",
+            "targetVariableName": "Color/Gray/gray-30",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      }
+    },
+    "Focus": {
+      "Ring": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0.4000000059604645,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#0066FF"
+        },
+        "$description": "Keyboard focus ring, 2px, drawn OUTSIDE the control so focusing never shifts layout. Required on every focusable element. It stacks with other edges — a focused invalid field shows both this and Border/Field/Error.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:87",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-focus-ring)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:7f53e9e4639dd09282b87cfa63910c4250e2253c/-1:-1",
+            "targetVariableName": "Color/Other/Focus state",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Inner": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 1,
+          "hex": "#FFFFFF"
+        },
+        "$description": "1px light ring drawn between the control and Border/Focus/Ring. Needed so focus stays visible on dark and saturated fills, where the ring alone can blend into the button.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:88",
+          "com.figma.scopes": [
+            "STROKE"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-border-focus-inner)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+            "targetVariableName": "Color/Gray/gray-00",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      }
+    }
+  },
+  "Brand": {
+    "Logo": {
+      "Dark": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.09019608050584793,
+            0.21176470816135406,
+            0.27843138575553894
+          ],
+          "alpha": 1,
+          "hex": "#173647"
+        },
+        "$description": "Fixed logo mark colour. Not a semantic token — it describes one asset, not a role, and is a candidate to move out of this collection to the Logo page.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:89",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-brand-logo-dark)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:426e910e12ca3b788aee0f2c5c9efa8c124401cc/-1:-1",
+            "targetVariableName": "Color/Brand/brand-logo-dark",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Purple": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.29019609093666077,
+            0.2705882489681244,
+            0.9215686321258545
+          ],
+          "alpha": 1,
+          "hex": "#4A45EB"
+        },
+        "$description": "Fixed logo mark colour. Not a semantic token — see Brand/Logo/Dark.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:90",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-brand-logo-purple)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:b5108f81c6c8f3cc2b40aad9a9f0084e1ba73aab/-1:-1",
+            "targetVariableName": "Color/Brand/brand-logo-purple",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      },
+      "Green": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5215686559677124,
+            0.9215686321258545,
+            0.18039216101169586
+          ],
+          "alpha": 1,
+          "hex": "#85EB2E"
+        },
+        "$description": "Fixed logo mark colour. Not a semantic token — see Brand/Logo/Dark.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:10626:91",
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--color-brand-logo-green)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:47b2680da1a95e5561ae0ed4b70ddfb2eb84c6e4/-1:-1",
+            "targetVariableName": "Color/Brand/brand-logo-green",
+            "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+            "targetVariableSetName": "Primitives"
+          }
+        }
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Semantic/Color"
+  }
+}
