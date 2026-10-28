@@ -157,7 +157,7 @@
   /* ── Action — Secondary ──────────────────────────────────────────────── */
   --color-action-secondary-default:  var(--color-gray-00);
   --color-action-secondary-hover:    var(--color-gray-05);
-  --color-action-secondary-pressed:  var(--color-gray-10);
+  --color-action-secondary-pressed:  var(--color-gray-15);
   --color-action-secondary-text:     var(--color-gray-50);
   --color-action-secondary-border:   rgba(60, 58, 219, 0.24);
 
@@ -225,6 +225,7 @@
   --color-status-error-indicator:  var(--color-red-70);
   --color-status-error-solid:      var(--color-red-70);
   --color-status-error-on-solid:   var(--color-gray-00);
+  --shadow-elevation-0: 0 1px 1px rgba(61, 61, 69, 0.2);
   --shadow-elevation-1: 0 2px 20px rgba(150, 148, 161, 0.2);
   --shadow-elevation-2: 1px 5px 10px 2px rgba(91, 91, 100, 0.3);
   --shadow-card: var(--shadow-elevation-1);

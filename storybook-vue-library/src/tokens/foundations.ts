@@ -43,7 +43,7 @@ export const foundationNotes = {
   colorNote:
     "All primitive palette tokens from the linked Figma Colors page are present in the token source.",
   elevationNote:
-    "The linked Figma Elevations page defines two box shadows, now documented as elevation tokens in Storybook.",
+    "The Figma effect styles define three approved box shadows (shadow 0, shadow 1, shadow 2), documented as elevation tokens in Storybook. shadow 0 is the small resting shadow added for the Floating circle button.",
   themeNote:
     "No Figma variable collections or theme modes were exposed in this file, so semantic aliases remain a code-side mapping layer."
 } as const;
@@ -152,6 +152,16 @@ export const semanticColorTokens = [
 ] as const;
 
 export const shadowTokens: ShadowToken[] = [
+  {
+    name: "Box Shadow 0",
+    cssVar: "--shadow-elevation-0",
+    value: "0 1px 1px rgba(61, 61, 69, 0.2)",
+    x: 0,
+    y: 1,
+    blur: 1,
+    spread: 0,
+    color: "rgba(61, 61, 69, 0.2)"
+  },
   {
     name: "Box Shadow 1",
     cssVar: "--shadow-elevation-1",
@@ -263,7 +273,7 @@ export const fullSemanticColorTokens: SemanticColorToken[] = [
   // ─── Action — Secondary (5) ──────────────────────────────────────────────
   { name: "Action/Secondary/Default", cssVar: "--color-action-secondary-default", propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Base → Gray/00",   hex: "#FFFFFF" },
   { name: "Action/Secondary/Hover",   cssVar: "--color-action-secondary-hover",   propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Subtle → Gray/05", hex: "#FAFAFC" },
-  { name: "Action/Secondary/Pressed", cssVar: "--color-action-secondary-pressed", propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Muted → Gray/10",  hex: "#F7F7F9" },
+  { name: "Action/Secondary/Pressed", cssVar: "--color-action-secondary-pressed", propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Gray/15",  hex: "#EFEFF2" },
   { name: "Action/Secondary/Text",    cssVar: "--color-action-secondary-text",    propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Gray/50",                  hex: "#B1B1BF" },
   { name: "Action/Secondary/Border",  cssVar: "--color-action-secondary-border",  propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "brand",   globalAlias: "rgba(60, 58, 219, 0.24)",  hex: "rgba(60, 58, 219, 0.24)", notes: "Code-only — extracted from Button.vue; no Figma equivalent, needs design approval" },
 

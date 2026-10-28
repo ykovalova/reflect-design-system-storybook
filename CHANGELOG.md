@@ -13,6 +13,13 @@ Branch `Marika-button`.
 
 ### Added
 
+- **`FloatingButton` component** (`src/components/FloatingButton/`) and stories — circular icon-only
+  action button: `appearance` (closed/opened), `size` (medium 60px / small 40px), `state`, required
+  `ariaLabel`, default slot for any icon. Figma-to-Vue mapping in `docs/code-connect-floating-button.md`.
+- **`--shadow-elevation-0`** (`0 1px 1px rgba(61, 61, 69, 0.2)`) — code token for the new Figma
+  effect style `shadow 0`, which reproduces the resting shadow of the Floating circle button.
+  Approved by the design lead; listed in `figma-mapping.md`, `design-system.md` and the
+  Elevations story.
 - **`scripts/generate-semantic-tokens.mjs`** (`npm run tokens:generate`, `tokens:check`)
   — builds the semantic colour layer from the Figma export
   `src/tokens/figma-export/Color.tokens.json` (113 tokens). Emits
@@ -24,6 +31,16 @@ Branch `Marika-button`.
 
 ### Changed
 
+- **`Border/Action/Secondary/Hover` gray-70 → gray-60** (matches `Border/Neutral/Hover` in the Floating
+  button file). Updated in the Figma export and regenerated tokens (`--color-border-action-secondary-hover`),
+  token map and spec. Used by `FloatingButton` (opened); the secondary `Button` still uses the legacy
+  rgba border and is unaffected. The alias id in the export entry is the plugin key; a fresh Figma
+  export will normalise it.
+- **`Action/Secondary/Pressed` background gray-10 → gray-15** (matches `Action/Neutral/Pressed` in the
+  Floating button file). Updated in the Figma export, the regenerated semantic tokens
+  (`--color-bg-action-secondary-pressed`), legacy `--color-action-secondary-pressed` in `base.css`,
+  the token map and spec, and used by `FloatingButton` instead of a raw primitive. Affects the pressed
+  state of the secondary `Button`.
 - **`Foundations/Colors` stories** — replaced `Semantic — Property-first` and
   `Semantic — Intent-first` with one `Semantic` story rendering the 113 generated
   tokens by group (Background, Border, Text, Icon, Overlay, Brand), with live-variable
