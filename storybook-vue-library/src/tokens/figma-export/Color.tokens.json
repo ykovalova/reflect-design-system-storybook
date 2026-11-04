@@ -937,6 +937,34 @@
               }
             }
           },
+          "Hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.9764705896377563,
+                0.9764705896377563,
+                0.9960784316062927
+              ],
+              "alpha": 1,
+              "hex": "#F9F9FE"
+            },
+            "$description": "Unchecked checkbox, radio or toggle under the pointer.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:11376:33",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-control-unchecked-hover)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableName": "Color/Brand/brand-05",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          },
           "Disabled": {
             "$type": "color",
             "$value": {

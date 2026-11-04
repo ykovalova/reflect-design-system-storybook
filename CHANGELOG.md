@@ -13,6 +13,10 @@ Branch `Marika-button`.
 
 ### Added
 
+- **`Background/Action/Control/Unchecked/Hover`** (`--color-bg-action-control-unchecked-hover`,
+  alias `brand-05`, `#F9F9FE`) — fill of an unchecked checkbox, radio or toggle under the pointer.
+  Added to the Figma `Semantic` export, regenerated via `npm run tokens:generate` and listed in
+  `semantic-token-map.md`.
 - **`FloatingButton` component** (`src/components/FloatingButton/`) and stories — circular icon-only
   action button: `appearance` (closed/opened), `size` (medium 60px / small 40px), `state`, required
   `ariaLabel`, default slot for any icon. Figma-to-Vue mapping in `docs/code-connect-floating-button.md`.
