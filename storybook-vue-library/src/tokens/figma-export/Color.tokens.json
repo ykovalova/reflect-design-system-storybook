@@ -951,7 +951,7 @@
             },
             "$description": "Unchecked checkbox, radio or toggle under the pointer.",
             "$extensions": {
-              "com.figma.variableId": "VariableID:11376:33",
+              "com.figma.variableId": "VariableID:11380:33",
               "com.figma.scopes": [
                 "FRAME_FILL",
                 "SHAPE_FILL"
