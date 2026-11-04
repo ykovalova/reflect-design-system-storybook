@@ -38,6 +38,7 @@
   --color-bg-action-danger-tertiary-hover: var(--color-red-10);
   --color-bg-action-danger-tertiary-pressed: var(--color-red-20);
   --color-bg-action-control-unchecked-default: var(--color-gray-00);
+  --color-bg-action-control-unchecked-hover: var(--color-brand-05);
   --color-bg-action-control-unchecked-disabled: var(--color-gray-15);
   --color-bg-action-control-checked-default: var(--color-brand-75);
   --color-bg-action-control-checked-hover: var(--color-brand-80);
