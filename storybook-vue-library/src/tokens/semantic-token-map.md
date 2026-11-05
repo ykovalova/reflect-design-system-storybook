@@ -127,7 +127,8 @@ Fills for things you press. Five ranks, each with the same four states, so no va
 
 | Token | Alias | Value | When to use |
 |---|---|---|---|
-| `Action/Control/Unchecked/Default` | `gray-00` | `#FFFFFF` | Checkbox box, radio dot well, toggle track — off. |
+| `Action/Control/Unchecked/Default` | `gray-00` | `#FFFFFF` | Checkbox box, radio dot well. |
+| `Action/Control/Unchecked/Active` | `brand-40` | `#B9B8F2` | Toggle track — off and switchable. A muted brand step so Off still reads as interactive; the knob is `Surface/Raised`. |
 | `Action/Control/Unchecked/Disabled` | `gray-15` | `#EFEFF2` | Off and locked. |
 | `Action/Control/Checked/Default` | `brand-75` | `#3C3ADB` | On. |
 | `Action/Control/Checked/Hover` | `brand-80` | `#302EAF` | The compound state — on **and** hovered. |

@@ -966,6 +966,34 @@
                 "targetVariableSetName": "Primitives"
               }
             }
+          },
+          "Active": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.7254902124404907,
+                0.7215686440467834,
+                0.9490196108818054
+              ],
+              "alpha": 1,
+              "hex": "#B9B8F2"
+            },
+            "$description": "Track fill of an unchecked toggle that can be switched. A muted brand step so Off still reads as interactive; the disabled Off track uses Unchecked/Disabled.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:11359:33",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-control-unchecked-active)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableName": "Color/Brand/brand-40",
+                "targetVariableSetName": "Primitives"
+              }
+            }
           }
         },
         "Checked": {

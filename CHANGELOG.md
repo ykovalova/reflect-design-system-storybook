@@ -13,6 +13,11 @@ Branch `Marika-button`.
 
 ### Added
 
+- **`Background/Action/Control/Unchecked/Active`** (`--color-bg-action-control-unchecked-active`,
+  alias `brand-40`, `#B9B8F2`) — track fill of an off, switchable Toggle, so Off reads as
+  interactive; the disabled Off track keeps `Unchecked/Disabled`. Added to the Figma `Semantic`
+  export, regenerated via `npm run tokens:generate` (114 tokens) and listed in
+  `semantic-token-map.md`. `Unchecked/Default` is now documented for checkbox and radio only.
 - **`FloatingButton` component** (`src/components/FloatingButton/`) and stories — circular icon-only
   action button: `appearance` (closed/opened), `size` (medium 60px / small 40px), `state`, required
   `ariaLabel`, default slot for any icon. Figma-to-Vue mapping in `docs/code-connect-floating-button.md`.
