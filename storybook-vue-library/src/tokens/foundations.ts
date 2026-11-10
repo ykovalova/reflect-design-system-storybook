@@ -277,10 +277,6 @@ export const fullSemanticColorTokens: SemanticColorToken[] = [
   { name: "Action/Secondary/Text",    cssVar: "--color-action-secondary-text",    propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Gray/50",                  hex: "#B1B1BF" },
   { name: "Action/Secondary/Border",  cssVar: "--color-action-secondary-border",  propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "brand",   globalAlias: "rgba(60, 58, 219, 0.24)",  hex: "rgba(60, 58, 219, 0.24)", notes: "Code-only — extracted from Button.vue; no Figma equivalent, needs design approval" },
 
-  // ─── Action — Tertiary Modal (3) ─────────────────────────────────────────
-  { name: "Action/TertiaryModal/Default", cssVar: "--color-action-tertiary-modal-default", propertyGroup: "action", propertySubgroup: "tertiary-modal", intentGroup: "brand", globalAlias: "rgba(60, 58, 219, 0.08)", hex: "rgba(60, 58, 219, 0.08)", notes: "Code-only — extracted from Button.vue; `tertiary-modal` variant has no Figma Action counterpart at all" },
-  { name: "Action/TertiaryModal/Hover",   cssVar: "--color-action-tertiary-modal-hover",   propertyGroup: "action", propertySubgroup: "tertiary-modal", intentGroup: "brand", globalAlias: "rgba(60, 58, 219, 0.08)", hex: "rgba(60, 58, 219, 0.08)", notes: "Code-only — same resolved value as Default; pre-existing behavior preserved as-is, not a new design decision" },
-  { name: "Action/TertiaryModal/Pressed",  cssVar: "--color-action-tertiary-modal-pressed",  propertyGroup: "action", propertySubgroup: "tertiary-modal", intentGroup: "brand", globalAlias: "rgba(60, 58, 219, 0.12)", hex: "rgba(60, 58, 219, 0.12)", notes: "Code-only — extracted from Button.vue" },
 
   // ─── Action — Danger (8) ─────────────────────────────────────────────────
   { name: "Action/Danger/Default",  cssVar: "--color-action-danger-default",  propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger",  globalAlias: "Red/70",                    hex: "#B42419" },

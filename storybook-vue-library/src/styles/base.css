@@ -161,12 +161,6 @@
   --color-action-secondary-text:     var(--color-gray-50);
   --color-action-secondary-border:   rgba(60, 58, 219, 0.24);
 
-  /* ── Action — Tertiary Modal ──────────────────────────────────────────── */
-  /* Code-only: no Figma "tertiary-modal" Action counterpart yet. See figma-mapping.md open decisions. */
-  --color-action-tertiary-modal-default:  rgba(60, 58, 219, 0.08);
-  --color-action-tertiary-modal-hover:    rgba(60, 58, 219, 0.08);
-  --color-action-tertiary-modal-pressed:  rgba(60, 58, 219, 0.12);
-
   /* ── Action — Danger ─────────────────────────────────────────────────── */
   --color-action-danger-default:   var(--color-red-70);
   --color-action-danger-hover:     var(--color-red-80);

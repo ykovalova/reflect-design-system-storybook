@@ -31,6 +31,16 @@ Branch `Marika-button`.
 
 ### Changed
 
+- **Button `tertiary-modal` now matches Figma "Tertiary (modals)"** (set `558:3397`): transparent
+  default fill (was a violet `rgba(60, 58, 219, 0.08)` wash), hover and pressed use
+  `--color-bg-action-tertiary-hover` / `-pressed`, label and icon use `--color-text-on-neutral`
+  (was primary), disabled greys the content with `--color-text-disabled` at full opacity (was 0.4
+  opacity), radius 4px for every size and icon-only (was circular / 8px), inline padding 12px,
+  Body 1/2 Medium type.
+- **Button focus ring matches Figma for every variant**: 2px `--color-border-focus-ring`, offset 1px
+  (3px from the edge), no box-shadow (was a primary outline plus a 4px shadow).
+- **Removed** the code-only `--color-action-tertiary-modal-*` tokens (`base.css`, `foundations.ts`,
+  `figma-mapping.md`); nothing consumes them any more.
 - **`Border/Action/Secondary/Hover` gray-70 → gray-60** (matches `Border/Neutral/Hover` in the Floating
   button file). Updated in the Figma export and regenerated tokens (`--color-border-action-secondary-hover`),
   token map and spec. Used by `FloatingButton` (opened); the secondary `Button` still uses the legacy

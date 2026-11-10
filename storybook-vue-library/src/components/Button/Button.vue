@@ -269,11 +269,33 @@ const hasTrailing = computed(
   --button-shadow: none;
 }
 
+/* Figma "Tertiary (modals)": transparent fill, neutral text, 4px radius, 12px inline padding.
+   Hover/pressed use the neutral overlay tokens; disabled keeps full opacity and only greys the content. */
 .button-variant-tertiary-modal {
-  --button-background: var(--color-action-tertiary-modal-default);
-  --button-color: var(--color-action-primary-default);
+  --button-background: var(--color-bg-action-transparent);
+  --button-color: var(--color-text-on-neutral);
   --button-border-color: transparent;
   --button-shadow: none;
+  --button-padding-inline: var(--space-12);
+  --button-radius: 0.25rem;
+  --button-font-weight: var(--font-weight-medium);
+  --button-font-size: var(--font-body-1-medium);
+  --button-line-height: var(--line-body-1);
+}
+
+.button-variant-tertiary-modal.button-size-small,
+.button-variant-tertiary-modal.button-size-extra-small {
+  --button-font-size: var(--font-body-2-medium);
+  --button-line-height: var(--line-body-2);
+}
+
+.button-variant-tertiary-modal.button-size-extra-small {
+  --button-radius: 0.25rem;
+}
+
+.button-variant-tertiary-modal.button-icon-only {
+  padding-inline: 0;
+  border-radius: var(--button-radius);
 }
 
 .button-variant-tertiary,
@@ -320,7 +342,7 @@ const hasTrailing = computed(
 
 .button-variant-tertiary-modal[data-state="hover"]:not(:disabled),
 .button-variant-tertiary-modal:not(:disabled):hover {
-  background: var(--color-action-tertiary-modal-hover);
+  background: var(--color-bg-action-tertiary-hover);
 }
 
 .button-variant-secondary-danger[data-state="hover"]:not(:disabled),
@@ -353,7 +375,7 @@ const hasTrailing = computed(
 }
 
 .button-variant-tertiary-modal[data-state="pressed"]:not(:disabled) {
-  background: var(--color-action-tertiary-modal-pressed);
+  background: var(--color-bg-action-tertiary-pressed);
 }
 
 .button-variant-secondary-danger[data-state="pressed"]:not(:disabled) {
@@ -362,9 +384,9 @@ const hasTrailing = computed(
 
 .button-root[data-state="focused"]:not(:disabled),
 .button-root:focus-visible:not(:disabled) {
-  outline: 2px solid var(--color-action-primary-default);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 4px var(--color-focus-ring);
+  outline: 2px solid var(--color-border-focus-ring);
+  outline-offset: 1px;
+  box-shadow: none;
 }
 
 .button-root[data-state="disabled"],
@@ -389,9 +411,13 @@ const hasTrailing = computed(
 }
 
 .button-variant-tertiary[data-state="disabled"],
-.button-variant-tertiary-danger[data-state="disabled"],
-.button-variant-tertiary-modal[data-state="disabled"] {
+.button-variant-tertiary-danger[data-state="disabled"] {
   --button-opacity: 0.4;
+}
+
+.button-variant-tertiary-modal:disabled:not([data-state="loading"]) {
+  --button-opacity: 1;
+  --button-color: var(--color-text-disabled);
 }
 
 @keyframes button-spin {
