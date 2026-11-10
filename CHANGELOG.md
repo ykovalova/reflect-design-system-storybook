@@ -37,8 +37,17 @@ Branch `Marika-button`.
   (was primary), disabled greys the content with `--color-text-disabled` at full opacity (was 0.4
   opacity), radius 4px for every size and icon-only (was circular / 8px), inline padding 12px,
   Body 1/2 Medium type.
+- **Button `secondary-danger` and `tertiary-danger` now match Figma** (set `558:3397`): secondary uses
+  `bg-action-danger-secondary-*` fills, `border-action-danger-*` borders and `text-status-danger-*`
+  text, so hover and pressed now darken the border (was a fixed rgba border and tint); tertiary is a
+  boxed button (12px padding, 4px radius) with transparent default and `bg-action-danger-tertiary-hover`
+  / `-pressed` fills (was a text link with underline on hover). Disabled uses `bg-action-disabled`,
+  `border-action-disabled` and `text-disabled` at full opacity (was 0.48 / 0.4 opacity). Icon-only is
+  4px radius, type is Body 1/2 Medium.
 - **Button focus ring matches Figma for every variant**: 2px `--color-border-focus-ring`, offset 1px
   (3px from the edge), no box-shadow (was a primary outline plus a 4px shadow).
+- **Removed** the code-only `--color-action-danger-surface*` / `--color-action-danger-border` tokens
+  (`base.css`, `foundations.ts`, `figma-mapping.md`), replaced by the Figma `Semantic` tokens.
 - **Removed** the code-only `--color-action-tertiary-modal-*` tokens (`base.css`, `foundations.ts`,
   `figma-mapping.md`); nothing consumes them any more.
 - **`Border/Action/Secondary/Hover` gray-70 → gray-60** (matches `Border/Neutral/Hover` in the Floating
