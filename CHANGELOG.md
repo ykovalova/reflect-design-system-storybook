@@ -13,6 +13,14 @@ Branch `Marika-button`.
 
 ### Added
 
+- **`Checkbox` component** (`src/components/Checkbox/`) and stories (`Components/Checkbox`: Playground, States,
+  WithoutLabel, Interactive) from the Figma Checkbox set (`706:2155`). Native `input type="checkbox"` with
+  `v-model` (`modelValue`), `indeterminate` (`aria-checked="mixed"`), `invalid` (`aria-invalid`), `disabled`,
+  optional `label` (set `ariaLabel` without one) and a `state` prop (`default`/`hover`/`focused`) for docs.
+  Covers all 15 Figma variants (Default, Hover, Focused, Disabled, Error x Unchecked, Checked, Indeterminate)
+  using semantic tokens only, including `Background/Action/Control/Unchecked/Hover`. Focus ring: 22px layer,
+  2px `--color-border-focus-ring`, 1px gap around the 16px box. Code Connect is not registered yet.
+
 - **`Background/Action/Control/Unchecked/Hover`** (`--color-bg-action-control-unchecked-hover`,
   alias `brand-05`, `#F9F9FE`) — fill of an unchecked checkbox, radio or toggle under the pointer.
   Added to the Figma `Semantic` export, regenerated via `npm run tokens:generate` and listed in
