@@ -51,7 +51,10 @@ export const States: Story = {
   render: () => ({
     components: { Checkbox },
     setup: () => ({ variants, states }),
-    template: `<div style="display:grid;grid-template-columns:auto repeat(3, max-content);gap:16px 32px;align-items:center">
+    // Columns are sized to their content and packed to the left, so all three variants stay inside
+    // narrow canvases (docs page, side panel); the wrapper scrolls instead of clipping.
+    template: `<div style="overflow-x:auto;padding:16px">
+    <div style="display:grid;grid-template-columns:max-content repeat(3, max-content);justify-content:start;gap:16px 24px;align-items:center">
       <span></span>
       <span v-for="v in variants" :key="v.name" class="token-meta">{{ v.name }}</span>
       <template v-for="s in states" :key="s.name">
@@ -65,6 +68,7 @@ export const States: Story = {
           label="Label"
         />
       </template>
+    </div>
     </div>`
   })
 };
