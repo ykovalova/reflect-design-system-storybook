@@ -154,13 +154,6 @@
   --color-action-primary-disabled:  var(--color-brand-50);
   --color-action-primary-icon:      var(--color-gray-00);
 
-  /* ── Action — Secondary ──────────────────────────────────────────────── */
-  --color-action-secondary-default:  var(--color-gray-00);
-  --color-action-secondary-hover:    var(--color-gray-05);
-  --color-action-secondary-pressed:  var(--color-gray-15);
-  --color-action-secondary-text:     var(--color-gray-50);
-  --color-action-secondary-border:   rgba(60, 58, 219, 0.24);
-
   /* ── Action — Danger ─────────────────────────────────────────────────── */
   --color-action-danger-default:   var(--color-red-70);
   --color-action-danger-hover:     var(--color-red-80);

@@ -269,11 +269,6 @@ export const fullSemanticColorTokens: SemanticColorToken[] = [
   { name: "Action/Primary/Icon",     cssVar: "--color-action-primary-icon",     propertyGroup: "action", propertySubgroup: "primary", intentGroup: "on-solid", globalAlias: "Icon/Inverse → Gray/00",  hex: "#FFFFFF" },
 
   // ─── Action — Secondary (5) ──────────────────────────────────────────────
-  { name: "Action/Secondary/Default", cssVar: "--color-action-secondary-default", propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Base → Gray/00",   hex: "#FFFFFF" },
-  { name: "Action/Secondary/Hover",   cssVar: "--color-action-secondary-hover",   propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Subtle → Gray/05", hex: "#FAFAFC" },
-  { name: "Action/Secondary/Pressed", cssVar: "--color-action-secondary-pressed", propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Gray/15",  hex: "#EFEFF2" },
-  { name: "Action/Secondary/Text",    cssVar: "--color-action-secondary-text",    propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Gray/50",                  hex: "#B1B1BF" },
-  { name: "Action/Secondary/Border",  cssVar: "--color-action-secondary-border",  propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "brand",   globalAlias: "rgba(60, 58, 219, 0.24)",  hex: "rgba(60, 58, 219, 0.24)", notes: "Code-only — extracted from Button.vue; no Figma equivalent, needs design approval" },
 
 
   // ─── Action — Danger (8) ─────────────────────────────────────────────────
