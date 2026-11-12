@@ -81,13 +81,13 @@ Two weights per family. `Subtle` is a tint you put text on; `Solid` is a fill yo
 
 | Token | Alias | Value | When to use |
 |---|---|---|---|
-| `Surface/Status/Info/Subtle` | `blue-20` | `#E8EDFB` | Info banner, alert and soft-badge ground. |
+| `Surface/Status/Info/Subtle` | `blue-30` | `#D2DBF7` | Info banner, alert and soft-badge ground. |
 | `Surface/Status/Info/Solid` | `blue-70` | `#1E4DD7` | Filled info badge, toast, status dot, progress fill. |
-| `Surface/Status/Success/Subtle` | `green-20` | `#EAF9F0` | Success banner and soft badge. |
-| `Surface/Status/Success/Solid` | `green-70` | `#32C26B` | Filled success badge, toast, dot. |
-| `Surface/Status/Warning/Subtle` | `yellow-20` | `#FFF9ED` | Warning banner and soft badge. |
+| `Surface/Status/Success/Subtle` | `green-30` | `#D6F3E1` | Success banner and soft badge. |
+| `Surface/Status/Success/Solid` | `green-80` | `#289B56` | Filled success badge, toast, dot. |
+| `Surface/Status/Warning/Subtle` | `yellow-40` | `#FFE9B7` | Warning banner and soft badge. |
 | `Surface/Status/Warning/Solid` | `yellow-70` | `#FFC84C` | Filled warning badge. **Light fill** — takes dark text, see `Text/OnStatus/Warning`. |
-| `Surface/Status/Danger/Subtle` | `red-20` | `#F7E2E1` | Error banner and soft badge. |
+| `Surface/Status/Danger/Subtle` | `red-30` | `#EFCDCB` | Error banner and soft badge. |
 | `Surface/Status/Danger/Solid` | `red-70` | `#B42419` | Filled error badge, toast, dot. |
 | `Surface/Status/Neutral/Subtle` | `gray-15` | `#EFEFF2` | Draft, archived, pending, "none" — a badge that means nothing in particular. |
 | `Surface/Status/Neutral/Solid` | `gray-70` | `#777783` | Filled neutral badge or dot. |
