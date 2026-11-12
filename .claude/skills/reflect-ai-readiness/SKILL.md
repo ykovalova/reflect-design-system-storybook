@@ -1,6 +1,6 @@
 ---
 name: reflect-ai-readiness
-description: Assess how ready a Reflect Design Kit component in Figma is for AI-driven implementation in Storybook (Figma MCP → Vue code). Scores 9 dimensions 0–2, lists concrete fixes in priority order, and gives a verdict (Ready / Ready with fixes / Not ready). Use when the user shares a Figma component link and asks about "AI readiness", "is this ready for Claude to build", "can we generate this component", or before starting any component transfer batch (RF-5288, RF-5291). Read-only — never edits Figma or code.
+description: Assess how ready a Reflect Design Kit component in Figma is for AI-driven implementation in Storybook (Figma MCP → Vue code). Scores 9 dimensions 0–2, lists concrete fixes in priority order, and gives a verdict (Ready / Ready with fixes / Not ready). Use when the user shares a Figma component link and asks about "AI readiness", "is this ready for Claude to build", "can we generate this component", or before starting any component transfer batch (RF-5288, RF-5291). The assessment itself (Steps 1-4) is read-only; the final step builds the Vue component and its story on a new branch. Never edits Figma unless asked.
 ---
 
 # Reflect AI Readiness Assessment
@@ -61,4 +61,23 @@ Assumptions Claude would have to make today: …
 Not verified: …
 ```
 
-Rules: quote counts from the evidence, not impressions. Flag anything inferred. Do not edit Figma, code or Jira; offer follow-ups instead. Do not send anything to Slack.
+## Step 5 — Build the component in Storybook (always the last step)
+
+Every component review ends with the code: a Vue component and its story. Do this after the report (and after any Figma fixes the user asked for), unless the user says to skip it. If the component already exists in `src/components/`, update it to match Figma instead of rewriting it.
+
+1. **Branch.** Start from an up-to-date `main` (`git fetch`, fast-forward `main`), then a new branch named for the component (e.g. `Checkbox-component`). Never build on the review branch.
+2. **Read the conventions first:** a sibling story (`src/stories/components/Badge.stories.ts`, `Button.stories.ts`) and component (`Badge.vue`, `Button.vue`), and `storybook-vue-library/CLAUDE.md`.
+3. **Take every value from Figma, not from memory.** Per variant, read tokens bound, sizes, padding, gap, radius, text style, and glyph geometry (`vectorPaths`, position inside its parent) with `use_figma`, and cross-check with `get_variable_defs`. Resolve variable names; do not copy raw hex values.
+4. **Write `src/components/<Name>/<Name>.vue`:**
+   - Props map 1:1 to the Figma properties (the same mapping the report's Property API row describes). Prefer the native element (`input`, `button`) so keyboard and a11y come for free; follow the Accessibility section of the spec sheet.
+   - Semantic tokens only (`--color-*` from `semantic-colors.generated.css`). If a token is missing, add it through the Figma export + `npm run tokens:generate`, never by hand in `*.generated.*`.
+   - Include every state × variant Figma has. A `state` prop is only for forcing hover/focus in docs; real `:hover` and `:focus-visible` must work without it.
+   - Focus ring follows the project rule (2px `--color-border-focus-ring`, 1px gap around the interactive control).
+5. **Write `src/stories/components/<Name>.stories.ts`:** `Components/<Name>`, `tags: ["autodocs"]`, `Playground`, a `States` story showing every Figma State × Variant, and stories for each notable option (e.g. without label, interactive with `v-model`).
+6. **Changelog:** add an entry under Unreleased in `CHANGELOG.md` in the same commit.
+7. **Verify, do not assume:** `npx vue-tsc --noEmit`; then run Storybook and look at it. `bin/storybook` hardcodes another user's Node path, so start it with `npm run storybook -- --host 127.0.0.1 --no-open --ci` from `storybook-vue-library/` and stop it afterwards. Check dimensions with `getBoundingClientRect` / `getComputedStyle` against Figma, check the console for errors, and exercise click, Space/Tab and disabled.
+8. **Report what was and was not checked** (e.g. Code Connect is not registered until the library is published). Commit only when the user asks, and never push: the user pushes. Offer a PR description in English (Summary, Changes; add other sections only if asked), ending with the Claude Code line.
+
+## Rules
+
+Quote counts from the evidence, not impressions. Flag anything inferred. Steps 1-4 are read-only: do not edit Figma, code or Jira there; offer follow-ups instead. Step 5 is the only step that writes code, and only inside the new component branch. Edit Figma only when the user asks. Do not send anything to Slack.
