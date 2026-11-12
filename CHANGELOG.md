@@ -13,6 +13,16 @@ Branch `Marika-button`.
 
 ### Added
 
+- **`Toggle` component** (`src/components/Toggle/`) and stories (`Components/Toggle`: Playground, States,
+  WithoutLabel, Interactive) from the Figma Toggle set (`730:2513`). Native `input type="checkbox"` with
+  `role="switch"` and `v-model` (`modelValue`), `variant` (`default` | `recording`: red dot when on, pause icon
+  when off), `disabled`, optional `leftLabel` / `rightLabel` (set `ariaLabel` without either) and a `state`
+  prop (`default` | `focused`) for docs. Covers all 12 Figma variants (Variant x State x On/Off; there is no
+  Hover state). Track uses `Checked/Default` when on and `Unchecked/Active` when off, `*/Disabled` when
+  disabled. Focus ring: 36x18 pill, 2px `--color-border-focus-ring`, 3px around the track. The knob shadow
+  (`0.5px 0.5px 2px rgba(62, 62, 70, 0.35)`) is the Figma effect and has no token yet. Code Connect is not
+  registered yet.
+
 - **`Checkbox` component** (`src/components/Checkbox/`) and stories (`Components/Checkbox`: Playground, States,
   WithoutLabel, Interactive) from the Figma Checkbox set (`706:2155`). Native `input type="checkbox"` with
   `v-model` (`modelValue`), `indeterminate` (`aria-checked="mixed"`), `invalid` (`aria-invalid`), `disabled`,
