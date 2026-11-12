@@ -366,6 +366,16 @@ export const semanticColors: SemanticColor[] = [
     "description": "Unchecked control that cannot be changed. Pair with Border/Disabled."
   },
   {
+    "name": "Background/Action/Control/Unchecked/Active",
+    "group": "Background",
+    "cssVar": "--color-bg-action-control-unchecked-active",
+    "value": "var(--color-brand-40)",
+    "alias": "Color/Brand/brand-40",
+    "hex": "#B9B8F2",
+    "alpha": 1,
+    "description": "Track fill of an unchecked toggle that can be switched. A muted brand step so Off still reads as interactive; the disabled Off track uses Unchecked/Disabled."
+  },
+  {
     "name": "Background/Action/Control/Checked/Default",
     "group": "Background",
     "cssVar": "--color-bg-action-control-checked-default",

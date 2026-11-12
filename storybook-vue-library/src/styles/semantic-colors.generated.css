@@ -40,6 +40,7 @@
   --color-bg-action-control-unchecked-default: var(--color-gray-00);
   --color-bg-action-control-unchecked-hover: var(--color-brand-05);
   --color-bg-action-control-unchecked-disabled: var(--color-gray-15);
+  --color-bg-action-control-unchecked-active: var(--color-brand-40);
   --color-bg-action-control-checked-default: var(--color-brand-75);
   --color-bg-action-control-checked-hover: var(--color-brand-80);
   --color-bg-action-control-checked-disabled: var(--color-gray-30);
