@@ -346,6 +346,16 @@ export const semanticColors: SemanticColor[] = [
     "description": "Box or track fill of an unchecked checkbox, radio or toggle. Pair with Border/Default so the empty control still has an edge."
   },
   {
+    "name": "Background/Action/Control/Unchecked/Hover",
+    "group": "Background",
+    "cssVar": "--color-bg-action-control-unchecked-hover",
+    "value": "var(--color-brand-05)",
+    "alias": "Color/Brand/brand-05",
+    "hex": "#F9F9FE",
+    "alpha": 1,
+    "description": "Unchecked checkbox, radio or toggle under the pointer."
+  },
+  {
     "name": "Background/Action/Control/Unchecked/Disabled",
     "group": "Background",
     "cssVar": "--color-bg-action-control-unchecked-disabled",
