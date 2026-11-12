@@ -46,30 +46,71 @@ const states = [
   { name: "Error", props: { invalid: true } }
 ];
 
-/** Every Figma State × Variant combination (15 variants). */
+/** One card per Figma Variant, every State inside it (15 variants in total). */
+export const VariantMatrix: Story = {
+  render: () => ({
+    components: { Checkbox },
+    setup: () => ({ variants, states }),
+    template: `
+      <section class="docs-page">
+        <div class="docs-stack">
+          <header class="docs-heading">
+            <p class="eyebrow">Checkbox</p>
+            <h1>Variant matrix</h1>
+          </header>
+          <div class="type-stack">
+            <article v-for="variant in variants" :key="variant.name" class="type-card">
+              <strong>{{ variant.name }}</strong>
+              <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 16px;">
+                <div v-for="state in states" :key="state.name" style="display: grid; gap: 8px; justify-items: start;">
+                  <span class="token-meta">{{ state.name }}</span>
+                  <Checkbox
+                    v-bind="state.props"
+                    :model-value="variant.modelValue"
+                    :indeterminate="variant.indeterminate"
+                    label="Label"
+                  />
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    `
+  })
+};
+
+/** One card per Figma State, every Variant inside it. */
 export const States: Story = {
   render: () => ({
     components: { Checkbox },
     setup: () => ({ variants, states }),
-    // Columns are sized to their content and packed to the left, so all three variants stay inside
-    // narrow canvases (docs page, side panel); the wrapper scrolls instead of clipping.
-    template: `<div style="overflow-x:auto;padding:16px">
-    <div style="display:grid;grid-template-columns:max-content repeat(3, max-content);justify-content:start;gap:16px 24px;align-items:center">
-      <span></span>
-      <span v-for="v in variants" :key="v.name" class="token-meta">{{ v.name }}</span>
-      <template v-for="s in states" :key="s.name">
-        <span class="token-meta">{{ s.name }}</span>
-        <Checkbox
-          v-for="v in variants"
-          :key="s.name + v.name"
-          v-bind="s.props"
-          :model-value="v.modelValue"
-          :indeterminate="v.indeterminate"
-          label="Label"
-        />
-      </template>
-    </div>
-    </div>`
+    template: `
+      <section class="docs-page">
+        <div class="docs-stack">
+          <header class="docs-heading">
+            <p class="eyebrow">Checkbox</p>
+            <h1>States</h1>
+          </header>
+          <div class="type-stack">
+            <article v-for="state in states" :key="state.name" class="type-card">
+              <strong>{{ state.name }}</strong>
+              <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 16px;">
+                <div v-for="variant in variants" :key="variant.name" style="display: grid; gap: 8px; justify-items: start;">
+                  <span class="token-meta">{{ variant.name }}</span>
+                  <Checkbox
+                    v-bind="state.props"
+                    :model-value="variant.modelValue"
+                    :indeterminate="variant.indeterminate"
+                    label="Label"
+                  />
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    `
   })
 };
 

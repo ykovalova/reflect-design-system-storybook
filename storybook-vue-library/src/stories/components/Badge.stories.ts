@@ -27,6 +27,47 @@ type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {};
 
+/** One card per Figma Status, with Default and Bold, with and without the status dot (20 variants in total). */
+export const VariantMatrix: Story = {
+  render: () => ({
+    components: { Badge },
+    setup: () => ({ statuses }),
+    template: `
+      <section class="docs-page">
+        <div class="docs-stack">
+          <header class="docs-heading">
+            <p class="eyebrow">Badge</p>
+            <h1>Variant matrix</h1>
+          </header>
+          <div class="type-stack">
+            <article v-for="status in statuses" :key="status" class="type-card">
+              <strong style="text-transform: capitalize;">{{ status }}</strong>
+              <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 16px;">
+                <div style="display: grid; gap: 8px; justify-items: start;">
+                  <span class="token-meta">Default</span>
+                  <Badge :status="status" variant="default" label="Label" />
+                </div>
+                <div style="display: grid; gap: 8px; justify-items: start;">
+                  <span class="token-meta">Bold</span>
+                  <Badge :status="status" variant="bold" label="Label" />
+                </div>
+                <div style="display: grid; gap: 8px; justify-items: start;">
+                  <span class="token-meta">Default, no dot</span>
+                  <Badge :status="status" variant="default" :status-dot="false" label="Label" />
+                </div>
+                <div style="display: grid; gap: 8px; justify-items: start;">
+                  <span class="token-meta">Bold, no dot</span>
+                  <Badge :status="status" variant="bold" :status-dot="false" label="Label" />
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    `
+  })
+};
+
 const grid = (variant: "default" | "bold", statusDot: boolean) => ({
   components: { Badge },
   setup: () => ({ statuses, variant, statusDot }),

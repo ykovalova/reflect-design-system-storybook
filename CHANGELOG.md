@@ -68,6 +68,12 @@ Branch `Marika-button`.
 
 ### Changed
 
+- **Checkbox, Toggle and Badge stories use the Button docs layout**: a `Variant matrix` story (docs page with
+  eyebrow and heading, one `type-card` per Figma variant, labelled cells for every state) replaces the
+  plain grids. Checkbox: 3 variant cards x 5 states; Toggle: 2 variant cards x State / On-Off (12 variants);
+  Badge: 5 status cards x Default / Bold x with / without dot. Checkbox and Toggle `States` now show one card
+  per state with every variant inside. The existing Badge `Default`, `Bold` and `WithoutDot` stories stay.
+
 - **Button `tertiary-modal` now matches Figma "Tertiary (modals)"** (set `558:3397`): transparent
   default fill (was a violet `rgba(60, 58, 219, 0.08)` wash), hover and pressed use
   `--color-bg-action-tertiary-hover` / `-pressed`, label and icon use `--color-text-on-neutral`
