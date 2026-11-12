@@ -46,34 +46,77 @@ const onOff = [
   { name: "Off", modelValue: false }
 ];
 
-/** Every Figma Variant x State x On/Off combination (12 variants). Toggle has no Hover state. */
+/** One card per Figma Variant, every State x On/Off inside it (12 variants in total). There is no Hover state. */
+export const VariantMatrix: Story = {
+  render: () => ({
+    components: { Toggle },
+    setup: () => ({ variants, states, onOff }),
+    template: `
+      <section class="docs-page">
+        <div class="docs-stack">
+          <header class="docs-heading">
+            <p class="eyebrow">Toggle</p>
+            <h1>Variant matrix</h1>
+          </header>
+          <div class="type-stack">
+            <article v-for="variant in variants" :key="variant.value" class="type-card">
+              <strong>{{ variant.name }}</strong>
+              <div style="display: flex; flex-wrap: wrap; gap: 24px 32px; margin-top: 16px;">
+                <template v-for="state in states" :key="state.name">
+                  <div v-for="o in onOff" :key="state.name + o.name" style="display: grid; gap: 8px; justify-items: start;">
+                    <span class="token-meta">{{ state.name }} / {{ o.name }}</span>
+                    <Toggle
+                      v-bind="state.props"
+                      :variant="variant.value"
+                      :model-value="o.modelValue"
+                      left-label="Label"
+                      right-label="Label"
+                    />
+                  </div>
+                </template>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    `
+  })
+};
+
+/** One card per Figma State, every Variant x On/Off inside it. */
 export const States: Story = {
   render: () => ({
     components: { Toggle },
     setup: () => ({ variants, states, onOff }),
-    // Columns are sized to their content and packed to the left, so the grid stays inside narrow canvases;
-    // the wrapper scrolls instead of clipping.
-    template: `<div style="overflow-x:auto;padding:16px">
-      <div v-for="v in variants" :key="v.value" style="margin-bottom:24px">
-        <p class="token-meta" style="margin:0 0 12px">{{ v.name }}</p>
-        <div style="display:grid;grid-template-columns:max-content repeat(3, max-content);justify-content:start;gap:16px 32px;align-items:center">
-          <span></span>
-          <span v-for="s in states" :key="s.name" class="token-meta">{{ s.name }}</span>
-          <template v-for="o in onOff" :key="o.name">
-            <span class="token-meta">{{ o.name }}</span>
-            <Toggle
-              v-for="s in states"
-              :key="v.value + o.name + s.name"
-              v-bind="s.props"
-              :variant="v.value"
-              :model-value="o.modelValue"
-              left-label="Label"
-              right-label="Label"
-            />
-          </template>
+    template: `
+      <section class="docs-page">
+        <div class="docs-stack">
+          <header class="docs-heading">
+            <p class="eyebrow">Toggle</p>
+            <h1>States</h1>
+          </header>
+          <div class="type-stack">
+            <article v-for="state in states" :key="state.name" class="type-card">
+              <strong>{{ state.name }}</strong>
+              <div style="display: flex; flex-wrap: wrap; gap: 24px 32px; margin-top: 16px;">
+                <template v-for="variant in variants" :key="variant.value">
+                  <div v-for="o in onOff" :key="variant.value + o.name" style="display: grid; gap: 8px; justify-items: start;">
+                    <span class="token-meta">{{ variant.name }} / {{ o.name }}</span>
+                    <Toggle
+                      v-bind="state.props"
+                      :variant="variant.value"
+                      :model-value="o.modelValue"
+                      left-label="Label"
+                      right-label="Label"
+                    />
+                  </div>
+                </template>
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
-    </div>`
+      </section>
+    `
   })
 };
 
