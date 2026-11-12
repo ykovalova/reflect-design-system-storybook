@@ -436,14 +436,12 @@ const hasTrailing = computed(
   --button-opacity: 1;
 }
 
-.button-variant-primary:disabled:not([data-state="loading"]) {
-  --button-background: var(--color-action-primary-disabled);
-  --button-color: var(--color-action-on-action-disabled);
-}
-
+/* Figma: disabled primary and primary danger are the same neutral grey (fill, border and text). */
+.button-variant-primary:disabled:not([data-state="loading"]),
 .button-variant-primary-danger:disabled:not([data-state="loading"]) {
-  --button-background: var(--color-action-danger-disabled);
-  --button-color: var(--color-action-on-action-disabled);
+  --button-background: var(--color-bg-action-disabled);
+  --button-border-color: var(--color-border-action-disabled);
+  --button-color: var(--color-text-disabled);
 }
 
 .button-variant-tertiary[data-state="disabled"] {

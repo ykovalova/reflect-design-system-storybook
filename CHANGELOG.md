@@ -44,6 +44,9 @@ Branch `Marika-button`.
   / `-pressed` fills (was a text link with underline on hover). Disabled uses `bg-action-disabled`,
   `border-action-disabled` and `text-disabled` at full opacity (was 0.48 / 0.4 opacity). Icon-only is
   4px radius, type is Body 1/2 Medium.
+- **Button disabled `primary` and `primary-danger` are neutral grey like Figma**: `bg-action-disabled`
+  fill, `border-action-disabled` border and `text-disabled` label (was a light brand / grey-15 fill with
+  a grey-50 label). This is what the Button / States story shows for `disabled`.
 - **Button focus ring matches Figma for every variant**: 2px `--color-border-focus-ring`, offset 1px
   (3px from the edge), no box-shadow (was a primary outline plus a 4px shadow).
 - **Removed** the code-only `--color-action-danger-surface*` / `--color-action-danger-border` tokens
