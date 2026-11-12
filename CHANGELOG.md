@@ -47,6 +47,12 @@ Branch `Marika-button`.
 - **Button disabled `primary` and `primary-danger` are neutral grey like Figma**: `bg-action-disabled`
   fill, `border-action-disabled` border and `text-disabled` label (was a light brand / grey-15 fill with
   a grey-50 label). This is what the Button / States story shows for `disabled`.
+- **Button `secondary` now matches Figma**: white `bg-action-secondary-default` fill, neutral
+  `border-action-secondary-default` border and `text-on-neutral` label (was a violet outline and
+  primary-coloured label). Hover and pressed also change the border (`-hover` gray-60, `-pressed`
+  gray-80), and disabled is the shared grey (`bg-action-disabled`, `border-action-disabled`,
+  `text-disabled`, full opacity). Padding 12px, radius 4px (also icon-only), Body 1/2 Medium type.
+  Removed the unused code-only `--color-action-secondary-*` tokens.
 - **Button focus ring matches Figma for every variant**: 2px `--color-border-focus-ring`, offset 1px
   (3px from the edge), no box-shadow (was a primary outline plus a 4px shadow).
 - **Removed** the code-only `--color-action-danger-surface*` / `--color-action-danger-border` tokens

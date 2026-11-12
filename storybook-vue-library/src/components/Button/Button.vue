@@ -256,10 +256,12 @@ const hasTrailing = computed(
   --button-color: var(--color-action-on-action-default);
 }
 
+/* Figma "Secondary": white fill, neutral border and text. Hover and pressed darken fill and border;
+   the label stays text-on-neutral. Same box metrics as the danger variants below. */
 .button-variant-secondary {
-  --button-background: var(--color-action-secondary-default);
-  --button-color: var(--color-action-primary-default);
-  --button-border-color: var(--color-action-secondary-border);
+  --button-background: var(--color-bg-action-secondary-default);
+  --button-color: var(--color-text-on-neutral);
+  --button-border-color: var(--color-border-action-secondary-default);
 }
 
 /* Figma "Secondary Danger" and "Tertiary Danger": boxed buttons with 4px radius, 12px inline padding
@@ -278,6 +280,7 @@ const hasTrailing = computed(
   --button-shadow: none;
 }
 
+.button-variant-secondary,
 .button-variant-secondary-danger,
 .button-variant-tertiary-danger {
   --button-padding-inline: var(--space-12);
@@ -287,12 +290,14 @@ const hasTrailing = computed(
   --button-line-height: var(--line-body-1);
 }
 
+.button-variant-secondary.button-size-small,
 .button-variant-secondary-danger.button-size-small,
 .button-variant-tertiary-danger.button-size-small {
   --button-font-size: var(--font-body-2-medium);
   --button-line-height: var(--line-body-2);
 }
 
+.button-variant-secondary.button-icon-only,
 .button-variant-secondary-danger.button-icon-only,
 .button-variant-tertiary-danger.button-icon-only {
   padding-inline: 0;
@@ -362,7 +367,8 @@ const hasTrailing = computed(
 
 .button-variant-secondary[data-state="hover"]:not(:disabled),
 .button-variant-secondary:not(:disabled):hover {
-  background: var(--color-action-secondary-hover);
+  --button-background: var(--color-bg-action-secondary-hover);
+  --button-border-color: var(--color-border-action-secondary-hover);
 }
 
 .button-variant-tertiary-modal[data-state="hover"]:not(:disabled),
@@ -400,7 +406,8 @@ const hasTrailing = computed(
 }
 
 .button-variant-secondary[data-state="pressed"]:not(:disabled) {
-  background: var(--color-action-secondary-pressed);
+  --button-background: var(--color-bg-action-secondary-pressed);
+  --button-border-color: var(--color-border-action-secondary-pressed);
 }
 
 .button-variant-tertiary-modal[data-state="pressed"]:not(:disabled) {
@@ -448,12 +455,14 @@ const hasTrailing = computed(
   --button-opacity: 0.4;
 }
 
+.button-variant-secondary:disabled:not([data-state="loading"]),
 .button-variant-secondary-danger:disabled:not([data-state="loading"]),
 .button-variant-tertiary-danger:disabled:not([data-state="loading"]) {
   --button-opacity: 1;
   --button-color: var(--color-text-disabled);
 }
 
+.button-variant-secondary:disabled:not([data-state="loading"]),
 .button-variant-secondary-danger:disabled:not([data-state="loading"]) {
   --button-background: var(--color-bg-action-disabled);
   --button-border-color: var(--color-border-action-disabled);

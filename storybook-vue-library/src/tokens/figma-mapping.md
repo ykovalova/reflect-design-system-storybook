@@ -172,7 +172,6 @@ Items that are unresolved and may block future transfers. Resolve before the nex
 | Radius primitives `r-0` → `r-48` | — | 12 variables | Defer until Figma exposes as a navigable collection |
 | `Typography/Button/*` weights | `font-weight: 500` | Semibold (600) | Confirm correct weight with design; update code or document intentional divergence |
 | `Focus state` effect | Single 4px shadow | Two rings (3px + 1px) | Align focus shadow treatment with Figma spec |
-| `--color-action-secondary-border` | `rgba(60, 58, 219, 0.24)` | No Figma equivalent | Formalized from Button.vue's existing hardcoded outline color — confirm this is the intended secondary-button border treatment |
 | **Code syntax for camelCase segments** | — | `OnSolid`, `OnStatus`, `OnNeutral`, `DangerGhost` each carry an explicit WEB code-syntax string | Read the stored syntax rather than deriving it — the naming rule gives `onsolid`, Figma may hold `on-solid`. Blocks CSS generation for the new layer |
 | `Overlay/Scrim` → `Other/Blanket` | — | Likely `rgba(91, 91, 100, 0.5)` (Gray/80 @ 50%), per the `Color/Focus/Blanket` row above | Confirm the two rows describe the same primitive before writing the scrim into CSS |
 | `Surface/Muted`, `Border/Subtle` | `gray-10`, `gray-20` | `gray-15`, `gray-30` | **Names reused at different values.** A find-and-replace on either produces a silently wrong colour — migrate these by hand |
