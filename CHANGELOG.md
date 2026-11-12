@@ -13,6 +13,16 @@ Branch `Marika-button`.
 
 ### Added
 
+- **`Radio` component** (`src/components/Radio/`) and stories (`Components/Radio`: Playground, Variant matrix,
+  States, WithoutLabel, Group) from the Figma Radio button set (`727:1155`). Native `input type="radio"`
+  with `name`, `value` and `v-model` (`modelValue`), `checked` override for docs, `size` (`medium` 16px |
+  `small` 12px), `invalid` (`aria-invalid`), `disabled`, optional `label` (set `ariaLabel` without one) and a
+  `state` prop (`default` | `hover` | `focused`) for docs. Covers all 20 Figma variants (State x Variant x Size)
+  using semantic tokens only; checked radios take the brand colour on the ring and dot, error uses
+  `Border/Action/Danger/Default` (unchecked) and `Border/Field/Error` (checked). Focus ring: circle with a 2px
+  `--color-border-focus-ring` stroke, 22px Medium / 18px Small. Small has no gap before the label, as in
+  Figma. Code Connect is not registered yet.
+
 - **`Toggle` component** (`src/components/Toggle/`) and stories (`Components/Toggle`: Playground, States,
   WithoutLabel, Interactive) from the Figma Toggle set (`730:2513`). Native `input type="checkbox"` with
   `role="switch"` and `v-model` (`modelValue`), `variant` (`default` | `recording`: red dot when on, pause icon
