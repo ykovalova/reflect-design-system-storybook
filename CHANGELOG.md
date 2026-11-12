@@ -29,6 +29,16 @@ Branch `Marika-button`.
   `Overlay/*` alpha tokens emit literal rgba; `Background/Action/Tertiary/{Hover,Pressed}`
   reference `Overlay/*` and emit `var(--color-overlay-*)`.
 
+### Fixed
+
+- **Badge colours match Figma** (Badge file `06LDpMG8MxDk6XwMBJSGUb`): `Color.tokens.json` was out of sync
+  with the `Semantic` collection, so regenerated tokens gave wrong Badge colours. Subtle fills moved
+  one step darker (info `blue-30` `#D2DBF7`, success `green-30` `#D6F3E1`, warning `yellow-40`
+  `#FFE9B7`, danger `red-30` `#EFCDCB`), `Status/Success/Solid` is `green-80` `#289B56` (was `green-70`),
+  and `Text/OnStatus/*` is white (`gray-00`) for neutral, info, success and danger, and `gray-100` for
+  warning (was `gray-70` / `blue-90` / `green-90` / `red-90` / `gray-90`; the neutral Bold label was
+  the same colour as its fill). Regenerated `semantic-colors.generated.*`; `semantic-token-map.md` updated.
+
 ### Changed
 
 - **Button `tertiary-modal` now matches Figma "Tertiary (modals)"** (set `558:3397`): transparent

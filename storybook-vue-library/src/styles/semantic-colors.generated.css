@@ -42,13 +42,13 @@
   --color-bg-action-control-checked-default: var(--color-brand-75);
   --color-bg-action-control-checked-hover: var(--color-brand-80);
   --color-bg-action-control-checked-disabled: var(--color-gray-30);
-  --color-bg-status-info-subtle: var(--color-blue-20);
+  --color-bg-status-info-subtle: var(--color-blue-30);
   --color-bg-status-info-solid: var(--color-blue-70);
-  --color-bg-status-success-subtle: var(--color-green-20);
-  --color-bg-status-success-solid: var(--color-green-70);
-  --color-bg-status-warning-subtle: var(--color-yellow-20);
+  --color-bg-status-success-subtle: var(--color-green-30);
+  --color-bg-status-success-solid: var(--color-green-80);
+  --color-bg-status-warning-subtle: var(--color-yellow-40);
   --color-bg-status-warning-solid: var(--color-yellow-70);
-  --color-bg-status-danger-subtle: var(--color-red-20);
+  --color-bg-status-danger-subtle: var(--color-red-30);
   --color-bg-status-danger-solid: var(--color-red-70);
   --color-bg-status-neutral-subtle: var(--color-gray-15);
   --color-bg-status-neutral-solid: var(--color-gray-70);
@@ -71,11 +71,11 @@
   --color-text-status-neutral: var(--color-gray-90);
   --color-text-status-danger-default: var(--color-red-70);
   --color-text-status-danger-pressed: var(--color-red-90);
-  --color-text-on-status-info: var(--color-blue-90);
-  --color-text-on-status-success: var(--color-green-90);
-  --color-text-on-status-warning: var(--color-gray-90);
-  --color-text-on-status-danger: var(--color-red-90);
-  --color-text-on-status-neutral: var(--color-gray-70);
+  --color-text-on-status-info: var(--color-gray-00);
+  --color-text-on-status-success: var(--color-gray-00);
+  --color-text-on-status-warning: var(--color-gray-100);
+  --color-text-on-status-danger: var(--color-gray-00);
+  --color-text-on-status-neutral: var(--color-gray-00);
 
   /* Icon */
   --color-icon-strong: var(--color-gray-100);
