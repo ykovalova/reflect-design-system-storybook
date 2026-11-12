@@ -154,29 +154,11 @@
   --color-action-primary-disabled:  var(--color-brand-50);
   --color-action-primary-icon:      var(--color-gray-00);
 
-  /* ── Action — Secondary ──────────────────────────────────────────────── */
-  --color-action-secondary-default:  var(--color-gray-00);
-  --color-action-secondary-hover:    var(--color-gray-05);
-  --color-action-secondary-pressed:  var(--color-gray-15);
-  --color-action-secondary-text:     var(--color-gray-50);
-  --color-action-secondary-border:   rgba(60, 58, 219, 0.24);
-
-  /* ── Action — Tertiary Modal ──────────────────────────────────────────── */
-  /* Code-only: no Figma "tertiary-modal" Action counterpart yet. See figma-mapping.md open decisions. */
-  --color-action-tertiary-modal-default:  rgba(60, 58, 219, 0.08);
-  --color-action-tertiary-modal-hover:    rgba(60, 58, 219, 0.08);
-  --color-action-tertiary-modal-pressed:  rgba(60, 58, 219, 0.12);
-
   /* ── Action — Danger ─────────────────────────────────────────────────── */
   --color-action-danger-default:   var(--color-red-70);
   --color-action-danger-hover:     var(--color-red-80);
   --color-action-danger-pressed:   var(--color-red-90);
   --color-action-danger-disabled:  var(--color-gray-15);
-  /* Code-only: "surface"/"border" sub-roles have no Figma Action/Danger counterpart yet. */
-  --color-action-danger-surface:          var(--color-status-error-surface);
-  --color-action-danger-surface-hover:    rgba(210, 120, 114, 0.08);
-  --color-action-danger-surface-pressed:  rgba(210, 120, 114, 0.12);
-  --color-action-danger-border:           rgba(210, 120, 114, 0.55);
 
   /* ── Action — OnAction ───────────────────────────────────────────────── */
   --color-action-on-action-default:   var(--color-gray-00);

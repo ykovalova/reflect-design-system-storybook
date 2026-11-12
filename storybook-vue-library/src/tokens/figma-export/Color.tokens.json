@@ -937,6 +937,34 @@
               }
             }
           },
+          "Hover": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.9764705896377563,
+                0.9764705896377563,
+                0.9960784316062927
+              ],
+              "alpha": 1,
+              "hex": "#F9F9FE"
+            },
+            "$description": "Unchecked checkbox, radio or toggle under the pointer.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:11380:33",
+              "com.figma.scopes": [
+                "FRAME_FILL",
+                "SHAPE_FILL"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--color-bg-action-control-unchecked-hover)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableName": "Color/Brand/brand-05",
+                "targetVariableSetName": "Primitives"
+              }
+            }
+          },
           "Disabled": {
             "$type": "color",
             "$value": {
@@ -1097,12 +1125,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9098039269447327,
-              0.929411768913269,
-              0.9843137264251709
+              0.8235294222831726,
+              0.860392153263092,
+              0.9686274528503418
             ],
             "alpha": 1,
-            "hex": "#E8EDFB"
+            "hex": "#D2DBF7"
           },
           "$description": "Tinted ground for informational banners, alerts and soft badges. Pair with Text/Status/Info, Icon/Status/Info and Border/Status/Info.",
           "$extensions": {
@@ -1115,9 +1143,7 @@
               "WEB": "var(--color-bg-status-info-subtle)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:7a79f1c0de731fbae18ba49254ea3fe8be7e8a24/-1:-1",
-              "targetVariableName": "Color/Blue/blue-20",
-              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableName": "Color/Blue/blue-30",
               "targetVariableSetName": "Primitives"
             }
           }
@@ -1159,12 +1185,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9176470637321472,
-              0.9764705896377563,
-              0.9411764740943909
+              0.8392156958580017,
+              0.9529411792755127,
+              0.8823529481887817
             ],
             "alpha": 1,
-            "hex": "#EAF9F0"
+            "hex": "#D6F3E1"
           },
           "$description": "Tinted ground for success banners, alerts and soft badges. Pair with Text/Status/Success, Icon/Status/Success and Border/Status/Success.",
           "$extensions": {
@@ -1177,9 +1203,7 @@
               "WEB": "var(--color-bg-status-success-subtle)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:e2dd3cac532c088fb333f5555fb4795ba49828e4/-1:-1",
-              "targetVariableName": "Color/Green/green-20",
-              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableName": "Color/Green/green-30",
               "targetVariableSetName": "Primitives"
             }
           }
@@ -1189,12 +1213,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.19607843458652496,
-              0.7607843279838562,
-              0.41960784792900085
+              0.1568627506494522,
+              0.608627438545227,
+              0.33568626642227173
             ],
             "alpha": 1,
-            "hex": "#32C26B"
+            "hex": "#289B56"
           },
           "$description": "Filled success ground for solid badges, toasts, status dots and progress fills. Pair the foreground with Text/OnStatus/Success — never with Text/Status/Success, which is tuned for the Subtle tint.",
           "$extensions": {
@@ -1207,8 +1231,8 @@
               "WEB": "var(--color-bg-status-success-solid)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:0435a4b42f8f9f06b2147784708936d829535a9a/-1:-1",
-              "targetVariableName": "Color/Green/green-70",
+              "targetVariableId": "VariableID:dc85727ae0157233f9f46235b0314ee08c78b60d/-1:-1",
+              "targetVariableName": "Color/Green/green-80",
               "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
               "targetVariableSetName": "Primitives"
             }
@@ -1222,11 +1246,11 @@
             "colorSpace": "srgb",
             "components": [
               1,
-              0.9764705896377563,
-              0.929411768913269
+              0.9137254953384399,
+              0.7192156910896301
             ],
             "alpha": 1,
-            "hex": "#FFF9ED"
+            "hex": "#FFE9B7"
           },
           "$description": "Tinted ground for warning banners, alerts and soft badges. Pair with Text/Status/Warning, Icon/Status/Warning and Border/Status/Warning.",
           "$extensions": {
@@ -1239,9 +1263,7 @@
               "WEB": "var(--color-bg-status-warning-subtle)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:c7911523ca995c5167a15c66327286839be5b27b/-1:-1",
-              "targetVariableName": "Color/Yellow/yellow-20",
-              "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
+              "targetVariableName": "Color/Yellow/yellow-40",
               "targetVariableSetName": "Primitives"
             }
           }
@@ -1283,12 +1305,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9686274528503418,
-              0.886274516582489,
-              0.8823529481887817
+              0.9372549057006836,
+              0.8039215803146362,
+              0.7960784435272217
             ],
             "alpha": 1,
-            "hex": "#F7E2E1"
+            "hex": "#EFCDCB"
           },
           "$description": "Tinted ground for error/destructive banners, alerts and soft badges. Pair with Text/Status/Danger, Icon/Status/Danger and Border/Status/Danger.",
           "$extensions": {
@@ -1301,8 +1323,8 @@
               "WEB": "var(--color-bg-status-danger-subtle)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:7e52d6717b0f39661a6e5365cb7bdacbc98941f1/-1:-1",
-              "targetVariableName": "Color/Red/red-20",
+              "targetVariableId": "VariableID:c22c41ab073cdbaca5aeea7e414c7ecd22bbaeca/-1:-1",
+              "targetVariableName": "Color/Red/red-30",
               "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
               "targetVariableSetName": "Primitives"
             }
@@ -1911,12 +1933,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.07058823853731155,
-            0.18117646872997284,
-            0.5058823823928833
+            1,
+            1,
+            1
           ],
           "alpha": 1,
-          "hex": "#122E81"
+          "hex": "#FFFFFF"
         },
         "$description": "Label on the filled Background/Status/Info/Solid ground — solid badges, toasts.",
         "$extensions": {
@@ -1928,8 +1950,8 @@
             "WEB": "var(--color-text-on-status-info)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:e49cb8eebd1f5ebb0f065a64d0c6fc415925dea8/-1:-1",
-            "targetVariableName": "Color/Blue/blue-90",
+            "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+            "targetVariableName": "Color/Gray/gray-00",
             "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
             "targetVariableSetName": "Primitives"
           }
@@ -1940,12 +1962,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.11764705926179886,
-            0.45490196347236633,
-            0.250980406999588
+            1,
+            1,
+            1
           ],
           "alpha": 1,
-          "hex": "#1E7440"
+          "hex": "#FFFFFF"
         },
         "$description": "Label on the filled Background/Status/Success/Solid ground.",
         "$extensions": {
@@ -1957,8 +1979,8 @@
             "WEB": "var(--color-text-on-status-success)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:d0fd225685ee2d1e85855602862ccbdd77ffba47/-1:-1",
-            "targetVariableName": "Color/Green/green-90",
+            "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+            "targetVariableName": "Color/Gray/gray-00",
             "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
             "targetVariableSetName": "Primitives"
           }
@@ -1969,12 +1991,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.24313725531101227,
-            0.24313725531101227,
-            0.27450981736183167
+            0.12941177189350128,
+            0.12941177189350128,
+            0.1568627506494522
           ],
           "alpha": 1,
-          "hex": "#3E3E46"
+          "hex": "#212128"
         },
         "$description": "Label on the filled Background/Status/Warning/Solid ground. Dark, not white — warning&#39;s solid fill is a light yellow, and white on it fails contrast. This is the one family that breaks the pattern.",
         "$extensions": {
@@ -1986,8 +2008,8 @@
             "WEB": "var(--color-text-on-status-warning)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:313ddc9a382d53c06753bc4344987a54d1a3d085/-1:-1",
-            "targetVariableName": "Color/Gray/gray-90",
+            "targetVariableId": "VariableID:b143beecbe31ee3e5e47d28e88f67d951cce8eac/-1:-1",
+            "targetVariableName": "Color/Gray/gray-100",
             "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
             "targetVariableSetName": "Primitives"
           }
@@ -1998,12 +2020,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.42352941632270813,
-            0.08627451211214066,
-            0.05882352963089943
+            1,
+            1,
+            1
           ],
           "alpha": 1,
-          "hex": "#6C160F"
+          "hex": "#FFFFFF"
         },
         "$description": "Label on the filled Background/Status/Danger/Solid ground.",
         "$extensions": {
@@ -2015,8 +2037,8 @@
             "WEB": "var(--color-text-on-status-danger)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:24caafd42c2c583e0d93943adb8e740ae71d531c/-1:-1",
-            "targetVariableName": "Color/Red/red-90",
+            "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+            "targetVariableName": "Color/Gray/gray-00",
             "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
             "targetVariableSetName": "Primitives"
           }
@@ -2027,12 +2049,12 @@
         "$value": {
           "colorSpace": "srgb",
           "components": [
-            0.46666666865348816,
-            0.46666666865348816,
-            0.5137255191802979
+            1,
+            1,
+            1
           ],
           "alpha": 1,
-          "hex": "#777783"
+          "hex": "#FFFFFF"
         },
         "$description": "Label on the filled Background/Status/Neutral/Solid ground.",
         "$extensions": {
@@ -2044,8 +2066,8 @@
             "WEB": "var(--color-text-on-status-neutral)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:8bef2d7aa0faae61f7bbdd1e3e3a1c2041bb6890/-1:-1",
-            "targetVariableName": "Color/Gray/gray-70",
+            "targetVariableId": "VariableID:6df7ada84f4fd9055cf6c85c6a79c7fb3c81f68b/-1:-1",
+            "targetVariableName": "Color/Gray/gray-00",
             "targetVariableSetId": "VariableCollectionId:5c070c5f58eb534806c64ae0800bb3f43ed87963/-1:-1",
             "targetVariableSetName": "Primitives"
           }

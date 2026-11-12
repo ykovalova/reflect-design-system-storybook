@@ -146,8 +146,6 @@ export const semanticColorTokens = [
   { name: "Action Primary", cssVar: "--color-action-primary", value: "var(--color-brand-75)", mapsTo: "brand-75" },
   { name: "Action Primary Hover", cssVar: "--color-action-primary-hover", value: "var(--color-brand-95)", mapsTo: "brand-95" },
   { name: "Action Danger", cssVar: "--color-action-danger", value: "var(--color-red-90)", mapsTo: "red-90" },
-  { name: "Action Danger Surface", cssVar: "--color-action-danger-surface", value: "var(--color-red-2-5)", mapsTo: "red-2,5" },
-  { name: "Action Danger Border", cssVar: "--color-action-danger-border", value: "var(--color-red-50)", mapsTo: "red-50" },
   { name: "Focus Ring", cssVar: "--color-focus-ring", value: "var(--color-blue-2-5)", mapsTo: "blue-2,5" }
 ] as const;
 
@@ -271,26 +269,13 @@ export const fullSemanticColorTokens: SemanticColorToken[] = [
   { name: "Action/Primary/Icon",     cssVar: "--color-action-primary-icon",     propertyGroup: "action", propertySubgroup: "primary", intentGroup: "on-solid", globalAlias: "Icon/Inverse → Gray/00",  hex: "#FFFFFF" },
 
   // ─── Action — Secondary (5) ──────────────────────────────────────────────
-  { name: "Action/Secondary/Default", cssVar: "--color-action-secondary-default", propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Base → Gray/00",   hex: "#FFFFFF" },
-  { name: "Action/Secondary/Hover",   cssVar: "--color-action-secondary-hover",   propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Surface/Subtle → Gray/05", hex: "#FAFAFC" },
-  { name: "Action/Secondary/Pressed", cssVar: "--color-action-secondary-pressed", propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Gray/15",  hex: "#EFEFF2" },
-  { name: "Action/Secondary/Text",    cssVar: "--color-action-secondary-text",    propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "neutral", globalAlias: "Gray/50",                  hex: "#B1B1BF" },
-  { name: "Action/Secondary/Border",  cssVar: "--color-action-secondary-border",  propertyGroup: "action", propertySubgroup: "secondary", intentGroup: "brand",   globalAlias: "rgba(60, 58, 219, 0.24)",  hex: "rgba(60, 58, 219, 0.24)", notes: "Code-only — extracted from Button.vue; no Figma equivalent, needs design approval" },
 
-  // ─── Action — Tertiary Modal (3) ─────────────────────────────────────────
-  { name: "Action/TertiaryModal/Default", cssVar: "--color-action-tertiary-modal-default", propertyGroup: "action", propertySubgroup: "tertiary-modal", intentGroup: "brand", globalAlias: "rgba(60, 58, 219, 0.08)", hex: "rgba(60, 58, 219, 0.08)", notes: "Code-only — extracted from Button.vue; `tertiary-modal` variant has no Figma Action counterpart at all" },
-  { name: "Action/TertiaryModal/Hover",   cssVar: "--color-action-tertiary-modal-hover",   propertyGroup: "action", propertySubgroup: "tertiary-modal", intentGroup: "brand", globalAlias: "rgba(60, 58, 219, 0.08)", hex: "rgba(60, 58, 219, 0.08)", notes: "Code-only — same resolved value as Default; pre-existing behavior preserved as-is, not a new design decision" },
-  { name: "Action/TertiaryModal/Pressed",  cssVar: "--color-action-tertiary-modal-pressed",  propertyGroup: "action", propertySubgroup: "tertiary-modal", intentGroup: "brand", globalAlias: "rgba(60, 58, 219, 0.12)", hex: "rgba(60, 58, 219, 0.12)", notes: "Code-only — extracted from Button.vue" },
 
   // ─── Action — Danger (8) ─────────────────────────────────────────────────
   { name: "Action/Danger/Default",  cssVar: "--color-action-danger-default",  propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger",  globalAlias: "Red/70",                    hex: "#B42419" },
   { name: "Action/Danger/Hover",    cssVar: "--color-action-danger-hover",    propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger",  globalAlias: "Red/80",                    hex: "#901D14" },
   { name: "Action/Danger/Pressed",  cssVar: "--color-action-danger-pressed",  propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger",  globalAlias: "Red/90",                    hex: "#6C160F" },
   { name: "Action/Danger/Disabled", cssVar: "--color-action-danger-disabled", propertyGroup: "action", propertySubgroup: "danger", intentGroup: "neutral", globalAlias: "Surface/Disabled → Gray/15",hex: "#EFEFF2" },
-  { name: "Action/Danger/Surface",        cssVar: "--color-action-danger-surface",        propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger", globalAlias: "Status/Error/Surface (aliased)", hex: "var(--color-status-error-surface)", notes: "Code-only — Figma's Action/Danger group has no Surface sub-role; aliased to the closest verified semantic value" },
-  { name: "Action/Danger/SurfaceHover",   cssVar: "--color-action-danger-surface-hover",   propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger", globalAlias: "rgba(210, 120, 114, 0.08)", hex: "rgba(210, 120, 114, 0.08)", notes: "Code-only — extracted from Button.vue; no Figma equivalent" },
-  { name: "Action/Danger/SurfacePressed", cssVar: "--color-action-danger-surface-pressed", propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger", globalAlias: "rgba(210, 120, 114, 0.12)", hex: "rgba(210, 120, 114, 0.12)", notes: "Code-only — extracted from Button.vue; no Figma equivalent" },
-  { name: "Action/Danger/Border",         cssVar: "--color-action-danger-border",          propertyGroup: "action", propertySubgroup: "danger", intentGroup: "danger", globalAlias: "rgba(210, 120, 114, 0.55)", hex: "rgba(210, 120, 114, 0.55)", notes: "Code-only — extracted from Button.vue; no Figma equivalent" },
 
   // ─── Action — OnAction (2) ───────────────────────────────────────────────
   { name: "Action/OnAction/Default",  cssVar: "--color-action-on-action-default",  propertyGroup: "action", propertySubgroup: "on-action", intentGroup: "on-solid", globalAlias: "Text/OnSolid → Gray/00",    hex: "#FFFFFF" },

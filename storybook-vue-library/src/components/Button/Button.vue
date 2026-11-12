@@ -60,7 +60,7 @@ const ICON_PATHS: Record<Exclude<ButtonIcon, "none">, { d: string; join?: boolea
 
 const isLoading = computed(() => props.state === "loading");
 const isDisabled = computed(() => props.disabled || props.state === "disabled" || isLoading.value);
-const isTextButton = computed(() => props.variant === "tertiary" || props.variant === "tertiary-danger");
+const isTextButton = computed(() => props.variant === "tertiary");
 const isModalTertiary = computed(() => props.variant === "tertiary-modal");
 const supportsExtraSmall = computed(() => props.onlyIcon && isModalTertiary.value);
 
@@ -256,28 +256,84 @@ const hasTrailing = computed(
   --button-color: var(--color-action-on-action-default);
 }
 
+/* Figma "Secondary": white fill, neutral border and text. Hover and pressed darken fill and border;
+   the label stays text-on-neutral. Same box metrics as the danger variants below. */
 .button-variant-secondary {
-  --button-background: var(--color-action-secondary-default);
-  --button-color: var(--color-action-primary-default);
-  --button-border-color: var(--color-action-secondary-border);
+  --button-background: var(--color-bg-action-secondary-default);
+  --button-color: var(--color-text-on-neutral);
+  --button-border-color: var(--color-border-action-secondary-default);
 }
 
+/* Figma "Secondary Danger" and "Tertiary Danger": boxed buttons with 4px radius, 12px inline padding
+   and Body 1/2 Medium type. Hover and pressed change fill, and for secondary also the border and text. */
 .button-variant-secondary-danger {
-  --button-background: var(--color-action-danger-surface);
-  --button-color: var(--color-action-danger-default);
-  --button-border-color: var(--color-action-danger-border);
+  --button-background: var(--color-bg-action-danger-secondary-default);
+  --button-color: var(--color-text-status-danger-default);
+  --button-border-color: var(--color-border-action-danger-default);
   --button-shadow: none;
 }
 
-.button-variant-tertiary-modal {
-  --button-background: var(--color-action-tertiary-modal-default);
-  --button-color: var(--color-action-primary-default);
+.button-variant-tertiary-danger {
+  --button-background: var(--color-bg-action-transparent);
+  --button-color: var(--color-text-status-danger-default);
   --button-border-color: transparent;
   --button-shadow: none;
 }
 
-.button-variant-tertiary,
+.button-variant-secondary,
+.button-variant-secondary-danger,
 .button-variant-tertiary-danger {
+  --button-padding-inline: var(--space-12);
+  --button-radius: 0.25rem;
+  --button-font-weight: var(--font-weight-medium);
+  --button-font-size: var(--font-body-1-medium);
+  --button-line-height: var(--line-body-1);
+}
+
+.button-variant-secondary.button-size-small,
+.button-variant-secondary-danger.button-size-small,
+.button-variant-tertiary-danger.button-size-small {
+  --button-font-size: var(--font-body-2-medium);
+  --button-line-height: var(--line-body-2);
+}
+
+.button-variant-secondary.button-icon-only,
+.button-variant-secondary-danger.button-icon-only,
+.button-variant-tertiary-danger.button-icon-only {
+  padding-inline: 0;
+  border-radius: var(--button-radius);
+}
+
+/* Figma "Tertiary (modals)": transparent fill, neutral text, 4px radius, 12px inline padding.
+   Hover/pressed use the neutral overlay tokens; disabled keeps full opacity and only greys the content. */
+.button-variant-tertiary-modal {
+  --button-background: var(--color-bg-action-transparent);
+  --button-color: var(--color-text-on-neutral);
+  --button-border-color: transparent;
+  --button-shadow: none;
+  --button-padding-inline: var(--space-12);
+  --button-radius: 0.25rem;
+  --button-font-weight: var(--font-weight-medium);
+  --button-font-size: var(--font-body-1-medium);
+  --button-line-height: var(--line-body-1);
+}
+
+.button-variant-tertiary-modal.button-size-small,
+.button-variant-tertiary-modal.button-size-extra-small {
+  --button-font-size: var(--font-body-2-medium);
+  --button-line-height: var(--line-body-2);
+}
+
+.button-variant-tertiary-modal.button-size-extra-small {
+  --button-radius: 0.25rem;
+}
+
+.button-variant-tertiary-modal.button-icon-only {
+  padding-inline: 0;
+  border-radius: var(--button-radius);
+}
+
+.button-variant-tertiary {
   --button-background: transparent;
   --button-border-color: transparent;
   --button-shadow: none;
@@ -289,10 +345,6 @@ const hasTrailing = computed(
 
 .button-variant-tertiary {
   --button-color: var(--color-action-primary-default);
-}
-
-.button-variant-tertiary-danger {
-  --button-color: var(--color-action-danger-default);
 }
 
 .button-textual {
@@ -315,23 +367,28 @@ const hasTrailing = computed(
 
 .button-variant-secondary[data-state="hover"]:not(:disabled),
 .button-variant-secondary:not(:disabled):hover {
-  background: var(--color-action-secondary-hover);
+  --button-background: var(--color-bg-action-secondary-hover);
+  --button-border-color: var(--color-border-action-secondary-hover);
 }
 
 .button-variant-tertiary-modal[data-state="hover"]:not(:disabled),
 .button-variant-tertiary-modal:not(:disabled):hover {
-  background: var(--color-action-tertiary-modal-hover);
+  background: var(--color-bg-action-tertiary-hover);
 }
 
 .button-variant-secondary-danger[data-state="hover"]:not(:disabled),
 .button-variant-secondary-danger:not(:disabled):hover {
-  background: var(--color-action-danger-surface-hover);
+  --button-background: var(--color-bg-action-danger-secondary-hover);
+  --button-border-color: var(--color-border-action-danger-hover);
+}
+
+.button-variant-tertiary-danger[data-state="hover"]:not(:disabled),
+.button-variant-tertiary-danger:not(:disabled):hover {
+  --button-background: var(--color-bg-action-danger-tertiary-hover);
 }
 
 .button-variant-tertiary[data-state="hover"]:not(:disabled),
-.button-variant-tertiary:not(:disabled):hover,
-.button-variant-tertiary-danger[data-state="hover"]:not(:disabled),
-.button-variant-tertiary-danger:not(:disabled):hover {
+.button-variant-tertiary:not(:disabled):hover {
   text-decoration: underline;
   text-underline-offset: 0.18em;
 }
@@ -349,22 +406,30 @@ const hasTrailing = computed(
 }
 
 .button-variant-secondary[data-state="pressed"]:not(:disabled) {
-  background: var(--color-action-secondary-pressed);
+  --button-background: var(--color-bg-action-secondary-pressed);
+  --button-border-color: var(--color-border-action-secondary-pressed);
 }
 
 .button-variant-tertiary-modal[data-state="pressed"]:not(:disabled) {
-  background: var(--color-action-tertiary-modal-pressed);
+  background: var(--color-bg-action-tertiary-pressed);
 }
 
 .button-variant-secondary-danger[data-state="pressed"]:not(:disabled) {
-  background: var(--color-action-danger-surface-pressed);
+  --button-background: var(--color-bg-action-danger-secondary-pressed);
+  --button-border-color: var(--color-border-action-danger-pressed);
+  --button-color: var(--color-text-status-danger-pressed);
+}
+
+.button-variant-tertiary-danger[data-state="pressed"]:not(:disabled) {
+  --button-background: var(--color-bg-action-danger-tertiary-pressed);
+  --button-color: var(--color-text-status-danger-pressed);
 }
 
 .button-root[data-state="focused"]:not(:disabled),
 .button-root:focus-visible:not(:disabled) {
-  outline: 2px solid var(--color-action-primary-default);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 4px var(--color-focus-ring);
+  outline: 2px solid var(--color-border-focus-ring);
+  outline-offset: 1px;
+  box-shadow: none;
 }
 
 .button-root[data-state="disabled"],
@@ -378,20 +443,34 @@ const hasTrailing = computed(
   --button-opacity: 1;
 }
 
-.button-variant-primary:disabled:not([data-state="loading"]) {
-  --button-background: var(--color-action-primary-disabled);
-  --button-color: var(--color-action-on-action-disabled);
-}
-
+/* Figma: disabled primary and primary danger are the same neutral grey (fill, border and text). */
+.button-variant-primary:disabled:not([data-state="loading"]),
 .button-variant-primary-danger:disabled:not([data-state="loading"]) {
-  --button-background: var(--color-action-danger-disabled);
-  --button-color: var(--color-action-on-action-disabled);
+  --button-background: var(--color-bg-action-disabled);
+  --button-border-color: var(--color-border-action-disabled);
+  --button-color: var(--color-text-disabled);
 }
 
-.button-variant-tertiary[data-state="disabled"],
-.button-variant-tertiary-danger[data-state="disabled"],
-.button-variant-tertiary-modal[data-state="disabled"] {
+.button-variant-tertiary[data-state="disabled"] {
   --button-opacity: 0.4;
+}
+
+.button-variant-secondary:disabled:not([data-state="loading"]),
+.button-variant-secondary-danger:disabled:not([data-state="loading"]),
+.button-variant-tertiary-danger:disabled:not([data-state="loading"]) {
+  --button-opacity: 1;
+  --button-color: var(--color-text-disabled);
+}
+
+.button-variant-secondary:disabled:not([data-state="loading"]),
+.button-variant-secondary-danger:disabled:not([data-state="loading"]) {
+  --button-background: var(--color-bg-action-disabled);
+  --button-border-color: var(--color-border-action-disabled);
+}
+
+.button-variant-tertiary-modal:disabled:not([data-state="loading"]) {
+  --button-opacity: 1;
+  --button-color: var(--color-text-disabled);
 }
 
 @keyframes button-spin {
