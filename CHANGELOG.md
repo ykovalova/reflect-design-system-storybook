@@ -13,6 +13,16 @@ Branch `Marika-button`.
 
 ### Added
 
+- **`Field` component** (`src/components/Field/`) and stories (`Components/Field`: Playground, Variant matrix,
+  States, WithIcons, WithoutLabel, Required, ErrorMessage, Interactive) from the Figma Field set (`493:10744`).
+  Native `input` with a linked `label`, `v-model` (`modelValue`), `size` (`medium` 40px | `small` 32px),
+  `placeholder`, `helperText` (becomes the error message when `invalid`), `invalid` (`aria-invalid`,
+  `aria-describedby`), `disabled`, `required` (asterisk), `type`, optional `label` (set `ariaLabel` without one),
+  `leading-icon` / `trailing-icon` slots and a `state` prop (`default` | `hover` | `active` | `focused`) for docs.
+  Covers all 14 Figma variants (State x Size) using semantic tokens only; Focused draws a 3px
+  `--color-border-focus-ring` outside the brand border and stacks with the red Error edge. Code Connect is not
+  registered yet.
+
 - **`Radio` component** (`src/components/Radio/`) and stories (`Components/Radio`: Playground, Variant matrix,
   States, WithoutLabel, Group) from the Figma Radio button set (`727:1155`). Native `input type="radio"`
   with `name`, `value` and `v-model` (`modelValue`), `checked` override for docs, `size` (`medium` 16px |
