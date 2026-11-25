@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Radio from "../../components/Radio/Radio.vue";
 
 const meta = {
-  title: "Components/Radio",
+  title: "Components/Radio button",
   component: Radio,
   tags: ["autodocs"],
   argTypes: {
@@ -65,7 +65,7 @@ export const VariantMatrix: Story = {
       <section class="docs-page">
         <div class="docs-stack">
           <header class="docs-heading">
-            <p class="eyebrow">Radio</p>
+            <p class="eyebrow">Radio button</p>
             <h1>Variant matrix</h1>
           </header>
           <div class="type-stack">
@@ -101,7 +101,7 @@ export const States: Story = {
       <section class="docs-page">
         <div class="docs-stack">
           <header class="docs-heading">
-            <p class="eyebrow">Radio</p>
+            <p class="eyebrow">Radio button</p>
             <h1>States</h1>
           </header>
           <div class="type-stack">

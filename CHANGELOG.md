@@ -23,7 +23,7 @@ Branch `Marika-button`.
   `--color-border-focus-ring` outside the brand border and stacks with the red Error edge. Code Connect is not
   registered yet.
 
-- **`Radio` component** (`src/components/Radio/`) and stories (`Components/Radio`: Playground, Variant matrix,
+- **`Radio` component** (`src/components/Radio/`) and stories (`Components/Radio button`: Playground, Variant matrix,
   States, WithoutLabel, Group) from the Figma Radio button set (`727:1155`). Native `input type="radio"`
   with `name`, `value` and `v-model` (`modelValue`), `checked` override for docs, `size` (`medium` 16px |
   `small` 12px), `invalid` (`aria-invalid`), `disabled`, optional `label` (set `ariaLabel` without one) and a
