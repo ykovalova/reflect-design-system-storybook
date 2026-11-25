@@ -11,6 +11,9 @@ const preview: Preview = {
       }
     },
     layout: "fullscreen",
+    docs: {
+      canvas: { sourceState: "none" }
+    },
     options: {
       storySort: {
         order: ["Foundations", ["Colors", "Spacing", "Typography"], "Components", ["Button"]]

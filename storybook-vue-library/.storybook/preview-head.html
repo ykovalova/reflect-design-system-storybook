@@ -1,0 +1,21 @@
+<style>
+  /* Docs pages: render components without the bordered canvas box */
+  .sbdocs .docs-story,
+  .sbdocs .sbdocs-preview {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    margin: 0 !important;
+  }
+  .sbdocs .docs-story > div:first-child {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  /* "Show code" bar / toolbar */
+  .sbdocs .docblock-code-toggle,
+  .sbdocs .docblock-source,
+  .sbdocs .docs-story [class*="ActionBar"],
+  .sbdocs .docs-story button[title*="code" i] {
+    display: none !important;
+  }
+</style>
