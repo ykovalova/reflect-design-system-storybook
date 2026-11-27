@@ -1,8 +1,9 @@
 <style>
-  /* Docs pages: remove only the stroke and shadow around story boxes.
-     Layout, padding and the "Show code" button stay as they were. */
-  .sbdocs .docs-story,
-  .sbdocs .sbdocs-preview {
+  /* Docs pages: remove the stroke and shadow only from small boxes that hold a
+     single component. Sections (matrix/overview stories built from
+     .docs-page) keep their stroke. */
+  .sbdocs .sbdocs-preview:not(:has(.docs-page)),
+  .sbdocs .sbdocs-preview:not(:has(.docs-page)) .docs-story {
     border: 0 !important;
     box-shadow: none !important;
   }
